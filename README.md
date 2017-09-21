@@ -33,11 +33,14 @@ Will update this section once development has started
 - **HTML**- (Short for Hypertext-Markup Language. Everything you type is essentially the barebones of the website)
 - Imagine a website with no color, no styles, and no custom positioning of elements. That's basically a normal HTML file and would look something like this:  
 
-(Image)
+![alt text](https://github.com/ufosc/club-website/blob/master/ReadMePictures/Naked.JPG)
+
 - **CSS**- (What makes a Webpage look the way it does and what you will be working on for about 70-80% of a standard webpage development)  
 - With CSS imported into your HTML file, it makes the pervious website look like this: 
 
-(Image link)
+![alt text](https://github.com/ufosc/club-website/blob/master/ReadMePictures/Clothed1.JPG)
+![alt text](https://github.com/ufosc/club-website/blob/master/ReadMePictures/Clothed2.JPG)
+
 - **Javascript**-(A language that allows us to manipulate webpages in special ways. More on this later...)
 
 ## Contributing
