@@ -43,6 +43,8 @@ Will update this section once development has started
 
 - **Javascript**-(A language that allows us to manipulate webpages in special ways. More on this later...)
 
+Check out the [resources file](docs/resources.md) in docs for a list of links to learn more about these technologies. 
+
 ## Contributing
 
 Please read **[CONTRIBUTING.md](CONTRIBUTING.md)** for how to work on the project.
