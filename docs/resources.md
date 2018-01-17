@@ -1,7 +1,7 @@
 # Resources 
 
 Here is a list of resources to learn about the different technologies used in the website. 
-
+ 
 <!-- Feel free to add useful resources, maybe a good video series -->
 
 - HTML Resources

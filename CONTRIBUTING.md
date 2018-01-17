@@ -1,6 +1,6 @@
 # Contributing to **Open Source Club Website**
 
-Thank you for helping out with the UFOSC's **project name**!
+Thank you for helping out with the UFOSC's club website!
 
 Following these guidelines helps us keep good project workflow. We appreciate you working with us on it. 
 
@@ -22,7 +22,7 @@ Check to see if the feature is already listed in our [TODO.md](docs/TODO.md). If
 
 ### Run Test 
 
-**Give detailed instructions on how to run the test. Also include information about the meaning of the results.**
+Open it up in a browser.
 
 ### Submit Changes 
 
