@@ -10,8 +10,8 @@ The website needs to be a central place for
 ## Getting Started
 
 Install
-- An internet browser like FireFox or Google Chrome
-- A text editor like VSCode, Atom, or Sublime Text
+- An internet browser like [Firefox](https://www.mozilla.org/en-US/firefox/new/) or [Google Chrome](https://www.google.com/chrome/index.html)
+- A text editor like [VSCode](https://code.visualstudio.com/), [Atom](https://atom.io/), or [Sublime Text](https://www.sublimetext.com/)
 
 Then clone this repo
 
