@@ -1,4 +1,6 @@
-# **Project Name** Design 
+# Club Website Design 
+
+TODO: Fill out
 
 **A paragraph or two giving an overview of the project. Give a brief description of each program. The goal is to quickly get new members up to speed.**
 

@@ -12,3 +12,5 @@ Members tasked with maintaining the code and the peace. Message them if there is
 
 Some awesome people who have made this project possible. 
 
+- **Joshua Hew, @CSugarPrince**
+
