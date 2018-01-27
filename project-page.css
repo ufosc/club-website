@@ -1,0 +1,68 @@
+       .container{
+        background-color: rgba(255, 255, 255, 0.548);
+        width: 50%;
+        border-radius: 25px;
+
+        }
+
+        .row {
+             display: flex;
+        }
+
+        .col {
+            flex: 1;
+            padding: 1em;
+            
+        }
+
+        .shadow{
+            box-shadow: 10px 10px 5px rgba(128, 128, 128, 0.363);
+        }
+
+        .description{
+            color: rgb(0, 0, 0);
+            font-family: 'Arapey', serif;
+            font-weight: lighter;
+            font-size: large;
+            margin-top: 0;
+            margin-right: -10%;
+        
+        }
+
+        .headTop{
+            padding-top: 2%;
+            margin-left: 2%;
+            margin-bottom: -2%;
+            font-family: 'Noto Serif', sans-serif;
+            font-weight: bold;
+        }
+
+        .headSub{
+            margin-left: 2%;
+            font-family: 'Alike', sans-serif;
+            font-weight: lighter;
+            margin-bottom: 0;
+            padding-bottom: 1%;
+            color: rgb(117, 117, 116);
+        }
+
+        .bigimg{
+            image-orientation: from-image;
+            overflow:hidden;
+            display: block;
+            width:auto;
+	        max-width:100%;
+	        height:auto;
+            border-radius: 15px 50px;
+
+        }
+
+        .footnoteDiv{
+            
+        }
+
+        .footnoteText{
+            font-family: 'Alike', sans-serif;
+            font-size: small;
+            text-align: center;
+        }
