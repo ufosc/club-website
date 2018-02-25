@@ -1,9 +1,10 @@
 // display actual content once it's been fetched
 function display(content) {
-  var converter = new showdown.Converter({tables: true}),
-    html      = converter.makeHtml(content);
+  /* using showdown library that converts markdown into HTML */
+    var converter = new showdown.Converter({tables: true}),
+    html          = converter.makeHtml(content);
 
-    /* creates new div with class 'item' and appends to items div*/
+    /* creates new div with class 'item' and appends to 'items' div*/
     var div       = document.createElement('div');
     div.className = 'item';
     div.innerHTML = html;
@@ -17,7 +18,6 @@ function getInfo(link, callback) {
     xhr.onreadystatechange = function() {
         if (xhr.readyState === 4) {
           var data = xhr.responseText;
-
           callback(data);
         }
     };
@@ -25,9 +25,8 @@ function getInfo(link, callback) {
 }
 
 /* slight callback hell 😅  */
-// TODO: make the code below a bit cleaner -  keep it DRY
 
-// call github API to get files (names) from resources repo
+// call github API to get all files (names) from resources repo (may also contain directories)
 getInfo("https://api.github.com/repos/ufosc/resources/contents/resources", function(result) {
   var jsonResponse = JSON.parse(result);
   jsonResponse.forEach(function(list) {
