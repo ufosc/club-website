@@ -44,7 +44,6 @@ p {
 
 .item {
     background-color: white;
-    ;
     border-radius: 5px;
     padding: .5em;
     box-shadow: 1px 1px 1px 1px grey;
@@ -55,10 +54,13 @@ footer {
     grid-gap: 20px;
 }
 
+footer > a {
+    grid-column: 2/3;
+}
+
 img {
     background: white;
     padding: .5em;
-    grid-column: 2/3;
     border-radius: 5px;
     box-shadow: 1px 1px 1px 1px grey;
 }
