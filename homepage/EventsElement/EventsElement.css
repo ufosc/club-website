@@ -1,0 +1,77 @@
+@font-face {
+	font-family: 'Noto';
+	src: url('NotoMono-Regular.woff') format('woff'),
+	url('NotoMono-Regular.ttf') format('truetype'); 
+}
+body {
+	font-family: 'Noto';
+}
+#UpcomingEvents {
+	display: grid;
+	grid-template-columns: repeat(3, auto);
+	grid-gap: 10px;
+	width: 70%;
+	margin-left: auto;
+	margin-right: auto;
+	max-width: 600px;
+}
+.EventLink {
+	color: black;
+	text-decoration: none;
+}
+.event {
+	border: solid #6d6d6d;
+	border-top-color: #ffc656;
+	border-top-width: 5px;
+	border-radius: 0 0 6px 6px;
+	box-shadow: 0 4px 6px 0 hsla(0, 0%, 0%, 0.2);
+	background: #f2f2f2;
+}
+.title {
+	margin-top: 10px;
+	margin-bottom: 5px;
+	margin-left: 6px;
+	font-size: 20px;
+}
+.time {
+	margin-left: 6px;
+	margin-bottom: 6px;
+	margin-top: 6px;
+	font-size: 15px;
+	color: #565656;
+}
+.location {
+	margin-top: 6px;
+	margin-left: 6px;
+	color: #6d6d6d;
+}
+hr {
+	margin-top: 5px;
+	margin-bottom: 5px;
+	margin-left: 6px;
+	width: 80%;
+}
+.event:hover {
+	background: #ffc656;
+	border: solid black;
+	border-top-width: 5px;
+	cursor: pointer;
+}
+.event:hover > .time {
+	color: #000000;
+}
+.event:hover > .location {
+	color: #000000;
+}
+@media only screen and (max-width: 842px) {
+	#UpcomingEvents{
+		width: 100%;
+	}
+}
+@media only screen and (max-width: 565px) {
+	#UpcomingEvents{
+		width: 200px;
+		grid-template-rows: repeat(3, 140px);
+		grid-template-columns: 100%;
+	}
+}
