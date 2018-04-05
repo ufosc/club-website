@@ -2,54 +2,73 @@
 <html>
 <head>
 	<link rel="stylesheet" type="text/css" href="OSC.css">
+	<script defer src="https://use.fontawesome.com/releases/v5.0.7/js/all.js"></script>
 </head>
 
 <body>
-	<ul id="header">
-		<li class="header-item"><a href="">logo</a></li>
-		<li class="header-item"><a href="">link</a></li>
-		<li class="header-item"><a href="">link</a></li>
-		<li class="header-item"><a href="">link</a></li>
-		<li class="header-item"><a href="">link</a></li>
-	</ul>
+
+	<div class="topnav" id="myTopnav">
+        <img src="yinyang3.png" alt="OSC logo" style="width:50px;height:50px;">
+        <a class="active" href="#home">Home</a>
+        <a href="#projects">Projects</a>
+        <a href="#events">Events</a>
+        <a href="#resources">Resources</a>
+        <a href="#contact">Contact</a>
+        <a href="#about" class="right">About</a>
+        <!-- Testing for the responsive menu -->
+        <a href="javascript:void(0);" style="font-size:14px;" class="icon" onclick="myFunction()">&#9776;</a>
+    </div>
+
 	<div class="wrapper">
-		<div class="slideshow">
+		<div id="slideshow">
 			<h1 class="title">Slideshow</h1>
 			<p>Lorem ipsum dolor sit amet, consectetur adipiscing 
 				elit, sed do eiusmod tempor incididunt ut labore et 
 				dolore magna aliqua. </p>
 		</div>
-		<div class="promote">
+		<div id="promote">
 			<h1 class="title">Promote</h1>
 			<img class="image" src="Promote.png" alt="Promote"> 
 			<p class="text">If you or a loved one has been diagnosed with Mesothelioma</p>
 		</div>
-		<div class="support">
+		<div id="support">
 			<h1 class="title">Support</h1>
 			<img class="image" src="Support.png" alt="Support"> 
 			<p class="text">you may to be entitled to financial compensation.</p>
 		</div>
-		<div class="create">
+		<div id="create">
 			<h1 class="title">Create</h1>
 			<img class="image" src="Create.png" alt="Create"> 
 			<p class="text">Mesothelioma is a rare cancer linked to asbestos exposure.</p>
 		</div>
-		<div class="upcomingevents">
+		<div id="upcomingevents">
 			<h1 class="title">Upcoming Events</h1>
 			<p>Lorem ipsum dolor sit amet, consectetur adipiscing 
 					elit, sed do eiusmod tempor incididunt ut labore et 
 					dolore magna aliqua. </p>
 		</div>
-		<div class="getinvolved">
+		<div id="getinvolved">
 			<h1 class="title">Get Involved</h1><p>Lorem ipsum dolor sit amet, consectetur adipiscing 
 				elit, sed do eiusmod tempor incididunt ut labore et 
 				dolore magna aliqua. </p>
 		</div>
 	</div>
-	<ul id="footer">
-		<li class="footer-item"><a href="link.asp">link</a></li>
-		<li class="footer-item"><a href="link.asp">link</a></li>
-		<li class="footer-item"><a href="link.asp">link</a></li>
-	</ul>
+	<div class="footer">
+		<a href="" class="footer-link"><i class="fab fa-facebook-square fa-2x"></i></a>
+		<a href="" class="footer-link"><i class="fab fa-github-square fa-2x"></i></a>
+		<a href="" class="footer-link"><i class="fab fa-slack fa-2x"></i></a>
+		<a href="" class="footer-link"><i class="fas fa-envelope fa-2x"></i></a>
+		<p class="bottom-text"><i class="fas fa-code"></i> with <i class="fas fa-heart"></i> by <strong>OSC</strong></p>
+ 	</div>
+	<script>
+        function myFunction() {
+            var x = document.getElementById("myTopnav");
+            if (x.className === "topnav") {
+                x.className += " responsive";
+            } else {
+                x.className = "topnav";
+            }
+        }
+    </script>
 </body>
 </html>

@@ -1,36 +1,24 @@
-
 @font-face {
 	font-family: 'Noto';
 	src: url('NotoMono-Regular.woff') format('woff'),
-	 url('NotoMono-Regular.ttf') format('truetype'); 
-  }  
+	url('NotoMono-Regular.ttf') format('truetype'); 
+}  
 body {
 	background-color: rgb(238, 238, 238);
 	font-family: 'Noto';
-}
-#header {
-	list-style-type: none;
 	margin: 0;
-	padding: 0;
-	background-color: #FF8E08;
-	overflow: hidden;
-	margin-bottom: 20px;
-}
-.header-item {
-	float: left;
-}
-li a {
-	display: block;
-	color: rgb(255, 255, 255);
-	text-align: center;
-	padding: 15px 15px;
+    padding: 0;
+    position: relative;
+    padding-bottom: 6rem;
+    min-height: 100%;
 }
 .wrapper > div {
 	background-color: rgba(59, 136, 251, 0);
 	padding: 10px;
 	color: rgb(0, 0, 0);
+	margin-top: 5px;
 }
-.slideshow, .upcomingevents, .getinvolved {
+#slideshow, #upcomingevents, #getinvolved {
 	border: 5px double rgb(27, 116, 250);
 	border-radius: 5px;
 } 
@@ -42,34 +30,30 @@ li a {
 	grid-template-rows: repeat(4, 200px);
 	grid-gap: 20px;
 }
-.slideshow {
+#slideshow {
 	grid-column: 1 / 4;
 	grid-row: 1;
 }
-.promote {
+#promote {
 	grid-column: 1;
 	grid-row: 2;
 	position: relative;
-	border: rgba(27, 116, 250, 0);
 }
-.support {
+#support {
 	grid-column: 2;
 	grid-row: 2;
 	position: relative;
-	border: rgba(27, 116, 250, 0);
 }
-.create {
+#create {
 	grid-column: 3;
 	grid-row: 2;
 	position: relative;
-	border: rgba(27, 116, 250, 0);
 }
-.upcomingevents {
+#upcomingevents {
 	grid-column: 1 / 4;
 	grid-row: 3;
-	position: relative;
 }
-.getinvolved {
+#getinvolved {
 	grid-column: 1 / 4;
 	grid-row: 4;
 }
@@ -90,25 +74,94 @@ li a {
 	right: 0;
 	margin: auto;
 }
-#footer {
-	list-style-type: none;
-	margin: 0;
-	padding: 0;
-	background-color: #FF8E08;
-	overflow: hidden;
-	margin-top: 20px;
+.topnav {
+    overflow: hidden;
+    background-color: #333;
 }
-.footer-item {
-	float: left;
+.topnav img {
+    float: left;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 40%;
+    padding: 10px 16px;
 }
-li a {
-	display: block;
-	color: white;
+.topnav a {
+    float: left;
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 28px 16px;
+    text-decoration: none;
+    font-family: "Noto";
+}
+.topnav a:hover {
+    background-color: rgb(25, 67, 253);
+    color: white;
+}
+.topnav .icon {
+    display: none;
+}
+
+.active {
+    background-color: rgb(247, 141, 21);
+    color: white;
+  }
+.topnav .right {float: right;}
+
+.footer {
+    display: flex;
+    background-color: #6b6b6b;
+    justify-content: center;
+    border-top: 3px double #ffbb4f;
+    flex-wrap: wrap;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    left: 0;
+}
+.footer-link {
+    color: #ffbb4f;
+    padding-left: 13px;
+    padding-top: 7px;
+    padding-bottom: 7px;
+}
+.footer-link:visited {
+    color: #ffbb4f;
+}
+.footer-link:hover {
+    color: white;
+}
+.bottom-text {
+	color: #3d3d3d;
+	width: 100%;
 	text-align: center;
-	padding: 15px 15px;
+    margin-top: 0;
+    margin-bottom: 3px;
+	padding-top: 10px;
+    font-size: 13px;
+}
+
+@media screen and (max-width: 600px) {
+    .topnav a:not(:first-child) {display: none;}
+    .topnav a.icon {
+      float: right;
+      display: block;
+    }  
+    .topnav.responsive {position: relative;}
+    .topnav.responsive .icon {
+      position: absolute;
+      right: 0;
+      top: 0;
+    }
+    .topnav.responsive a {
+      float: none;
+      display: block;
+      text-align: left;
+    }
 }
 /* For mobile phones ===============================================================================================*/
-@media only screen and (max-width: 500px) {
+@media only screen and (max-width: 630px) {
 	.wrapper > div {
 		border: 5px double rgb(27, 116, 250);
 		border-radius: 5px;
@@ -117,32 +170,49 @@ li a {
 		display: grid;
 		max-width: 500px;
 		margin: 0 auto;
+		margin-top: 6px;
 		grid-template-columns: 1fr;
 		grid-auto-rows: minmax(100px, 200px);
 		grid-gap: 10px;
 	}
-	.slideshow {
+	#slideshow {
 		grid-column: 1;
 		grid-row: 1;
 	}
-	.promote {
+	#promote {
 		grid-column: 1;
 		grid-row: 2;
 	}
-	.support {
+	#support {
 		grid-column: 1;
 		grid-row: 3;
 	}
-	.upcomingevents {
+	#upcomingevents {
 		grid-column: 1;
 		grid-row: 5;
 	}
-	.create {
+	#create {
 		grid-column: 1;
 		grid-row: 4;
 	}
-	.getinvolved {
+	#getinvolved {
 		grid-column: 1;
 		grid-row: 6;
 	}
+	.topnav a:not(:first-child) {display: none;}
+    .topnav a.icon {
+      float: right;
+      display: block;
+    }
+    .topnav.responsive {position: relative;}
+    .topnav.responsive .icon {
+      position: absolute;
+      right: 0;
+      top: 0;
+    }
+    .topnav.responsive a {
+      float: none;
+      display: block;
+      text-align: left;
+    }
 }
