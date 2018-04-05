@@ -48,6 +48,7 @@ p {
     border-radius: 5px;
     padding: .5em;
     box-shadow: 1px 1px 1px 1px grey;
+    margin-bottom: 10px;
 }
 
 footer {
