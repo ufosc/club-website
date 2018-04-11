@@ -6,12 +6,12 @@
 
 :root {
 	--dark-primary-color: #303F9F;
-  --light-primary-color: #C5CAE9;
-  --primary-color: #3F51B5;
-  --text-icon-color: #FFFFFF;
-  --accent-color: #4CAF50;
+ 	--light-primary-color: #C5CAE9;
+ 	--primary-color: #3F51B5;
+ 	--text-icon-color: #FFFFFF;
+ 	--accent-color: #4CAF50;
 	--primary-text-color: #212121;
-  --secondary-text-color: #757575;
+ 	--secondary-text-color: #757575;
 	--divider-color: #BDBDBD;	
 	--background-color: #FFFFFF;
 	/* TODO: Add other variables like types of font */
@@ -28,6 +28,7 @@ Blue: #2f70df
 /* Unified styling for every page */
 body {
 	background-color: var(--background-color);
+	font-family: "Noto";
 }
 
 /* Header CSS */
@@ -78,6 +79,12 @@ body {
 	width: 50px; 
 	height: 50px;
 }
+.page-element {
+	background: var(--background-color);
+	border: 1px solid var(--primary-color);
+	border-radius: 0 0 6px 6px;
+	box-shadow: 0 4px 6px 0 hsla(0, 0%, 0%, 0.2);
+}
 
 @media screen and (max-width: 600px) {
 
@@ -110,9 +117,9 @@ body {
 /* Footer CSS */
 .footer {
 	display: flex;
-	/* background-color: #6b6b6b; */
+	background-color: var(--dark-primary-color);
 	justify-content: center;
-	/* border-top: 3px double #ffbb4f; */
+	border-top: 6px double var(--accent-color); 
 	flex-wrap: wrap;
 	position: absolute;
 	right: 0;
@@ -121,26 +128,26 @@ body {
 }
 
 .footer-link {
-	/* color: #ffbb4f; */
+	color: var(--accent-color); 
 	padding-left: 13px;
 	padding-top: 7px;
 	padding-bottom: 7px;
 }
 
 .footer-link:visited {
-	/* color: #ffbb4f; */
+	color: var(--background-color);
 }
 
 .footer-link:hover {
-	/* color: white; */
+	color: var(--accent-color);
 }
 
 .bottom-text {
-/* color: #3d3d3d; */
-width: 100%;
-text-align: center;
+	color: var(--background-color);
+	width: 100%;
+	text-align: center;
 	margin-top: 0;
 	margin-bottom: 3px;
-padding-top: 10px;
+	padding-top: 10px;
 	font-size: 13px;
 }
