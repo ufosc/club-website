@@ -26,7 +26,7 @@ body {
 	max-width: 1000px;
 	margin: 0 auto;
 	grid-template-columns: repeat(3, 1fr);
-	grid-template-rows: repeat(2, 200px) 133px 200px;
+	grid-template-rows: repeat(4, 200px);
 	grid-gap: 20px;
 }
 #slideshow {
@@ -49,12 +49,20 @@ body {
 	grid-row: 2;
 	position: relative;
 }
-
 /* Events element CSS */
+#events-wrapper {
+	grid-column: 1 / 4;
+	grid-row: 3;
+	display: grid;
+	grid-gap: 20px;
+	grid-template-columns: repeat(3, 1fr);
+
+}
 .EventLink {
 	color: black;
 	text-decoration: none;
 	height: 133px;
+	margin-top: 40px;
 }
 .event {
 	border: 1px solid;
@@ -178,6 +186,18 @@ hr {
 	#getinvolved {
 		grid-column: 1;
 		grid-row: 8;
+	}
+
+	.topnav > .right {
+		display: none;
+	}
+	.topnav.responsive > .right {
+		display: block;
+	}
+	.topnav.responsive > .right > .placeholder {
+		float: none;
+		display: block;
+		height: 60px;
 	}
 	.topnav a:not(:first-child) {display: none;}
     .topnav a.icon {
