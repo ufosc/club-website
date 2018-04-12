@@ -15,6 +15,9 @@ body {
     padding-bottom: 6rem;
     min-height: 100%;
 }
+#logo {
+	padding: 0;
+}
 .wrapper > div {
 	/* background-color: rgba(59, 136, 251, 0); */
 	padding: 10px;
@@ -26,7 +29,8 @@ body {
 	max-width: 1000px;
 	margin: 0 auto;
 	grid-template-columns: repeat(3, 1fr);
-	grid-template-rows: repeat(4, 200px);
+	grid-template-rows: repeat(2, 200px);
+	grid-auto-rows: min-content;
 	grid-gap: 20px;
 }
 #slideshow {
@@ -60,7 +64,7 @@ body {
 	grid-gap: 20px;
 	grid-template-columns: repeat(3, 1fr);
 }
-#upcoming-events {
+#upcoming-events-title {
 	margin-bottom: 0;
 }
 .EventLink {
@@ -125,6 +129,13 @@ hr {
 	grid-column: 1 / 4;
 	grid-row: 4;
 }
+#get-involved-title {
+	margin-bottom: 0;
+}
+#get-involved-text {
+	margin-top: 0;
+	margin-bottom: 0;
+}
 .title {
 	position: relative;
 	top: -25px;
@@ -156,7 +167,8 @@ hr {
 		margin: 0 auto;
 		margin-top: 6px;
 		grid-template-columns: 1fr;
-		grid-template-rows: repeat(4, 200px) repeat(3, 167px) 200px;
+		grid-template-rows: repeat(4, 200px) repeat(3, 167px);
+		grid-auto-rows: min-content;
 		grid-gap: 10px;
 	}
 	#slideshow {
@@ -201,8 +213,8 @@ hr {
 		display: block;
 		height: 60px;
 	}
-	.topnav a:not(:first-child) {display: none;}
-    .topnav a.icon {
+	.topnav .topnav-link:not(:first-child) {display: none;}
+    .topnav .topnav-link.icon {
       float: right;
       display: block;
     }
@@ -212,7 +224,7 @@ hr {
       right: 0;
       top: 0;
     }
-    .topnav.responsive a {
+    .topnav.responsive .topnav-link {
       float: none;
       display: block;
       text-align: left;
