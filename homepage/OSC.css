@@ -53,16 +53,21 @@ body {
 #events-wrapper {
 	grid-column: 1 / 4;
 	grid-row: 3;
+}
+#events-grid {
 	display: grid;
+	margin-top: -15px;
 	grid-gap: 20px;
 	grid-template-columns: repeat(3, 1fr);
-
+}
+#upcoming-events {
+	margin-bottom: 0;
 }
 .EventLink {
 	color: black;
 	text-decoration: none;
 	height: 133px;
-	margin-top: 40px;
+	margin-top: 0;
 }
 .event {
 	border: 1px solid;
@@ -71,7 +76,6 @@ body {
 	border-top-color: #303F9F; 
 	border-top-width: 5px;
 	border-radius: 0 0 6px 6px;
-	box-shadow: 0 4px 6px 0 hsla(0, 0%, 0%, 0.2);
 }
 .event-title {
 	margin-top: 10px;
@@ -152,7 +156,7 @@ hr {
 		margin: 0 auto;
 		margin-top: 6px;
 		grid-template-columns: 1fr;
-		grid-template-rows: repeat(4, 200px) 133px 133px 133px 200px;
+		grid-template-rows: repeat(4, 200px) repeat(3, 167px) 200px;
 		grid-gap: 10px;
 	}
 	#slideshow {
@@ -171,18 +175,16 @@ hr {
 		grid-column: 1;
 		grid-row: 4;
 	}
-	#event1 {
-		grid-auto-columns: 1;
-		grid-row: 5;
+	#events-wrapper {
+		grid-column: 1;
+		grid-row: 5 / 8;
 	}
-	#event2 {
-		grid-auto-columns: 1;
-		grid-row: 6;
+	#events-grid {
+		grid-template-columns: 1fr;
+		grid-template-rows: 133px;
+		grid-gap: 10px;
 	}
-	#event3 {
-		grid-auto-columns: 1;
-		grid-row: 7;
-	}
+
 	#getinvolved {
 		grid-column: 1;
 		grid-row: 8;
