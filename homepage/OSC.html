@@ -7,78 +7,138 @@
 </head>
 
 <body>
-
-	<div class="topnav" id="myTopnav">
-		<!-- TODO: Either make the logo link home or add a logo link -->
-		<a id="logo" href=""><img class="logo" src="small-logo.png" alt="OSC Logo"></a>
-		<div class="right">
-			<div class="placeholder"></div>
+	<!-- The header bar -->
+	<div class="topnav">
+		<!-- Logo -->
+		<a href="#home">
+			<img class="topnav-logo" src="small-logo.png" alt="Open Source Club Logo">
+		</a>
+		<!-- Page links -->
+		<div class="topnav-right">
+			<div class="topnav-placeholder"></div>
 			<a class="topnav-link" href="#projects">Projects</a>
 			<a class="topnav-link" href="#events">Events</a>
 			<a class="topnav-link" href="#resources">Resources</a>
 			<a class="topnav-link" href="#contact">Contact</a>
 			<a class="topnav-link" href="#about">About</a>
 		</div>
-		<!-- Testing for the responsive menu -->
-		<a href="javascript:void(0);" style="font-size:14px;" class="icon" onclick="myFunction()">&#9776;</a>
+		<!-- Drop down menu -->
+		<a href="javascript:void(0);" class="topnav-link topnav-menu-icon" onclick="dropDownMenu()">
+			&#9776;
+		</a>
 	</div>
+	<!-- End of header bar -->
 
+	<!-- The page content -->
 	<div class="wrapper">
+
+		<!-- Slideshow -->
 		<div id="slideshow" class="page-element">
 			<h1 class="title">Slideshow</h1>
-			<p>Lorem ipsum dolor sit amet, consectetur adipiscing 
+			<p>
+				Lorem ipsum dolor sit amet, consectetur adipiscing 
 				elit, sed do eiusmod tempor incididunt ut labore et 
-				dolore magna aliqua. </p>
-		</div>
-		<div id="promote" class="page-element">
-			<h1 class="title">Promote</h1>
-			<img class="image" src="Promote.png" alt="Promote"> 
-			<p class="text">If you or a loved one has been diagnosed with Mesothelioma</p>
-		</div>
-		<div id="support" class="page-element">
-			<h1 class="title">Support</h1>
-			<img class="image" src="Support.png" alt="Support"> 
-			<p class="text">you may to be entitled to financial compensation.</p>
-		</div>
-		<div id="create" class="page-element">
-			<h1 class="title">Create</h1>
-			<img class="image" src="Create.png" alt="Create"> 
-			<p class="text">Mesothelioma is a rare cancer linked to asbestos exposure.</p>
+				dolore magna aliqua.
+			</p>
 		</div>
 
+		<!-- Tag line boxes -->
+		<div id="promote" class="page-element">
+			<h1 class="title">
+				Promote
+			</h1>
+			<!-- TODO: Maybe find font for each of these, instead of pictures -->
+			<img class="image" src="Promote.png" alt="Promote"> 
+			<p class="text">
+				If you or a loved one has been diagnosed with Mesothelioma
+			</p>
+		</div>
+
+		<div id="support" class="page-element">
+			<h1 class="title">
+				Support
+			</h1>
+			<img class="image" src="Support.png" alt="Support"> 
+			<p class="text">
+				you may to be entitled to financial compensation.
+			</p>
+		</div>
+
+		<div id="create" class="page-element">
+			<h1 class="title">
+				Create
+			</h1>
+			<img class="image" src="Create.png" alt="Create"> 
+			<p class="text">
+				Mesothelioma is a rare cancer linked to asbestos exposure.
+			</p>
+		</div>
+
+		<!-- Upcoming events box -->
 		<div id="events-wrapper" class="page-element">
-			<h1 class="title" id="upcoming-events-title">Upcoming Events</h1>
+			<h1 class="title" id="upcoming-events-title">
+				Upcoming Events
+			</h1>
 			<div id="events-grid">
-				<a class="EventLink" id="event1" href="">
+
+				<a class="event-link" id="event1" href="">
 					<div class="event">
-						<p class="event-title"><strong>Event 1</strong></p>
+						<p class="event-title">
+							<strong>Event 1</strong>
+						</p>
 						<hr>
-						<p class="time">4:00 PM - 6:00 PM</p>
-						<p class="location"><strong>Marston Library:</strong><br> Room Darwin</p>
+						<p class="time">
+							4:00 PM - 6:00 PM
+						</p>
+						<p class="location">
+							<strong>Marston Library:</strong>
+							<br> Room Darwin
+						</p>
 					</div>
 				</a>
-				<a class="EventLink" id="event2" href="">
+
+				<a class="event-link" id="event2" href="">
 					<div class="event">
-						<p class="event-title"><strong>Event 2</strong></p>
+						<p class="event-title">
+							<strong>Event 2</strong>
+						</p>
 						<hr>
-						<p class="time">4:00 PM - 6:00 PM</p>
-						<p class="location"><strong>Marston Library:</strong><br> Room Darwin</p>
+						<p class="time">
+							4:00 PM - 6:00 PM
+						</p>
+						<p class="location">
+							<strong>Marston Library:</strong>
+							<br> Room Darwin
+						</p>
 					</div>
 				</a>
-				<a class="EventLink" id="event3" href="">
+
+				<a class="event-link" id="event3" href="">
 					<div class="event">
-						<p class="event-title"><strong>Event 3</strong></p>
+						<p class="event-title">
+							<strong>Event 3</strong>
+						</p>
 						<hr>
-						<p class="time">4:00 PM - 6:00 PM</p>
-						<p class="location"><strong>Marston Library:</strong><br> Room Darwin</p>
+						<p class="time">
+							4:00 PM - 6:00 PM
+						</p>
+						<p class="location">
+							<strong>Marston Library:</strong>
+							<br> Room Darwin
+						</p>
 					</div>
 				</a>
+
 			</div>
 		</div>
 		
-		<div id="getinvolved" class="page-element">
-			<h1 class="title" id="get-involved-title">Get Involved</h1>
-			<p id="get-involved-text">Lorem ipsum dolor sit amet, consectetur adipiscing 
+		<!-- Get involved box -->
+		<div id="get-involved" class="page-element">
+			<h1 class="title" id="get-involved-title">
+				Get Involved
+			</h1>
+			<p id="get-involved-text">
+				Lorem ipsum dolor sit amet, consectetur adipiscing 
 				elit, sed do eiusmod tempor incididunt ut labore et 
 				dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipiscing 
 				elit, sed do eiusmod tempor incididunt ut labore et 
@@ -87,26 +147,49 @@
 				dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipiscing 
 				elit, sed do eiusmod tempor incididunt ut labore et 
 				dolore magna aliqua.
-
 			</p>
 		</div>
 	</div>
+
+	<!-- The footer -->
 	<div class="footer">
-		<a href="" class="footer-link"><i class="fab fa-facebook-square fa-2x"></i></a>
-		<a href="" class="footer-link"><i class="fab fa-github-square fa-2x"></i></a>
-		<a href="" class="footer-link"><i class="fab fa-slack fa-2x"></i></a>
-		<a href="" class="footer-link"><i class="fas fa-envelope fa-2x"></i></a>
-		<p class="bottom-text"><i class="fas fa-code"></i> with <i class="fas fa-heart"></i> by <strong>OSC</strong></p>
- 	</div>
+
+		<!-- The links -->
+		<a href="" class="footer-link">
+			<i class="fab fa-facebook-square fa-2x"></i>
+		</a>
+		<a href="" class="footer-link">
+			<i class="fab fa-github-square fa-2x"></i>
+		</a>
+		<a href="" class="footer-link">
+			<i class="fab fa-slack fa-2x"></i>
+		</a>
+		<a href="" class="footer-link">
+			<i class="fas fa-envelope fa-2x"></i>
+		</a>
+
+		<!-- The text -->
+		<p class="footer-text">
+			<i class="fas fa-code"></i> 
+			with 
+			<i class="fas fa-heart"></i> 
+			by <strong>OSC</strong>
+		</p>
+
+	</div>
+	<!-- End of footer -->
+	 
 	<script>
-        function myFunction() {
-            var x = document.getElementById("myTopnav");
-            if (x.className === "topnav") {
-                x.className += " responsive";
-            } else {
-                x.className = "topnav";
-            }
-        }
-    </script>
+		// Function for setting the drop down menu css
+		function dropDownMenu() {
+			var x = document.getElementsByClassName("topnav");						
+			if (x[0].className === "topnav") {
+				x[0].className += " drop-down-menu";
+			} else {
+				x[0].className = "topnav";
+			}
+		}
+	</script>
+
 </body>
 </html>
