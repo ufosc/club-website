@@ -1,8 +1,8 @@
 /* Pulling fonts from assets folder */
 @font-face {
 	font-family: 'Noto';
-	src: url('NotoMono-Regular.woff') format('woff'),
-	url('NotoMono-Regular.ttf') format('truetype'); 
+	src: url('../assets/fonts/NotoMono-Regular.woff') format('woff'),
+	url('../assets/fonts/NotoMono-Regular.ttf') format('truetype'); 
 }  
 
 /* Default styling values used throughout the CSS */
