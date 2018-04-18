@@ -1,35 +1,20 @@
+@import "unified.css";
 
 body {
-    background-color: white;
+    margin: 0;
+    padding: 0;
+    position: relative;
+    padding-bottom: 6rem;
+    min-height: 100%;
 }
 
 .wrapper {
     display: grid;
-    grid-template-columns: repeat(2,1fr);
+    grid-template-columns: repeat(2, 1fr);
     grid-gap: 60px;
     grid-auto-rows: minmax(100px, auto);
 }
 
-#header {
-    list-style-type: none;
-    justify-content: flex-start;
-    padding-left: 20px;
-    padding-bottom: 20px;
-    border-bottom: 3px solid black;
-    background-color: #f97609;
-    overflow: hidden;
-    width: 100%;
-    border: 3px solid black;
-    font-family: notoFont;
-}
-
-.header-item {
-    float: left
-}
-
-li a {
-    display: block
-}
 
 .h1 {
     justify-content: flex-start;
@@ -90,26 +75,6 @@ li a {
         display: grid;
         grid-template-columns: repeat(1,1fr);
         grid-auto-rows: minmax(100px, auto);
-    }
-
-    #header {
-        list-style-type: none;
-        grid-column: 1;
-        justify-content: flex-start;
-        padding-left: 20px;
-        padding-bottom: 20px;
-        background-color: #f97609;
-        overflow: hidden;
-        width: auto;
-        border: 4px solid black;
-    }
-
-    .header-item {
-        float: left
-    }
-
-    li a {
-        display: block
     }
 
     .h1 {
@@ -173,23 +138,6 @@ li a {
         display: grid;
         grid-template-columns: repeat(1,1fr);
         grid-auto-rows: minmax(100px, auto);
-    }
-
-    #header {
-        list-style-type: none;
-        grid-column: 1;
-        justify-content: flex-start;
-        padding-left: 20px;
-        padding-bottom: 20px;
-        background-color: #f97609;
-        overflow: hidden;
-        width: auto;
-        border: 4px solid black;
-        font-family: notoFont;
-    }
-
-    .header-item {
-        float: left
     }
 
     li a {

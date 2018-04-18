@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>About Page</title>
+    <link rel="stylesheet" type="text/css" href="styles/index.css">
+    <script defer src="https://use.fontawesome.com/releases/v5.0.7/js/all.js"></script>
+</head>
+
+<body>
+    <!-- Used to keep footer positioned at bottom -->
+    <div id="page-container">
+    <!-- The header bar -->
+    <div class="topnav">
+
+        <!-- Logo -->
+        <a href="#home">
+            <img class="topnav-logo" src="assets/images/small-logo.png" alt="Open Source Club Logo">
+        </a>
+
+        <!-- Page links -->
+        <div class="topnav-right">
+            <div class="topnav-placeholder"></div>
+            <a class="topnav-link" href="#projects">Projects</a>
+            <a class="topnav-link" href="#events">Events</a>
+            <a class="topnav-link" href="#resources">Resources</a>
+            <a class="topnav-link" href="#contact">Contact</a>
+            <a class="topnav-link" href="#about">About</a>
+        </div>
+
+        <!-- Drop down menu -->
+        <a href="javascript:void(0);" class="topnav-link topnav-menu-icon" onclick="dropDownMenu()">
+            &#9776;
+        </a>
+        
+    </div>
+
+    <div id="content-wrapper">
+        <div id="about" class="page-element">
+            <h1 class="title">About OSC</h1>
+            <div class="text">
+                Europe was founded in 1848 by Walker Texas Ranger when he rode a horse across the Atlantic, he called it "Eastern USA" which was eventually abbreviated as just "EU"
+            </div>
+        </div>
+        <div id="history" class="page-element">
+            <h1 class="title">History</h1>
+            <div class="text">
+                "Turmoil has engulfed the Galactic Republic. The taxation of trade routes to outlying star systems is in dispute.
+
+                Hoping to resolve the matter with a blockade of deadly battleships, the greedy Trade Federation has stopped all shipping to the small planet of Naboo.
+
+                While the congress of the Republic endlessly debates this alarming chain of events, the Supreme Chancellor has secretly dispatched two Jedi Knights, the guardians of peace and justice in the galaxy, to settle the conflict...."
+            </div>
+        </div>
+    </div>
+        
+    <div class="footer">
+
+    <!-- The links -->
+    <a href="" class="footer-link">
+        <i class="fab fa-facebook-square fa-2x"></i>
+    </a>
+    <a href="" class="footer-link">
+        <i class="fab fa-github-square fa-2x"></i>
+    </a>
+    <a href="" class="footer-link">
+        <i class="fab fa-slack fa-2x"></i>
+    </a>
+    <a href="" class="footer-link">
+        <i class="fas fa-envelope fa-2x"></i>
+    </a>
+
+    <!-- The text -->
+    <p class="footer-text">
+        <i class="fas fa-code"></i> 
+        with 
+        <i class="fas fa-heart"></i> 
+        by <strong>OSC</strong>
+    </p>
+
+    </div>
+    <!-- End of footer -->
+    </div>
+
+    <script>
+        // Function for setting the drop down menu css
+        function dropDownMenu() {
+            var x = document.getElementsByClassName("topnav");                      
+            if (x[0].className === "topnav") {
+                x[0].className += " drop-down-menu";
+            } else {
+                x[0].className = "topnav";
+            }
+        }
+    </script>
+</body>
+</html>
