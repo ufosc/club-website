@@ -1,13 +1,23 @@
 @import "unified.css";
 
 body {
+    position: relative;
     margin: 0;
     padding: 0;
+    min-height: 100%;
+}
+html {
     height: 100%;
+    box-sizing: border-box;
+}
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
 }
 #page-container {
-    min-height: 100%;
-    position: relative;
+    margin: 0 auto;
+    padding-bottom: 70px;
 }
 #content-wrapper {
     display: grid;
@@ -18,7 +28,11 @@ body {
     margin-left: auto;
     margin-right: auto;
     padding: 10px;
-    padding-bottom: 100px;
+    padding-bottom: 81px;
+    overflow: auto;
+}
+#logo-link {
+    box-sizing: initial;
 }
 .title {
     position: relative;
@@ -47,4 +61,26 @@ body {
     bottom: 0;
     width: 100%;
     height: 81px;
+    margin-top: -81px;
+    clear: both;
+}
+@media screen and (max-width: 1000px) {
+    #content-wrapper {
+        width: 90%;
+    }
+}
+@media screen and (max-width: 600px) {
+    #content-wrapper {
+        width: 95%;
+        grid-template-rows: repeat(2, auto);
+        grid-template-columns: 1fr;
+    }
+    #about {
+        grid-column: 1;
+        grid-row: 1;
+    }
+    #history {
+        grid-column: 1;
+        grid-row: 2;
+    }
 }
