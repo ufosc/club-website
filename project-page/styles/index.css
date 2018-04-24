@@ -1,0 +1,59 @@
+@import "unified.css";
+
+.project-element {
+    width: 800px;
+    margin-top: 20px;
+    margin-left: auto;
+    margin-right: auto;
+}
+.content-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+.column {
+    flex: 1;
+    padding: 1em;
+    
+}
+.shadow {
+    box-shadow: 10px 10px 5px rgba(128, 128, 128, 0.363);
+}
+.big-img {
+    image-orientation: from-image;
+    overflow: hidden;
+    display: block;
+    width: auto;
+    max-width: 100%;
+    height: auto;
+    border-radius: 15px 50px;
+}
+.footnote-text {
+    font-size: small;
+    text-align: center;
+}
+.title {
+    margin-top: 0;
+    padding-top: 15px;
+    margin-left: 15px;
+    margin-bottom: -2%;
+    font-weight: bold;
+}
+.subtitle {
+    margin-left: 15px;
+    font-weight: lighter;
+    margin-bottom: 0;
+    padding-bottom: 1%;
+    margin-right: 20px;
+    /* Gray, replace with a color from unified.css */
+    color: rgb(117, 117, 116);
+    border-bottom: 1px solid rgb(117, 117, 116);
+}
+.contributors {
+    padding-bottom: 10px
+}
+.fa-github {
+    font-size: 24px
+}
+.fa-users {
+    font-size: 20px;
+}
