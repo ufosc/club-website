@@ -17,6 +17,7 @@ body {
 	grid-auto-rows: min-content;
 	grid-gap: 20px;
 }
+
 .wrapper > div {
 	padding: 10px;	
 }
