@@ -11,6 +11,26 @@ function Resources (header) { //object which stores resources text
 };
 var resources = []; //objects are accessed in an array by index
 
+// Render the data as an element on the page
+function createElement(data) {
+    let page = document.getElementById("data");
+
+    // Create the resource elements
+    let block = document.createElement("div");
+    let header = document.createElement("h3");
+    let body = document.createElement("p");
+
+    // Add text to the elements
+    header.innerHTML = data.header;
+    body.innerText = data.mainBody;
+
+    // Add elements to the block
+    block.appendChild(header);
+    block.appendChild(body);
+
+    // Add the block to the page
+    page.appendChild(block);
+}
 
 //parse actual content once it's been fetched
 function parser(content) {
@@ -43,6 +63,7 @@ function parser(content) {
         }
         resources[i].subHeader = subHeaders;
         resources[i].subBody = subBodies;
+        createElement(resources[i]);
         console.log(resources[i]); //USE THIS TO LOOK AT HOW THE OBJECTS ARE FORMATTED, DELETE WHEN NOT NEEDED
     }
 }
