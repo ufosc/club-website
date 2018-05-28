@@ -1,3 +1,10 @@
+/* Pull in the font awesome styling 
+Note: This is only a subset of the fonts to keep size down. Go to the font awesome 
+site if you need icons or want to update it */
+@import "fontawesome.min.css";
+@import "fa-brands.min.css";
+@import "fa-solid.min.css";
+
 /* Pulling fonts from assets folder */
 @font-face {
 	font-family: 'Noto';
@@ -56,6 +63,9 @@ body {
 	border: 1px solid var(--primary-color);
 	border-radius: 0 0 6px 6px;
 	box-shadow: 0 4px 6px 0 var(--shadow-color);
+	justify-content: flex-start;
+	padding: 20px 20px 0px 20px;
+	text-align: center;
 }
 
 /* Header CSS */
@@ -109,6 +119,12 @@ body {
 /* Move each link to the right side of the page */
 .topnav .topnav-right {
 	float: right;
+}
+
+/* External link icon */
+.external-link {
+	color: var(--light-primary-color);
+	font-size: .75em;
 }
 
 /* Header settings for smaller devices */
@@ -179,7 +195,7 @@ body {
 	display: flex;
 	background-color: var(--dark-primary-color);
 	justify-content: center;
-	border-top: 6px double var(--accent-color); 
+	border-top: 3px solid var(--accent-color); 
 	flex-wrap: wrap;
 	position: absolute;
 	bottom: 0;

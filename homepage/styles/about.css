@@ -17,7 +17,7 @@ html {
 }
 #page-container {
     margin: 0 auto;
-    padding-bottom: 70px;
+    padding-bottom: 40px;
 }
 #content-wrapper {
     display: grid;
@@ -47,14 +47,14 @@ html {
 #about {
     grid-column: 1;
     grid-row: 1;
-    justify-content: flex-start;
-    padding: 20px;
+/*     justify-content: flex-start;
+    padding: 20px; */
 }
 #history {
     grid-column: 2;
     grid-row: 1;
-    justify-content: flex-start;
-    padding: 20px;
+/*     justify-content: flex-start;
+    padding: 20px; */
 }
 .footer {
     position: absolute;
