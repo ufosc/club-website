@@ -1,24 +1,17 @@
 @import "unified.css";
 
-body {
-	margin: 0;
-	padding: 0;
-	position: relative;
-	padding-bottom: 6rem;
-	min-height: 100%;
-}
-
-.wrapper {
+#wrapper {
 	display: grid;
 	max-width: 1000px;
-	margin: 0 auto;
+	width: 97%;
 	grid-template-columns: repeat(3, 1fr);
 	grid-template-rows: repeat(2);
 	grid-auto-rows: min-content;
 	grid-gap: 20px;
+	margin: 20px auto 0;
 }
 
-.wrapper > div {
+#wrapper > div {
 	padding: 10px;	
 }
 
@@ -26,7 +19,6 @@ body {
 #slideshow {
 	grid-column: 1 / 4;
 	grid-row: 1;
-	margin-top: 20px;
 }
 
 #promote {
@@ -145,17 +137,6 @@ hr {
 	margin-bottom: 0;
 }
 
-.title {
-	position: relative;
-	top: -20px;
-	text-align: center;
-}
-
-.text {
-	position: relative;
-	text-align: center;
-}
-
 .tagline-icon {
 	font-size: 80px;
 	position: relative;
@@ -168,7 +149,7 @@ hr {
 /* For mobile phones */
 @media only screen and (max-width: 600px) {
 
-	.wrapper {
+	#wrapper {
 		display: grid;
 		width: 95%;
 		max-width: 500px;
@@ -180,7 +161,7 @@ hr {
 		grid-gap: 10px;
 	}
 
-	.wrapper > div {
+	#wrapper > div {
 		border-radius: 5px;
 	}
 

@@ -47,14 +47,25 @@ Blue: #2f70df
 /* Unified styling for every page */
 
 /* Default values for each page */
+html {
+  height: 100%;
+  box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
 body {
 	background-color: var(--background-color);
 	font-family: var(--normal-font);
-	min-height: 100%;
-	position: relative;
 	margin: 0;
 	padding: 0;
+	position: relative;
 	padding-bottom: 6rem;
+	min-height: 100%;
 }
 
 /* Each card used on the site */
@@ -65,6 +76,19 @@ body {
 	box-shadow: 0 4px 6px 0 var(--shadow-color);
 	justify-content: flex-start;
 	padding: 20px 20px 0px 20px;
+	text-align: center;
+}
+
+/* Every title on the site */
+.title {
+	position: relative;
+	top: -20px;
+	text-align: center;
+}
+
+/* All text on the site */
+.text {
+	position: relative;
 	text-align: center;
 }
 
@@ -98,6 +122,11 @@ body {
 	font-family: var(--header-font);
 }
 
+/* Keep the logo in the box */
+#logo-link {
+	box-sizing: initial;
+}
+
 /* Links in the header when a mouse is over them */
 .topnav .topnav-link:hover {
 	border-bottom: 4px solid var(--accent-color);
@@ -109,11 +138,6 @@ body {
 .topnav .topnav-menu-icon {
 	display: none;
 	font-size: 20px;
-}
-
-/* Set this to the current tab to show the user the active page*/
-.topnav .topnav-active {
-	/* background-color: var(--dark-primary-color); */
 }
 
 /* Move each link to the right side of the page */
@@ -205,9 +229,13 @@ body {
 /* Links inside the footer */
 .footer-link {
 	color: var(--accent-color); 
-	padding-left: 13px;
 	padding-top: 7px;
 	padding-bottom: 7px;
+}
+
+/* Space between (not outside) the links */
+.footer-link + .footer-link {
+	padding-left: 13px;
 }
 
 /* Already clicked links change color */

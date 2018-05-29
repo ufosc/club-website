@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Projects</title>
-	<meta charset="utf-8"/> 
+	<title>Open Source Club</title>
+	<meta charset="utf-8"/>
 	<link rel="stylesheet" type="text/css" href="styles/projects.css">
-	<script defer src="https://use.fontawesome.com/releases/v5.0.7/js/all.js"></script>
+	<!-- TODO: Give license credit to all fonts -->
 </head>
 
 <body>
@@ -21,9 +21,16 @@
 		<div class="topnav-right">
 			<div class="topnav-placeholder"></div>
 			<a class="topnav-link" href="projects.html">Projects</a>
-			<a class="topnav-link" href="event.html">Events</a>
-			<a class="topnav-link" href="resource.html">Resources</a>
-			<a class="topnav-link" href="contact.html">Contact</a>
+			<a class="topnav-link" href="https://calendar.google.com/calendar/embed?src=toln76hk72u3v4vhu4hblu8s88%40group.calendar.google.com&ctz=America%2FNew_York">
+				Events
+				<i class="fas fa-external-link-alt external-link" data-fa-transform="up-6"></i>
+			</a>
+			<a class="topnav-link" href="https://github.com/ufosc/resources">
+				Resources
+				<i class="fas fa-external-link-alt external-link" data-fa-transform="up-6 right-4"></i>
+			</a>
+			<!-- TODO: Make a contact page (This may not be necessary) -->
+			<!-- <a class="topnav-link" href="contact.html">Contact</a> -->
 			<a class="topnav-link" href="about.html">About</a>
 		</div>
 
@@ -33,6 +40,7 @@
 		</a>
 		
 	</div>
+	<!-- End of header bar -->
 
 	<!-- Page content -->
 
@@ -99,43 +107,47 @@
 			</p>
 		</div>    
 	</div>
+
+	<!-- The footer -->
 	<div class="footer">
 
-	<!-- The links -->
-	<a href="" class="footer-link">
-		<i class="fab fa-facebook-square fa-2x"></i>
-	</a>
-	<a href="" class="footer-link">
-		<i class="fab fa-github-square fa-2x"></i>
-	</a>
-	<a href="" class="footer-link">
-		<i class="fab fa-slack fa-2x"></i>
-	</a>
-	<a href="" class="footer-link">
-		<i class="fas fa-envelope fa-2x"></i>
-	</a>
-
-	<!-- The text -->
-	<p class="footer-text">
-		<i class="fas fa-code"></i> 
-		with 
-		<i class="fas fa-heart"></i> 
-		by <strong>OSC</strong>
-	</p>
-
-	</div>
-	<!-- End of footer -->
-
-	<script>
-		// Function for setting the drop down menu css
-		function dropDownMenu() {
-			var x = document.getElementsByClassName("topnav");                      
-			if (x[0].className === "topnav") {
-				x[0].className += " drop-down-menu";
-			} else {
-				x[0].className = "topnav";
+			<!-- The links -->
+			<a href="" class="footer-link">
+				<i class="fab fa-slack fa-2x"></i>
+			</a>
+			<a href="" class="footer-link">
+				<i class="fab fa-github-square fa-2x"></i>
+			</a>
+			<a href="" class="footer-link">
+				<i class="fab fa-facebook-square fa-2x"></i>
+			</a>
+			<a href="" class="footer-link">
+				<i class="fas fa-envelope-square fa-2x"></i>
+			</a>
+	
+			<!-- The text -->
+			<p class="footer-text">
+				<i class="fas fa-code"></i> 
+				with 
+				<i class="fas fa-heart"></i> 
+				by <strong>OSC</strong>
+			</p>
+	
+		</div>
+		<!-- End of footer -->
+		 
+		<script>
+			// Function for setting the drop down menu css
+			function dropDownMenu() {
+				var x = document.getElementsByClassName("topnav");						
+				if (x[0].className === "topnav") {
+					x[0].className += " drop-down-menu";
+				} else {
+					x[0].className = "topnav";
+				}
 			}
-		}
-	</script>
-</body>
-</html>
+		</script>
+	
+	</body>
+	</html>
+	

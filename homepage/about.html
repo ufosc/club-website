@@ -1,98 +1,107 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>About Page</title>
-    <meta charset="utf-8"/> 
-    <link rel="stylesheet" type="text/css" href="styles/about.css">
-    <script defer src="https://use.fontawesome.com/releases/v5.0.7/js/all.js"></script>
+	<title>Open Source Club</title>
+	<meta charset="utf-8"/>
+	<link rel="stylesheet" type="text/css" href="styles/about.css">
+	<!-- TODO: Give license credit to all fonts -->
 </head>
 
 <body>
-    <!-- Used to keep footer positioned at bottom -->
-    <div id="page-container">
 
-        <!-- The header bar -->
-        <div class="topnav">
+	<!-- The header bar -->
+	<div class="topnav">
 
-        <!-- Logo -->
-        <a id="logo-link" href="index.html">
-            <img class="topnav-logo" src="assets/images/small-logo.png" alt="Open Source Club Logo">
-        </a>
+		<!-- Logo -->
+		<a id="logo-link" href="index.html">
+			<img class="topnav-logo" src="assets/images/small-logo.png" alt="Open Source Club Logo">
+		</a>
 
-        <!-- Page links -->
-        <div class="topnav-right">
-            <div class="topnav-placeholder"></div>
-            <a class="topnav-link" href="projects.html">Projects</a>
-            <a class="topnav-link" href="event.html">Events</a>
-            <a class="topnav-link" href="resource.html">Resources</a>
-            <a class="topnav-link" href="contact.html">Contact</a>
-            <a class="topnav-link" href="about.html">About</a>
-        </div>
+		<!-- Page links -->
+		<div class="topnav-right">
+			<div class="topnav-placeholder"></div>
+			<a class="topnav-link" href="projects.html">Projects</a>
+			<a class="topnav-link" href="https://calendar.google.com/calendar/embed?src=toln76hk72u3v4vhu4hblu8s88%40group.calendar.google.com&ctz=America%2FNew_York">
+				Events
+				<i class="fas fa-external-link-alt external-link" data-fa-transform="up-6"></i>
+			</a>
+			<a class="topnav-link" href="https://github.com/ufosc/resources">
+				Resources
+				<i class="fas fa-external-link-alt external-link" data-fa-transform="up-6 right-4"></i>
+			</a>
+			<!-- TODO: Make a contact page (This may not be necessary) -->
+			<!-- <a class="topnav-link" href="contact.html">Contact</a> -->
+			<a class="topnav-link" href="about.html">About</a>
+		</div>
 
-            <!-- Drop down menu -->
-            <a href="javascript:void(0);" class="topnav-link topnav-menu-icon" onclick="dropDownMenu()">
-                &#9776;
-            </a>
-            
-        </div>
+		<!-- Drop down menu -->
+		<a href="javascript:void(0);" class="topnav-link topnav-menu-icon" onclick="dropDownMenu()">
+			&#9776;
+		</a>
+		
+	</div>
+	<!-- End of header bar -->
 
-        <div id="content-wrapper">
-            <div id="about" class="page-element">
-                <h1 class="title">About OSC</h1>
-                <div class="text">
-                    Europe was founded in 1848 by Walker Texas Ranger when he rode a horse across the Atlantic, he called it "Eastern USA" which was eventually abbreviated as just "EU"
-                </div>
-            </div>
-            <div id="history" class="page-element">
-                <h1 class="title">History</h1>
-                <div class="text">
-                    "Turmoil has engulfed the Galactic Republic. The taxation of trade routes to outlying star systems is in dispute.
+	<div id="wrapper">
+		<div id="about" class="page-element">
+			<h1 class="title">About OSC</h1>
+			<div class="text">
+				Europe was founded in 1848 by Walker Texas Ranger when he rode a horse across the Atlantic, he called it "Eastern USA" which was eventually abbreviated as just "EU"
+			</div>
+		</div>
 
-                    Hoping to resolve the matter with a blockade of deadly battleships, the greedy Trade Federation has stopped all shipping to the small planet of Naboo.
+		<div id="history" class="page-element">
+			<h1 class="title">History</h1>
+			<div class="text">
+				"Turmoil has engulfed the Galactic Republic. The taxation of trade routes to outlying star systems is in dispute.
 
-                    While the congress of the Republic endlessly debates this alarming chain of events, the Supreme Chancellor has secretly dispatched two Jedi Knights, the guardians of peace and justice in the galaxy, to settle the conflict...."
-                </div>
-            </div>
-        </div>
-    </div>
+				Hoping to resolve the matter with a blockade of deadly battleships, the greedy Trade Federation has stopped all shipping to the small planet of Naboo.
 
-    <div class="footer">
+				While the congress of the Republic endlessly debates this alarming chain of events, the Supreme Chancellor has secretly dispatched two Jedi Knights, the guardians of peace and justice in the galaxy, to settle the conflict...."
+			</div>
+		</div>
+	</div>
 
-    <!-- The links -->
-    <a href="" class="footer-link">
-        <i class="fab fa-facebook-square fa-2x"></i>
-    </a>
-    <a href="" class="footer-link">
-        <i class="fab fa-github-square fa-2x"></i>
-    </a>
-    <a href="" class="footer-link">
-        <i class="fab fa-slack fa-2x"></i>
-    </a>
-    <a href="" class="footer-link">
-        <i class="fas fa-envelope fa-2x"></i>
-    </a>
+	<!-- The footer -->
+	<div class="footer">
 
-    <!-- The text -->
-    <p class="footer-text">
-        <i class="fas fa-code"></i> 
-        with 
-        <i class="fas fa-heart"></i> 
-        by <strong>OSC</strong>
-    </p>
-
-    </div>
-    <!-- End of footer -->
-
-    <script>
-        // Function for setting the drop down menu css
-        function dropDownMenu() {
-            var x = document.getElementsByClassName("topnav");                      
-            if (x[0].className === "topnav") {
-                x[0].className += " drop-down-menu";
-            } else {
-                x[0].className = "topnav";
-            }
-        }
-    </script>
-</body>
-</html>
+			<!-- The links -->
+			<a href="" class="footer-link">
+				<i class="fab fa-slack fa-2x"></i>
+			</a>
+			<a href="" class="footer-link">
+				<i class="fab fa-github-square fa-2x"></i>
+			</a>
+			<a href="" class="footer-link">
+				<i class="fab fa-facebook-square fa-2x"></i>
+			</a>
+			<a href="" class="footer-link">
+				<i class="fas fa-envelope-square fa-2x"></i>
+			</a>
+	
+			<!-- The text -->
+			<p class="footer-text">
+				<i class="fas fa-code"></i> 
+				with 
+				<i class="fas fa-heart"></i> 
+				by <strong>OSC</strong>
+			</p>
+	
+		</div>
+		<!-- End of footer -->
+		 
+		<script>
+			// Function for setting the drop down menu css
+			function dropDownMenu() {
+				var x = document.getElementsByClassName("topnav");						
+				if (x[0].className === "topnav") {
+					x[0].className += " drop-down-menu";
+				} else {
+					x[0].className = "topnav";
+				}
+			}
+		</script>
+	
+	</body>
+	</html>
+	
