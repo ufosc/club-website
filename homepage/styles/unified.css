@@ -47,8 +47,10 @@ Blue: #2f70df
 /* Unified styling for every page */
 
 /* Default values for each page */
+
+/* Used to keep the footer at the bottom of the page */
 html {
-  height: 100%;
+	height: 100%;
   box-sizing: border-box;
 }
 
@@ -228,7 +230,7 @@ body {
 
 /* Links inside the footer */
 .footer-link {
-	color: var(--accent-color); 
+	color: var(--background-color); 
 	padding-top: 7px;
 	padding-bottom: 7px;
 }
