@@ -1,3 +1,10 @@
+/* Pull in the font awesome styling 
+Note: This is only a subset of the fonts to keep size down. Go to the font awesome 
+site if you need icons or want to update it */
+@import "fontawesome.min.css";
+@import "fa-brands.min.css";
+@import "fa-solid.min.css";
+
 /* Pulling fonts from assets folder */
 @font-face {
 	font-family: 'Noto';
@@ -40,9 +47,27 @@ Blue: #2f70df
 /* Unified styling for every page */
 
 /* Default values for each page */
+
+/* Used to keep the footer at the bottom of the page */
+html {
+	height: 100%;
+  box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
 body {
 	background-color: var(--background-color);
 	font-family: var(--normal-font);
+	margin: 0;
+	padding: 0;
+	position: relative;
+	padding-bottom: 6rem;
+	min-height: 100%;
 }
 
 /* Each card used on the site */
@@ -51,6 +76,22 @@ body {
 	border: 1px solid var(--primary-color);
 	border-radius: 0 0 6px 6px;
 	box-shadow: 0 4px 6px 0 var(--shadow-color);
+	justify-content: flex-start;
+	padding: 20px 20px 0px 20px;
+	text-align: center;
+}
+
+/* Every title on the site */
+.title {
+	position: relative;
+	top: -20px;
+	text-align: center;
+}
+
+/* All text on the site */
+.text {
+	position: relative;
+	text-align: center;
 }
 
 /* Header CSS */
@@ -83,6 +124,11 @@ body {
 	font-family: var(--header-font);
 }
 
+/* Keep the logo in the box */
+#logo-link {
+	box-sizing: initial;
+}
+
 /* Links in the header when a mouse is over them */
 .topnav .topnav-link:hover {
 	border-bottom: 4px solid var(--accent-color);
@@ -96,18 +142,31 @@ body {
 	font-size: 20px;
 }
 
-/* Set this to the current tab to show the user the active page*/
-.topnav .topnav-active {
-	/* background-color: var(--dark-primary-color); */
-}
-
 /* Move each link to the right side of the page */
 .topnav .topnav-right {
 	float: right;
 }
 
+/* External link icon */
+.external-link {
+	color: var(--light-primary-color);
+	font-size: .75em;
+}
+
 /* Header settings for smaller devices */
 @media screen and (max-width: 600px) {
+
+	/* The logo in the header */
+	.topnav .topnav-logo {
+		width: 40px; 
+		height: 40px;
+	}
+
+	/* Links in the header when a mouse is over them */
+	.topnav .topnav-link:hover {
+		border-bottom: none;
+		padding-bottom: 14px;
+	}
 
 	/* Effect all header links except the logo */
 	.topnav-link:not(:first-child) {
@@ -118,6 +177,7 @@ body {
 	.topnav-link.topnav-menu-icon {
 		float: right;
 		display: block;
+		padding: 18px 16px;
 	}  
 
 	/* Header on smaller devices when clicked */
@@ -137,6 +197,7 @@ body {
 		float: none;
 		display: block;
 		text-align: left;
+		padding-bottom: 18px;
 	}
 
 	/* Make the menu items be below the menu icon when clicked */
@@ -160,20 +221,23 @@ body {
 	display: flex;
 	background-color: var(--dark-primary-color);
 	justify-content: center;
-	border-top: 6px double var(--accent-color); 
+	border-top: 3px solid var(--accent-color); 
 	flex-wrap: wrap;
 	position: absolute;
-	right: 0;
 	bottom: 0;
-	left: 0;
+	width: 100%;
 }
 
 /* Links inside the footer */
 .footer-link {
-	color: var(--accent-color); 
-	padding-left: 13px;
+	color: var(--background-color); 
 	padding-top: 7px;
 	padding-bottom: 7px;
+}
+
+/* Space between (not outside) the links */
+.footer-link + .footer-link {
+	padding-left: 13px;
 }
 
 /* Already clicked links change color */

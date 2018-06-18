@@ -2,9 +2,9 @@
 <html>
 <head>
 	<title>Open Source Club</title>
+	<meta charset="utf-8"/>
 	<link rel="stylesheet" type="text/css" href="styles/index.css">
-	<!-- TODO: Maybe load this from a local version -->
-	<script defer src="https://use.fontawesome.com/releases/v5.0.7/js/all.js"></script>
+	<!-- TODO: Give license credit to all fonts -->
 </head>
 
 <body>
@@ -13,18 +13,25 @@
 	<div class="topnav">
 
 		<!-- Logo -->
-		<a href="#home">
+		<a id="logo-link" href="index.html">
 			<img class="topnav-logo" src="assets/images/small-logo.png" alt="Open Source Club Logo">
 		</a>
 
 		<!-- Page links -->
 		<div class="topnav-right">
 			<div class="topnav-placeholder"></div>
-			<a class="topnav-link" href="#projects">Projects</a>
-			<a class="topnav-link" href="#events">Events</a>
-			<a class="topnav-link" href="#resources">Resources</a>
-			<a class="topnav-link" href="#contact">Contact</a>
-			<a class="topnav-link" href="#about">About</a>
+			<a class="topnav-link" href="projects.html">Projects</a>
+			<a class="topnav-link" href="https://calendar.google.com/calendar/embed?src=toln76hk72u3v4vhu4hblu8s88%40group.calendar.google.com&ctz=America%2FNew_York">
+				Events
+				<i class="fas fa-external-link-alt external-link" data-fa-transform="up-6"></i>
+			</a>
+			<a class="topnav-link" href="https://github.com/ufosc/resources">
+				Resources
+				<i class="fas fa-external-link-alt external-link" data-fa-transform="up-6 right-4"></i>
+			</a>
+			<!-- TODO: Make a contact page (This may not be necessary) -->
+			<!-- <a class="topnav-link" href="contact.html">Contact</a> -->
+			<a class="topnav-link" href="about.html">About</a>
 		</div>
 
 		<!-- Drop down menu -->
@@ -36,7 +43,7 @@
 	<!-- End of header bar -->
 
 	<!-- The page content -->
-	<div class="wrapper">
+	<div id="wrapper">
 
 		<!-- Slideshow -->
 		<div id="slideshow" class="page-element">
@@ -53,10 +60,9 @@
 			<h1 class="title">
 				Promote
 			</h1>
-			<!-- TODO: Maybe find font for each of these, instead of pictures -->
-			<img class="image" src="assets/images/promote.png" alt="Promote"> 
+			<i class="fas fa-bullhorn tagline-icon"></i>
 			<p class="text">
-				If you or a loved one has been diagnosed with Mesothelioma
+				Spread information about the free and open source movement as well as FOSS projects
 			</p>
 		</div>
 
@@ -64,9 +70,9 @@
 			<h1 class="title">
 				Support
 			</h1>
-			<img class="image" src="assets/images/support.png" alt="Support"> 
+			<i class="fas fa-heart tagline-icon"></i>
 			<p class="text">
-				you may to be entitled to financial compensation.
+				Work on existing open source projects and collaborate with other clubs on and off campus
 			</p>
 		</div>
 
@@ -74,14 +80,15 @@
 			<h1 class="title">
 				Create
 			</h1>
-			<img class="image" src="assets/images/create.png" alt="Create"> 
+			<i class="fas fa-lightbulb tagline-icon"></i>
 			<p class="text">
-				Mesothelioma is a rare cancer linked to asbestos exposure.
+				Build useful and fun projects with other club members to solve problems and learn
 			</p>
 		</div>
 
+		<!-- TODO: Finish the event integration -->
 		<!-- Upcoming events box -->
-		<div id="events-wrapper" class="page-element">
+<!-- 		<div id="events-wrapper" class="page-element">
 			<h1 class="title" id="upcoming-events-title">
 				Upcoming Events
 			</h1>
@@ -93,10 +100,10 @@
 							<strong>Event 1</strong>
 						</p>
 						<hr>
-						<p class="time">
+						<p class="event-time">
 							4:00 PM - 6:00 PM
 						</p>
-						<p class="location">
+						<p class="event-location">
 							<strong>Marston Library:</strong>
 							<br> Room Darwin
 						</p>
@@ -109,10 +116,10 @@
 							<strong>Event 2</strong>
 						</p>
 						<hr>
-						<p class="time">
+						<p class="event-time">
 							4:00 PM - 6:00 PM
 						</p>
-						<p class="location">
+						<p class="event-location">
 							<strong>Marston Library:</strong>
 							<br> Room Darwin
 						</p>
@@ -125,10 +132,10 @@
 							<strong>Event 3</strong>
 						</p>
 						<hr>
-						<p class="time">
+						<p class="event-time">
 							4:00 PM - 6:00 PM
 						</p>
-						<p class="location">
+						<p class="event-location">
 							<strong>Marston Library:</strong>
 							<br> Room Darwin
 						</p>
@@ -136,23 +143,17 @@
 				</a>
 
 			</div>
-		</div>
+		</div> -->
 		
 		<!-- Get involved box -->
 		<div id="get-involved" class="page-element">
 			<h1 class="title" id="get-involved-title">
 				Get Involved
 			</h1>
-			<p id="get-involved-text">
-				Lorem ipsum dolor sit amet, consectetur adipiscing 
-				elit, sed do eiusmod tempor incididunt ut labore et 
-				dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipiscing 
-				elit, sed do eiusmod tempor incididunt ut labore et 
-				dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipiscing 
-				elit, sed do eiusmod tempor incididunt ut labore et 
-				dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipiscing 
-				elit, sed do eiusmod tempor incididunt ut labore et 
-				dolore magna aliqua.
+			<p class="get-involved-text">
+				OSC is the Open Source Club at the University of Florida. We are a community of makers, who want to solve problems and improve our world using open source projects.
+				<br> <br>
+				Sign up for our <a href="https://docs.google.com/forms/d/e/1FAIpQLSfeU1RSGQWOZfvQXLrUGnDAKvVAqO7gc3TZySmN1CFhCM9uog/viewform?c=0&w=1">email list</a> or our <a href="https://www.facebook.com/groups/ufosc/">Facebook group<a/> for meeting announcements and join our <a href="https://ufosc.slack.com/">Slack</a> to communicate with other members and ask questions. And of course, come to our meetings! Introduce yourself, work on projects, and have fun.
 			</p>
 		</div>
 	</div>
@@ -161,17 +162,17 @@
 	<div class="footer">
 
 		<!-- The links -->
-		<a href="" class="footer-link">
-			<i class="fab fa-facebook-square fa-2x"></i>
-		</a>
-		<a href="" class="footer-link">
-			<i class="fab fa-github-square fa-2x"></i>
-		</a>
-		<a href="" class="footer-link">
+		<a href="https://ufosc.slack.com/" class="footer-link">
 			<i class="fab fa-slack fa-2x"></i>
 		</a>
-		<a href="" class="footer-link">
-			<i class="fas fa-envelope fa-2x"></i>
+		<a href="https://github.com/ufosc/" class="footer-link">
+			<i class="fab fa-github-square fa-2x"></i>
+		</a>
+		<a href="https://www.facebook.com/groups/ufosc/" class="footer-link">
+			<i class="fab fa-facebook-square fa-2x"></i>
+		</a>
+		<a href="mailto:gator.osc@gmail.com" class="footer-link">
+			<i class="fas fa-envelope-square fa-2x"></i>
 		</a>
 
 		<!-- The text -->
