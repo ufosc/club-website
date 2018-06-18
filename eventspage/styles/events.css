@@ -1,41 +1,46 @@
+@import "unified.css";
 body {
-	background-color: #b5b5b5;
+	margin: 0;
+	padding: 0;
+	position: relative;
+	padding-bottom: 6rem;
+	min-height: 100%;
 }
-#wrapper {
+#event-wrapper {
+	margin-top: 15px;
 	display: grid;
-	grid-template-columns: 306px;
-	grid-template-rows: repeat(6, 119px);
-	grid-row-gap: 30px;
+	grid-template-columns: repeat(2, 306px);
+	grid-template-rows: repeat(3, 119px);
+	grid-gap: 30px;
 	justify-content: center;
 }
-h3 {
+.event-title {
 	grid-column-start: 2;
 	grid-row-start: 1;
 	margin: auto;
 	margin-left: 14px;
 }
-img {
-	margin: 3px;
-}
-p{
+.event-description {
 	margin-left: 14px;
 	margin-top: 0;
 	grid-column-start: 2;
 	grid-row-start: 2;
+	font-size: 14px;
 }
 .event {
-	background-color: #f7a547;
 	display: grid;
 	grid-template-columns: 1fr 2fr;
-	grid-template-rows: 40% 60%;
+	border: none;
 	border-radius: 10px;
+	grid-template-rows: 40% 60%;
 	grid-template-areas: "month title"
-		                   "day description"
+						 "day description";
+	background-color: var(--divider-color);
 }
 .month {
 	grid-area: month;
 	display: flex;
-  align-items: center;
+  	align-items: center;
 	text-align: center;
 	border-radius: 10px 10px 0 0;
 	font-size: 20px;
