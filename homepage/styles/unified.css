@@ -246,7 +246,7 @@ body {
 /* Links inside the footer */
 .footer-link {
 	color: var(--background-color); 
-	padding-top: 7px;
+	padding-top: 10px;
 	padding-bottom: 7px;
 }
 
@@ -268,10 +268,11 @@ body {
 /* The text at the bottom of the footer */
 .footer-text {
 	color: var(--background-color);
+	font-family: var(--header-font);
 	width: 100%;
 	text-align: center;
 	margin-top: 0;
-	margin-bottom: 3px;
+	margin-bottom: 6px;
 	padding-top: 10px;
 	font-size: 13px;
 }
