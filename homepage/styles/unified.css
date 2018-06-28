@@ -10,7 +10,19 @@ site if you need icons or want to update it */
 	font-family: 'NotoMono';
 	src: url('../assets/fonts/Noto-Mono/NotoMono-Regular.woff') format('woff'),
 	url('../assets/fonts/Noto-Mono/NotoMono-Regular.ttf') format('truetype'); 
-}  
+}
+
+@font-face {
+	font-family: 'NotoSans';
+	src: url('../assets/fonts/Noto-Sans/NotoSans-Regular.woff') format('woff'),
+	url('../assets/fonts/Noto-Sans/NotoSans-Regular.ttf') format('truetype'); 
+}
+
+@font-face {
+	font-family: 'NotoSerif';
+	src: url('../assets/fonts/Noto-Serif/NotoSerif-Regular.woff') format('woff'),
+	url('../assets/fonts/Noto-Serif/NotoSerif-Regular.ttf') format('truetype'); 
+}
 
 /* Default styling values used throughout the CSS */
 :root {
@@ -29,8 +41,9 @@ site if you need icons or want to update it */
 	--secondary-text-color: #757575;
 	 
 	/* Font type */
-	--normal-font: 'NotoMono';
+	--normal-font: 'NotoSerif';
 	--header-font: 'NotoMono';
+	--title-font: 'NotoSans';
 
 	/* Other */
 	--phone-width: 600px; /* Don't use yet. Can not currently use CSS var in media queries */
@@ -86,12 +99,14 @@ body {
 	position: relative;
 	top: -20px;
 	text-align: center;
+	font-family: var(--title-font);
 }
 
 /* All text on the site */
 .text {
 	position: relative;
 	text-align: center;
+	font-family: var(--normal-font);
 }
 
 /* Header CSS */
