@@ -7,9 +7,9 @@ site if you need icons or want to update it */
 
 /* Pulling fonts from assets folder */
 @font-face {
-	font-family: 'Noto';
-	src: url('../assets/fonts/NotoMono-Regular.woff') format('woff'),
-	url('../assets/fonts/NotoMono-Regular.ttf') format('truetype'); 
+	font-family: 'NotoMono';
+	src: url('../assets/fonts/Noto-Mono/NotoMono-Regular.woff') format('woff'),
+	url('../assets/fonts/Noto-Mono/NotoMono-Regular.ttf') format('truetype'); 
 }  
 
 /* Default styling values used throughout the CSS */
@@ -29,8 +29,8 @@ site if you need icons or want to update it */
 	--secondary-text-color: #757575;
 	 
 	/* Font type */
-	--normal-font: 'Noto';
-	--header-font: 'Noto';
+	--normal-font: 'NotoMono';
+	--header-font: 'NotoMono';
 
 	/* Other */
 	--phone-width: 600px; /* Don't use yet. Can not currently use CSS var in media queries */
