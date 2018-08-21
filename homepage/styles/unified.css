@@ -87,7 +87,7 @@ body {
 .page-element {
 	background: var(--background-color);
 	border: 1px solid var(--primary-color);
-	border-radius: 0 0 6px 6px;
+	border-radius: 3px 3px 3px 3px;
 	box-shadow: 0 4px 6px 0 var(--shadow-color);
 	justify-content: flex-start;
 	padding: 20px 20px 0px 20px;
