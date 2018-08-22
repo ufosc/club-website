@@ -90,7 +90,7 @@ body {
 	border-radius: 3px 3px 3px 3px;
 	box-shadow: 0 4px 6px 0 var(--shadow-color);
 	justify-content: flex-start;
-	padding: 20px 20px 0px 20px;
+	padding: 10px;
 	text-align: center;
 }
 

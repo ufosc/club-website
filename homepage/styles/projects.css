@@ -8,65 +8,30 @@
 }
 
 .project-element {
-    /* position: relative; */
-    /* width: 500px; */
-/*     margin-top: 20px;
-    margin-left: auto;
-    margin-right: auto; */
-    /* max-width: 600px;
-    max-height: 1000px; */
-    /* display: grid; */
     display: flex;
     flex-direction: column;
 }
 
-.project-title {
-/*     margin-top: 0;
-    padding-top: 15px;
-    margin-left: 15px; */
-    margin-bottom: -22px;
-    font-weight: bold;
-}
-
 .project-subtitle {
-    /* margin-left: 15px; */
     font-weight: lighter;
-    margin-bottom: 0;
-    padding-bottom: 1%;
-    /* margin-right: 20px; */
-    /* Gray, replace with a color from unified.css */
+    /* TODO: Gray, replace with a color from unified.css */
     color: rgb(117, 117, 116);
     border-bottom: 1px solid rgb(117, 117, 116);
-}
-
-.project-image-container {
-    flex: 1;
-    padding: 1em;
+    margin-top: -20px;
 }
 
 .project-image {
-    image-orientation: from-image;
-    overflow: hidden;
-    /* display: block; */
     max-width: 300px;
     max-height: 300px;
-    margin-left: auto;
-    margin-right: auto;
     border-radius: 15px;
     border-style: solid;
     border-width: 2px;
-    /* box-shadow: 10px 10px 5px rgba(128, 128, 128, 0.363); */
 }
 
 .project-footnote-text {
-    /* position: absolute;
-    bottom: 10px; */
+    /* TODO: Replace with value from unified.css */
     font-size: small;
-    text-align: center;
-}
-
-.project-contributors {
-    padding-bottom: 10px
+    margin-top: auto;
 }
 
 .fa-github {
