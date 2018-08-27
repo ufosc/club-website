@@ -1,16 +1,27 @@
 @import "unified.css";
 
+/* 
+TODO: On this page
+1. Get images to resize as the size of the page changes (within reason)
+    - First desktop, then mobile 
+2. Have the boxes resize in-kind with part 1
+    - First desktop, then mobile
+3. Keep it fluid
+4. Active/Inactive tag?
+*/
+
 #wrapper {
     display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
     grid-gap: 20px;
-    grid-template-columns: repeat(auto-fill, minmax(500px, 1fr));
+    justify-items: stretch;
     margin: 20px;
 }
 
 .project-element {
     /* position: relative; */
     /* width: 500px; */
-/*     margin-top: 20px;
+    /*     margin-top: 20px;
     margin-left: auto;
     margin-right: auto; */
     /* max-width: 600px;
@@ -18,10 +29,11 @@
     /* display: grid; */
     display: flex;
     flex-direction: column;
+    /* max-width: 550px; */
 }
 
 .project-title {
-/*     margin-top: 0;
+    /*     margin-top: 0;
     padding-top: 15px;
     margin-left: 15px; */
     margin-bottom: -22px;
@@ -48,7 +60,8 @@
     image-orientation: from-image;
     overflow: hidden;
     /* display: block; */
-    max-width: 300px;
+    max-width: 20vw;
+    min-width: 200px;
     max-height: 300px;
     margin-left: auto;
     margin-right: auto;
@@ -75,4 +88,16 @@
 
 .fa-users {
     font-size: 20px;
+}
+
+/* Have the size  */
+@media screen and (max-width: 600px) {
+    #wrapper {
+        grid-template-columns: repeat(auto-fill, minmax(90vw, 400px));
+    }
+
+    .project-element {
+        max-width: 550px;
+    /* max-width: 400px; */
+    }
 }
