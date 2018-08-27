@@ -11,10 +11,6 @@
 	margin: 20px auto 0;
 }
 
-#wrapper > div {
-	padding: 10px;	
-}
-
 /* Position of each element */
 #slideshow {
 	grid-column: 1 / 4;
