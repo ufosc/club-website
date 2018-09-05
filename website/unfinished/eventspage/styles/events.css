@@ -1,0 +1,58 @@
+@import "unified.css";
+body {
+	margin: 0;
+	padding: 0;
+	position: relative;
+	padding-bottom: 6rem;
+	min-height: 100%;
+}
+#event-wrapper {
+	margin-top: 15px;
+	display: grid;
+	grid-template-columns: repeat(2, 306px);
+	grid-template-rows: repeat(3, 119px);
+	grid-gap: 30px;
+	justify-content: center;
+}
+.event-title {
+	grid-column-start: 2;
+	grid-row-start: 1;
+	margin: auto;
+	margin-left: 14px;
+}
+.event-description {
+	margin-left: 14px;
+	margin-top: 0;
+	grid-column-start: 2;
+	grid-row-start: 2;
+	font-size: 14px;
+}
+.event {
+	display: grid;
+	grid-template-columns: 1fr 2fr;
+	border: none;
+	border-radius: 10px;
+	grid-template-rows: 40% 60%;
+	grid-template-areas: "month title"
+						 "day description";
+	background-color: var(--divider-color);
+}
+.month {
+	grid-area: month;
+	display: flex;
+  	align-items: center;
+	text-align: center;
+	border-radius: 10px 10px 0 0;
+	font-size: 20px;
+	background: #f45c42;
+	justify-content: center;
+}
+.day {
+	grid-area: day;
+	display: flex;
+  align-items: center;
+	border-radius: 0 0 10px 10px;
+	font-size: 50px;
+	background: #e2e2e2;
+	justify-content: center;
+}

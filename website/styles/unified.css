@@ -1,0 +1,278 @@
+/* Pull in the font awesome styling 
+Note: This is only a subset of the fonts to keep size down. Go to the font awesome 
+site if you need icons or want to update it */
+@import "fontawesome.min.css";
+@import "fa-brands.min.css";
+@import "fa-solid.min.css";
+
+/* Pulling fonts from assets folder */
+@font-face {
+	font-family: 'NotoMono';
+	src: url('../assets/fonts/Noto-Mono/NotoMono-Regular.woff') format('woff'),
+	url('../assets/fonts/Noto-Mono/NotoMono-Regular.ttf') format('truetype'); 
+}
+
+@font-face {
+	font-family: 'NotoSans';
+	src: url('../assets/fonts/Noto-Sans/NotoSans-Regular.woff') format('woff'),
+	url('../assets/fonts/Noto-Sans/NotoSans-Regular.ttf') format('truetype'); 
+}
+
+@font-face {
+	font-family: 'NotoSerif';
+	src: url('../assets/fonts/Noto-Serif/NotoSerif-Regular.woff') format('woff'),
+	url('../assets/fonts/Noto-Serif/NotoSerif-Regular.ttf') format('truetype'); 
+}
+
+/* Default styling values used throughout the CSS */
+:root {
+	/* Site colors */
+	--dark-primary-color: #303F9F;
+ 	--light-primary-color: #C5CAE9;
+ 	--primary-color: #3F51B5;
+ 	--text-icon-color: #FFFFFF;
+	--accent-color: #4CAF50;
+	--divider-color: #BDBDBD;	
+	--background-color: #FFFFFF;
+	--shadow-color: hsla(0, 0%, 0%, 0.2);
+
+	 /* Text color */
+	--primary-text-color: #212121;
+	--secondary-text-color: #757575;
+	 
+	/* Font type */
+	--normal-font: 'NotoSerif';
+	--header-font: 'NotoMono';
+	--title-font: 'NotoSans';
+
+	/* Other */
+	--phone-width: 600px; /* Don't use yet. Can not currently use CSS var in media queries */
+}
+
+/* Logo Color Scheme */
+/* 
+Red: #d21b0e
+Green: #0bcc3e
+Black: #3a3a3a
+Blue: #2f70df
+*/
+
+/* Unified styling for every page */
+
+/* Default values for each page */
+
+/* Used to keep the footer at the bottom of the page */
+html {
+	height: 100%;
+  box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+body {
+	background-color: var(--background-color);
+	font-family: var(--normal-font);
+	margin: 0;
+	padding: 0;
+	position: relative;
+	padding-bottom: 6rem;
+	min-height: 100%;
+}
+
+/* Each card used on the site */
+.page-element {
+	background: var(--background-color);
+	border: 1px solid var(--primary-color);
+	border-radius: 3px 3px 3px 3px;
+	box-shadow: 0 4px 6px 0 var(--shadow-color);
+	justify-content: flex-start;
+	padding: 10px;
+	text-align: center;
+}
+
+/* Every title on the site */
+.title {
+	position: relative;
+	top: -20px;
+	text-align: center;
+	font-family: var(--title-font);
+}
+
+/* All text on the site */
+.text {
+	position: relative;
+	text-align: center;
+	font-family: var(--normal-font);
+}
+
+/* Header CSS */
+
+/* The header bar */
+.topnav {
+	overflow: hidden;
+	background-color: var(--primary-color);
+}
+
+/* The logo in the header */
+.topnav .topnav-logo {
+	float: left;
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	width: 50px; 
+	height: 50px;
+	padding: 10px 16px;
+}
+
+/* Links in the header*/
+.topnav .topnav-link {
+	float: left;
+	display: block;
+	color: var(--text-icon-color);
+	text-align: center;
+	padding: 28px 16px;
+	text-decoration: none;
+	font-family: var(--header-font);
+}
+
+/* Keep the logo in the box */
+#logo-link {
+	box-sizing: initial;
+}
+
+/* Links in the header when a mouse is over them */
+.topnav .topnav-link:hover {
+	border-bottom: 4px solid var(--accent-color);
+	padding-bottom: 24px;
+	color: var(--accent-color);
+}
+
+/* The header menu is only visible when the screen is small */
+.topnav .topnav-menu-icon {
+	display: none;
+	font-size: 20px;
+}
+
+/* Move each link to the right side of the page */
+.topnav .topnav-right {
+	float: right;
+}
+
+/* External link icon */
+.external-link {
+	color: var(--light-primary-color);
+	font-size: .75em;
+}
+
+/* Header settings for smaller devices */
+@media screen and (max-width: 600px) {
+
+	/* The logo in the header */
+	.topnav .topnav-logo {
+		width: 40px; 
+		height: 40px;
+	}
+
+	/* Links in the header when a mouse is over them */
+	.topnav .topnav-link:hover {
+		border-bottom: none;
+		padding-bottom: 14px;
+	}
+
+	/* Effect all header links except the logo */
+	.topnav-link:not(:first-child) {
+		display: none;
+	}
+
+	/* Make the menu icon visible */
+	.topnav-link.topnav-menu-icon {
+		float: right;
+		display: block;
+		padding: 18px 16px;
+	}  
+
+	/* Header on smaller devices when clicked */
+	.topnav.drop-down-menu {
+		position: relative;
+	}
+
+	/* Keep the menu icon on the right when clicked */
+	.topnav.drop-down-menu .topnav-menu-icon {
+		position: absolute;
+		right: 0;
+		top: 0;
+	}
+
+	/* Display the links when menu is clicked */
+	.topnav.drop-down-menu .topnav-link {
+		float: none;
+		display: block;
+		text-align: left;
+		padding-bottom: 18px;
+	}
+
+	/* Make the menu items be below the menu icon when clicked */
+	.topnav.drop-down-menu > .topnav-right {
+		display: block;
+	}
+
+	/* Empty space between the top of the screen and the first menu item */
+	.topnav.drop-down-menu > .topnav-right > .topnav-placeholder {
+		float: none;
+		display: block;
+		height: 60px;
+	}
+
+}
+
+/* Footer CSS */
+
+/* Footer size and color */
+.footer {
+	display: flex;
+	background-color: var(--dark-primary-color);
+	justify-content: center;
+	border-top: 3px solid var(--accent-color); 
+	flex-wrap: wrap;
+	position: absolute;
+	bottom: 0;
+	width: 100%;
+}
+
+/* Links inside the footer */
+.footer-link {
+	color: var(--background-color); 
+	padding-top: 10px;
+	padding-bottom: 7px;
+}
+
+/* Space between (not outside) the links */
+.footer-link + .footer-link {
+	padding-left: 13px;
+}
+
+/* Already clicked links change color */
+.footer-link:visited {
+	color: var(--background-color);
+}
+
+/* Change the link color when the mouse hovers over it */
+.footer-link:hover {
+	color: var(--accent-color);
+}
+
+/* The text at the bottom of the footer */
+.footer-text {
+	color: var(--background-color);
+	font-family: var(--header-font);
+	width: 100%;
+	text-align: center;
+	margin-top: 0;
+	margin-bottom: 6px;
+	padding-top: 10px;
+	font-size: 13px;
+}
