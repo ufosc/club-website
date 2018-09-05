@@ -10,7 +10,7 @@ Please read our [CODE_OF_CONDUCT.md](CODE_OF_CONDUCT.md) to understand our commu
 
 Please check the [Projects](https://github.com/ufosc/club-website/projects) and [Issues](https://github.com/ufosc/club-website/issues?q=is%3Aissue+is%3Aopen+sort%3Aupdated-desc) pages for current task. If you see something that you would like to help with, ask about helping in a comment and we'll assign it too you. If you're just starting out, checkout our **[beginner friendly](https://github.com/ufosc/club-website/labels/good%20first%20issue)** issues for ways to help.
 
-Checkout the [DESIGN.md](docs/DESIGN.md) file for a high level explanation of the project. For a road map, look at the [TODO.md](docs/TODO.md) which lists planned features for the project. Check out the other files in docs for more information.
+Checkout the [DESIGN.md](docs/DESIGN.md) file for a high level explanation of the project. Check out the other files in docs for more information.
 
 ### Report Bug
 
@@ -18,7 +18,7 @@ Check to see if someone already reported this [bug](https://github.com/ufosc/clu
 
 ### Request a Feature
 
-Check to see if the feature is already listed in our [TODO.md](docs/TODO.md). If it's not, describe the feature and why it would be beneficial. Create an [Issue](https://github.com/ufosc/club-website/issues?q=is%3Aissue+is%3Aopen+sort%3Aupdated-desc) with this description and add a feature enhancement label. We will do our best to respond quickly to it.
+If it's not already an issue, describe the feature and why it would be beneficial. Create an [Issue](https://github.com/ufosc/club-website/issues?q=is%3Aissue+is%3Aopen+sort%3Aupdated-desc) with this description and add a feature enhancement label. We will do our best to respond quickly to it.
 
 ### Run Test
 
