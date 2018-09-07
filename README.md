@@ -30,7 +30,7 @@ TBD, probably deploying our own Nginx server.
 - **CSS** - Short for Cascading Style Sheets. It defines the look of the page
 - **JavaScript** -  Not short for anything. It adds the functionality to the page.
 
-Check out the [RESOURCES.md](docs/resources.md) file in docs for a list of links to learn more about these technologies.
+Check out the [RESOURCES.md](docs/RESOURCES.md) file in docs for a list of links to learn more about these technologies.
 
 ## Contributing
 
