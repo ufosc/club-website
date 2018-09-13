@@ -38,7 +38,7 @@
 		<a href="javascript:void(0);" class="topnav-link topnav-menu-icon" onclick="dropDownMenu()">
 			&#9776;
 		</a>
-		
+
 	</div>
 	<!-- End of header bar -->
 
@@ -46,15 +46,40 @@
 	<div id="wrapper">
 
 		<!-- Slideshow -->
-		<div id="slideshow" class="page-element">
-			<h1 class="title">Slideshow</h1>
-			<p>
-				Lorem ipsum dolor sit amet, consectetur adipiscing 
-				elit, sed do eiusmod tempor incididunt ut labore et 
-				dolore magna aliqua.
-			</p>
+		<div id="slideshow" class="page-element" style="padding: 0px">
+			<div class="slideshow-container">
+				<div class="mySlides fade">
+					<img class="slide" style="object-fit: contain" src=".\assets\images\small-logo.png">
+					<br><br> <!--This is here so the box is the same height as the other slides w/text-->
+				</div>
+				<div class="mySlides fade">
+					<img class="slide" style="object-position: 50% 30%" src=".\assets\images\lan-party.jpg">
+					<div class="text">LAN parties</div>
+				</div>
+				<div class="mySlides fade">
+					<img class="slide" style="object-position: 50% 35%" src=".\assets\images\casual-coding.jpg">
+					<div class="text">Casual Coding</div>
+				</div>
+				<div class="mySlides fade">
+					<img class="slide" style="object-position: 50% 25%" src=".\assets\images\swamp-hacks-2017.jpg">
+					<div class="text">Hackathons</div>
+				</div>
+				<div class="mySlides fade">
+					<img class="slide" src=".\assets\images\mozilla-talk.jpg">
+					<div class="text">Guest Speakers</div>
+				</div>
+				<a class="prev arrow" onclick="plusSlides(-1)">&#10094;</a>
+				<a class="next arrow" onclick="plusSlides(1)">&#10095;</a>
+			</div>
+			<div style="text-align:center; padding-bottom:10px;">
+				<span class="dot" onclick="currentSlide(1)"></span>
+				<span class="dot" onclick="currentSlide(2)"></span>
+				<span class="dot" onclick="currentSlide(3)"></span>
+				<span class="dot" onclick="currentSlide(4)"></span>
+				<span class="dot" onclick="currentSlide(5)"></span>
+			</div>
 		</div>
-
+		<br>
 		<!-- Tag line boxes -->
 		<div id="promote" class="page-element">
 			<h1 class="title">
@@ -144,7 +169,7 @@
 
 			</div>
 		</div> -->
-		
+
 		<!-- Get involved box -->
 		<div id="get-involved" class="page-element">
 			<h1 class="title" id="get-involved-title">
@@ -177,26 +202,16 @@
 
 		<!-- The text -->
 		<p class="footer-text">
-			<i class="fas fa-code"></i> 
-			with 
-			<i class="fas fa-heart"></i> 
+			<i class="fas fa-code"></i>
+			with
+			<i class="fas fa-heart"></i>
 			by <strong>OSC</strong>
 		</p>
 
 	</div>
 	<!-- End of footer -->
-	 
-	<script>
-		// Function for setting the drop down menu css
-		function dropDownMenu() {
-			var x = document.getElementsByClassName("topnav");						
-			if (x[0].className === "topnav") {
-				x[0].className += " drop-down-menu";
-			} else {
-				x[0].className = "topnav";
-			}
-		}
-	</script>
+
+	<script src="./scripts/index.js"></script>
 
 </body>
 </html>
