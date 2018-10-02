@@ -249,6 +249,14 @@ hr {
 		border-radius: 5px;
 	}
 
+	.topnav.drop-down-menu .topnav-link {
+		padding: 8px 16px;
+	}
+
+	.topnav.drop-down-menu .topnav-link:last-child {
+		padding-bottom: 15px;
+	}
+
 	/* Position of the elements */
 	#slideshow {
 		grid-column: 1;
