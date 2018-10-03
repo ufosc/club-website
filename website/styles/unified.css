@@ -7,43 +7,43 @@ site if you need icons or want to update it */
 
 /* Pulling fonts from assets folder */
 @font-face {
-	font-family: 'NotoMono';
-	src: url('../assets/fonts/Noto-Mono/NotoMono-Regular.woff') format('woff'),
-	url('../assets/fonts/Noto-Mono/NotoMono-Regular.ttf') format('truetype'); 
+	font-family: "NotoMono";
+	src: url("../assets/fonts/Noto-Mono/NotoMono-Regular.woff") format("woff"),
+		url("../assets/fonts/Noto-Mono/NotoMono-Regular.ttf") format("truetype");
 }
 
 @font-face {
-	font-family: 'NotoSans';
-	src: url('../assets/fonts/Noto-Sans/NotoSans-Regular.woff') format('woff'),
-	url('../assets/fonts/Noto-Sans/NotoSans-Regular.ttf') format('truetype'); 
+	font-family: "NotoSans";
+	src: url("../assets/fonts/Noto-Sans/NotoSans-Regular.woff") format("woff"),
+		url("../assets/fonts/Noto-Sans/NotoSans-Regular.ttf") format("truetype");
 }
 
 @font-face {
-	font-family: 'NotoSerif';
-	src: url('../assets/fonts/Noto-Serif/NotoSerif-Regular.woff') format('woff'),
-	url('../assets/fonts/Noto-Serif/NotoSerif-Regular.ttf') format('truetype'); 
+	font-family: "NotoSerif";
+	src: url("../assets/fonts/Noto-Serif/NotoSerif-Regular.woff") format("woff"),
+		url("../assets/fonts/Noto-Serif/NotoSerif-Regular.ttf") format("truetype");
 }
 
 /* Default styling values used throughout the CSS */
 :root {
 	/* Site colors */
-	--dark-primary-color: #303F9F;
- 	--light-primary-color: #C5CAE9;
- 	--primary-color: #3F51B5;
- 	--text-icon-color: #FFFFFF;
-	--accent-color: #4CAF50;
-	--divider-color: #BDBDBD;	
-	--background-color: #FFFFFF;
+	--dark-primary-color: #303f9f;
+	--light-primary-color: #c5cae9;
+	--primary-color: #3f51b5;
+	--text-icon-color: #ffffff;
+	--accent-color: #4caf50;
+	--divider-color: #bdbdbd;
+	--background-color: #ffffff;
 	--shadow-color: hsla(0, 0%, 0%, 0.2);
 
-	 /* Text color */
+	/* Text color */
 	--primary-text-color: #212121;
 	--secondary-text-color: #757575;
-	 
+
 	/* Font type */
-	--normal-font: 'NotoSerif';
-	--header-font: 'NotoMono';
-	--title-font: 'NotoSans';
+	--normal-font: "NotoSerif";
+	--header-font: "NotoMono";
+	--title-font: "NotoSans";
 
 	/* Other */
 	--phone-width: 600px; /* Don't use yet. Can not currently use CSS var in media queries */
@@ -64,13 +64,13 @@ Blue: #2f70df
 /* Used to keep the footer at the bottom of the page */
 html {
 	height: 100%;
-  box-sizing: border-box;
+	box-sizing: border-box;
 }
 
 *,
 *:before,
 *:after {
-  box-sizing: inherit;
+	box-sizing: inherit;
 }
 
 body {
@@ -123,7 +123,7 @@ body {
 	display: block;
 	margin-left: auto;
 	margin-right: auto;
-	width: 50px; 
+	width: 50px;
 	height: 50px;
 	padding: 10px 16px;
 }
@@ -165,16 +165,16 @@ body {
 /* External link icon */
 .external-link {
 	color: var(--light-primary-color);
-	font-size: .75em;
+	font-size: 0.75em;
 }
 
 /* Header settings for smaller devices */
 @media screen and (max-width: 600px) {
-
 	/* The logo in the header */
 	.topnav .topnav-logo {
-		width: 40px; 
+		width: 40px;
 		height: 40px;
+		margin-right: 60%;
 	}
 
 	/* Links in the header when a mouse is over them */
@@ -193,7 +193,7 @@ body {
 		float: right;
 		display: block;
 		padding: 18px 16px;
-	}  
+	}
 
 	/* Header on smaller devices when clicked */
 	.topnav.drop-down-menu {
@@ -210,14 +210,20 @@ body {
 	/* Display the links when menu is clicked */
 	.topnav.drop-down-menu .topnav-link {
 		float: none;
-		display: block;
 		text-align: left;
 		padding-bottom: 18px;
+		display: flex;
 	}
 
 	/* Make the menu items be below the menu icon when clicked */
 	.topnav.drop-down-menu > .topnav-right {
-		display: block;
+		display: flex;
+		justify-content: center;
+		align-content: center;
+	}
+
+	.topnav.drop-down-menu .topnav-link i {
+		margin-left: 8px;
 	}
 
 	/* Empty space between the top of the screen and the first menu item */
@@ -226,7 +232,6 @@ body {
 		display: block;
 		height: 60px;
 	}
-
 }
 
 /* Footer CSS */
@@ -236,7 +241,7 @@ body {
 	display: flex;
 	background-color: var(--dark-primary-color);
 	justify-content: center;
-	border-top: 3px solid var(--accent-color); 
+	border-top: 3px solid var(--accent-color);
 	flex-wrap: wrap;
 	position: absolute;
 	bottom: 0;
@@ -245,7 +250,7 @@ body {
 
 /* Links inside the footer */
 .footer-link {
-	color: var(--background-color); 
+	color: var(--background-color);
 	padding-top: 10px;
 	padding-bottom: 7px;
 }
