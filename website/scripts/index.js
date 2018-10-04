@@ -43,3 +43,6 @@ function showSlides(n) {
 	dots[slideIndex-1].className += " active";
 	timeOut = setTimeout(() => plusSlides(1), 5000); //Increments slide every 5 seconds automatically, timer is reset whenever a slide is manually selected
 }
+
+	//Functions for the login page
+	

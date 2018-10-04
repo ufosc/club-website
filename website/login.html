@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+	<head lang="en"><style type="text/css">@charset "UTF-8";[ng\:cloak],[ng-cloak],[data-ng-cloak],[x-ng-cloak],.ng-cloak,.x-ng-cloak,.ng-hide:not(.ng-hide-animate){display:none !important;}ng\:form{display:block;}.ng-animate-shim{visibility:hidden;}.ng-anchor{position:absolute;}</style>		
+		<title>Open Source Club</title>
+		<meta charset="utf-8"/>
+		<link rel="stylesheet" type="text/css" href="styles/login.css">
+	</head>
+	<!-- TODO: Give license credit to all fonts 
+
+<body>
+
+	<!-- The header bar -->
+	<div class="topnav">
+
+		<!-- Logo -->
+		<a id="logo-link" href="index.html">
+			<img class="topnav-logo" src="assets/images/small-logo.png" alt="Open Source Club Logo">
+		</a>
+
+		<!-- Page links -->
+		<div class="topnav-right">
+            <div class="topnav-placeholder"></div>
+            <a class="topnav-link" href="login.html">Login</a>
+			<a class="topnav-link" href="projects.html">Projects</a>
+			<a class="topnav-link" href="https://calendar.google.com/calendar/embed?src=toln76hk72u3v4vhu4hblu8s88%40group.calendar.google.com&ctz=America%2FNew_York">
+				Events
+				<i class="fas fa-external-link-alt external-link" data-fa-transform="up-6"></i>
+			</a>
+			<a class="topnav-link" href="https://github.com/ufosc/resources">
+				Resources
+				<i class="fas fa-external-link-alt external-link" data-fa-transform="up-6 right-4"></i>
+			</a>
+			<!-- TODO: Make a contact page (This may not be necessary) -->
+			<!-- <a class="topnav-link" href="contact.html">Contact</a> -->
+			<a class="topnav-link" href="about.html">About</a>
+		</div>
+
+		<!-- Drop down menu -->
+		<a href="javascript:void(0);" class="topnav-link topnav-menu-icon" onclick="dropDownMenu()">
+			&#9776;
+		</a>
+		
+	</div>
+	<!-- End of header bar -->
+		<!-- Page content -->
+	<div class="content">
+		<div ng-show="loginState === 'login'" class>
+			<div class="ui login-password form">
+				<form action="action_page.php">  
+      
+        	<div class="field">																						<!-- Email field -->
+						<label><b> Email</b></label>
+          	<input type="email" id="email" placeholder="yourname@ufl.edu" ng-model="email" required class="ng-valid ng-valid-email ng-dirty ng-touched">
+					</div>
+
+					<div class="field">																					<!-- password field -->
+						<b><label> Password</label></b>
+          	<input type="password" id="password" placeholder="Enter Password" ng-model = "password" name="password" required class="ng-valid ng-valid-email ng-dirty ng-touched">
+					</div>
+
+				<div class="field">
+					<button id ="login-password" type="submit">Login</button>
+				</div>
+				<div class="field">
+					<button id ="register" type="submit" ng-click="register()">Sign up</button>
+				</div>
+
+				</form> 
+			</div>
+		</div>
+		<div ng-show="loginState === 'forgot'" class="ng-hide">
+			<div class="ui forgot-password form">
+				<form ng-submit="sendResetEmail()" class="ng-pristine ng-valid ng-valid-email">
+
+					<div class="field">
+						<label> Email</label>
+						<input type="email" id="email" placeholder="foo@bar.edu" ng-model="email" class="ng-pristine ng-untouched ng-valid ng-valid-email">
+					</div>
+
+					<div class="field">
+						<button id="forgot-password" type="submit" class="fluid ui login primary button">
+						Send Reset Email
+					</button>
+					</div>
+				</form>
+			</div>
+		</div>
+
+		<div ng-show="loginState === 'login'" class="forgot">																		
+				<a href="#" ng-click="setLoginState('forgot')">Forgot Password?</a>
+		</div>
+
+		<div ng-show="loginState === 'forgot'" class="forgot ng-hide">
+				<a href="#" ng-click="setLoginState('login')" class="ng-binding">
+				Login or Sign up
+				</a>
+		</div>
+	</div>
+</body>
+</html>
+		
