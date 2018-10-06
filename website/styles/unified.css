@@ -102,6 +102,13 @@ body {
 	font-family: var(--title-font);
 }
 
+/* Every subtitle on the site */
+.subtitle {
+	position: relative;
+	text-align: center;
+	font-family: var(--title-font);
+}
+
 /* All text on the site */
 .text {
 	position: relative;
