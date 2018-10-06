@@ -12,12 +12,13 @@ The website needs to be a central place for
 Install
 - An internet browser like [Firefox](https://www.mozilla.org/en-US/firefox/new/) or [Google Chrome](https://www.google.com/chrome/index.html)
 - A text editor like [VSCode](https://code.visualstudio.com/), [Atom](https://atom.io/), or [Sublime Text](https://www.sublimetext.com/)
+	- Install an [EditorConfig](https://editorconfig.org/) plugin if available, to help ensure consistent formatting
 
-Then clone this repo
+[Then clone this repo](https://help.github.com/articles/cloning-a-repository/)
 
-### Testing 
+### Testing
 
-Open up the index.html file in a browser by dragging the file from your file explorer into the browser window.
+Open up the index.html file (under the website folder) in a browser by dragging the file from your file explorer into the browser window.
 
 ## Deployment
 
@@ -29,7 +30,7 @@ TBD, probably deploying our own Nginx server.
 - **CSS** - Short for Cascading Style Sheets. It defines the look of the page
 - **JavaScript** -  Not short for anything. It adds the functionality to the page.
 
-Check out the [resources file](docs/resources.md) in docs for a list of links to learn more about these technologies. 
+Check out the [RESOURCES.md](docs/RESOURCES.md) file in docs for a list of links to learn more about these technologies.
 
 ## Contributing
 
