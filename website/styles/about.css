@@ -1,48 +1,16 @@
 @import "unified.css";
 
-/* Bigger screen layout */
+/* Layout adapts to both desktop and mobile */
 #wrapper {
 	display: grid;
-	grid-template-columns: repeat(2, 1fr);
-	width: 97%;
-	overflow: auto;
+	grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
 	grid-gap: 20px;
-	margin: 20px auto 0;
+	justify-items: stretch;
+	margin: 20px;
 }
 
-#about {
-	grid-column: 1;
-	grid-row: 1;
-}
-
-#history {
-	grid-column: 2;
-	grid-row: 1;
-}
-
-/* For mobile phones */
-@media only screen and (max-width: 600px) {
-
-	#wrapper {
-		display: grid;
-		width: 95%;
-		max-width: 500px;
-		margin: 0 auto;
-		margin-top: 10px;
-		grid-template-rows: repeat(2, auto);
-		grid-template-columns: 1fr;
-		grid-auto-rows: min-content;
-		grid-gap: 10px;
-	}
-
-	#about {
-		grid-column: 1;
-		grid-row: 1;
-	}
-
-	#history {
-		grid-column: 1;
-		grid-row: 2;
-	}
-
+/* Make sure the list is within the box */
+ol {
+	padding-left: 10px;
+	padding-right: 10px;
 }
