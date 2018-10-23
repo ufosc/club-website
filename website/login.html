@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Open Source Club</title>
+		<meta charset="utf-8"/>
+		<link rel="stylesheet" type="text/css" href="styles/login.css">
+	</head>
+	<!-- TODO: Give license credit to all fonts -->
+
+<body>
+
+	<!-- The header bar -->
+	<div class="topnav">
+
+		<!-- Logo -->
+		<a id="logo-link" href="index.html">
+			<img class="topnav-logo" src="assets/images/small-logo.png" alt="Open Source Club Logo">
+		</a>
+
+		<!-- Page links -->
+		<div class="topnav-right">
+            <div class="topnav-placeholder"></div>
+            <a class="topnav-link" href="login.html">Sign in</a>
+			<a class="topnav-link" href="projects.html">Projects</a>
+			<a class="topnav-link" href="https://calendar.google.com/calendar/embed?src=toln76hk72u3v4vhu4hblu8s88%40group.calendar.google.com&ctz=America%2FNew_York">
+				Events
+				<i class="fas fa-external-link-alt external-link" data-fa-transform="up-6"></i>
+			</a>
+			<a class="topnav-link" href="https://github.com/ufosc/resources">
+				Resources
+				<i class="fas fa-external-link-alt external-link" data-fa-transform="up-6 right-4"></i>
+			</a>
+			<!-- TODO: Make a contact page (This may not be necessary) -->
+			<!-- <a class="topnav-link" href="contact.html">Contact</a> -->
+			<a class="topnav-link" href="about.html">About</a>
+		</div>
+
+		<!-- Drop down menu -->
+		<a href="javascript:void(0);" class="topnav-link topnav-menu-icon" onclick="dropDownMenu()">
+			&#9776;
+		</a>
+		
+	</div>
+	<!-- End of header bar -->
+		<!-- Page content -->
+	<div class="content">
+		<div class="ui sign-in form">
+			<form id = "sign-in form">
+				<!-- TODO: create request handler that connects to backend on submit-->											  					
+        		<div class="field">																	<!-- Email field -->
+					<label> Email</label>
+          			<input type="email" id="email" placeholder="yourname@ufl.edu" required>
+				</div>
+
+				<div class="hiddenField">															<!-- First name field -->
+					<label> First Name</label>
+          			<input type="text" id="fname" placeholder="Jane">
+				</div>
+
+				<div class="hiddenField">															<!-- Last name field -->
+					<label> Last Name</label>
+          			<input type="text" id="lname" placeholder="Doe">
+				</div>
+			
+				<div class="hiddenField">															<!-- GitHub field -->
+					<label> GitHub Handle</label>
+          			<input type="link" id="gname" placeholder="github.com/yourname">
+				</div>
+
+				<div class="hiddenField">															<!-- TODO: add styling to checkboxes -->
+					<label> Join Our Email list?</label>
+          			<input type="checkbox" id="emailList">
+				</div>
+
+				<div class="hiddenField">															
+					<label> Share Info With ACM?</label>
+          			<input type="checkbox" id="acmShare">
+				</div>
+
+				<!-- sign in button -->
+				<!-- TODO: switch type to submit -->
+				<div class="field">																	
+					<button id ="sign-in" onclick="loginHandler()" type="button">Sign in</button>
+				</div>
+			</form>
+
+			<!-- temporary script to handle requests -->
+			<script>		
+				var expandedForm;																	
+				function loginHandler() {
+					var uemail = document.getElementById("email").value;
+					//eventually this line should replace "Jonathan" with a reference to the name the person signed up with.
+					//TODO: actually count the sign-in
+					if(uemail == "jperitz@ufl.edu" || Boolean(expandedForm)) {
+						document.getElementById("sign-in form").reset();																
+						alert("Thanks Jonathan, your sign-in was successful!");
+					}
+					//if the email doesn't match the DB, unhide the extra fields
+					else if(uemail != "jperitz@ufl.edu") {
+						var x = document.getElementsByClassName("hiddenField");
+						expandedForm = true;
+						for (var i =0; i < x.length; i++) {
+							x[i].style.display = "block";
+						}
+					}
+					//the following line should only get executed if some error occurred.
+					else {
+						alert("Oops! Something went wrong. Please try again.");
+					}	
+				}
+			</script>
+		</div>
+	</div>
+</body>
+</html>
