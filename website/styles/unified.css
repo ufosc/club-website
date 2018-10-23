@@ -102,6 +102,13 @@ body {
 	font-family: var(--title-font);
 }
 
+/* Every subtitle on the site */
+.subtitle {
+	position: relative;
+	text-align: center;
+	font-family: var(--title-font);
+}
+
 /* All text on the site */
 .text {
 	position: relative;
@@ -212,7 +219,16 @@ body {
 		float: none;
 		display: block;
 		text-align: left;
-		padding-bottom: 18px;
+	}
+
+	/* Adjusted padding on nav links when in mobile view to try and tighten things up */
+
+	.topnav.drop-down-menu .topnav-link {
+		padding: 8px 16px;
+	}
+
+	.topnav.drop-down-menu .topnav-link:last-child {
+		padding-bottom: 15px;
 	}
 
 	/* Make the menu items be below the menu icon when clicked */
