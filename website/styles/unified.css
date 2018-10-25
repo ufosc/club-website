@@ -62,9 +62,13 @@ Blue: #2f70df
 /* Default values for each page */
 
 /* Used to keep the footer at the bottom of the page */
-html {
-	height: 100%;
-  box-sizing: border-box;
+/* clink73 - Issue #44 - Added "max-width: 100%" and "overflow-x: hidden" to make sure we were using the full 
+						 length of the page and hiding the horizontal scrollbar if there was one for some reason. */
+	html {
+		max-width: 100%;
+		overflow-x: hidden;
+		height: 100%;
+		box-sizing: border-box;
 }
 
 *,
@@ -246,18 +250,20 @@ body {
 }
 
 /* Footer CSS */
-
-/* Footer size and color */
-.footer {
-	display: flex;
-	background-color: var(--dark-primary-color);
-	justify-content: center;
-	border-top: 3px solid var(--accent-color); 
-	flex-wrap: wrap;
-	position: absolute;
-	bottom: 0;
-	width: 100%;
+/* clink73 - Issue #44 - I added "left: 0;" here because this will position the 
+			 footer to the very left bottom left corner since you are using flexbox. */
+	.footer {
+		display: flex;
+		background-color: var(--dark-primary-color);
+		justify-content: center;
+		border-top: 3px solid var(--accent-color); 
+		flex-wrap: wrap;
+		position: absolute;
+		bottom: 0;
+		left: 0;
+		width: 100%;
 }
+			
 
 /* Links inside the footer */
 .footer-link {
