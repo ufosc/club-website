@@ -1,5 +1,5 @@
-/* Pull in the font awesome styling 
-Note: This is only a subset of the fonts to keep size down. Go to the font awesome 
+/* Pull in the font awesome styling
+Note: This is only a subset of the fonts to keep size down. Go to the font awesome
 site if you need icons or want to update it */
 @import "fontawesome.min.css";
 @import "fa-brands.min.css";
@@ -9,19 +9,19 @@ site if you need icons or want to update it */
 @font-face {
 	font-family: 'NotoMono';
 	src: url('../assets/fonts/Noto-Mono/NotoMono-Regular.woff') format('woff'),
-	url('../assets/fonts/Noto-Mono/NotoMono-Regular.ttf') format('truetype'); 
+	url('../assets/fonts/Noto-Mono/NotoMono-Regular.ttf') format('truetype');
 }
 
 @font-face {
 	font-family: 'NotoSans';
 	src: url('../assets/fonts/Noto-Sans/NotoSans-Regular.woff') format('woff'),
-	url('../assets/fonts/Noto-Sans/NotoSans-Regular.ttf') format('truetype'); 
+	url('../assets/fonts/Noto-Sans/NotoSans-Regular.ttf') format('truetype');
 }
 
 @font-face {
 	font-family: 'NotoSerif';
 	src: url('../assets/fonts/Noto-Serif/NotoSerif-Regular.woff') format('woff'),
-	url('../assets/fonts/Noto-Serif/NotoSerif-Regular.ttf') format('truetype'); 
+	url('../assets/fonts/Noto-Serif/NotoSerif-Regular.ttf') format('truetype');
 }
 
 /* Default styling values used throughout the CSS */
@@ -32,14 +32,14 @@ site if you need icons or want to update it */
  	--primary-color: #3F51B5;
  	--text-icon-color: #FFFFFF;
 	--accent-color: #4CAF50;
-	--divider-color: #BDBDBD;	
+	--divider-color: #BDBDBD;
 	--background-color: #FFFFFF;
 	--shadow-color: hsla(0, 0%, 0%, 0.2);
 
 	 /* Text color */
 	--primary-text-color: #212121;
 	--secondary-text-color: #757575;
-	 
+
 	/* Font type */
 	--normal-font: 'NotoSerif';
 	--header-font: 'NotoMono';
@@ -50,7 +50,7 @@ site if you need icons or want to update it */
 }
 
 /* Logo Color Scheme */
-/* 
+/*
 Red: #d21b0e
 Green: #0bcc3e
 Black: #3a3a3a
@@ -61,14 +61,13 @@ Blue: #2f70df
 
 /* Default values for each page */
 
-/* Used to keep the footer at the bottom of the page */
-/* clink73 - Issue #44 - Added "max-width: 100%" and "overflow-x: hidden" to make sure we were using the full 
-						 length of the page and hiding the horizontal scrollbar if there was one for some reason. */
-	html {
-		max-width: 100%;
-		overflow-x: hidden;
-		height: 100%;
-		box-sizing: border-box;
+/* Both "max-width: 100%" and "overflow-x: hidden" make sure we were using the full length of
+the page and hiding the horizontal scrollbar if there was one for some reason. */
+html {
+	max-width: 100%;
+	overflow-x: hidden;
+	height: 100%;
+	box-sizing: border-box;
 }
 
 *,
@@ -134,7 +133,7 @@ body {
 	display: block;
 	margin-left: auto;
 	margin-right: auto;
-	width: 50px; 
+	width: 50px;
 	height: 50px;
 	padding: 10px 16px;
 }
@@ -184,7 +183,7 @@ body {
 
 	/* The logo in the header */
 	.topnav .topnav-logo {
-		width: 40px; 
+		width: 40px;
 		height: 40px;
 	}
 
@@ -204,7 +203,7 @@ body {
 		float: right;
 		display: block;
 		padding: 18px 16px;
-	}  
+	}
 
 	/* Header on smaller devices when clicked */
 	.topnav.drop-down-menu {
@@ -250,24 +249,22 @@ body {
 }
 
 /* Footer CSS */
-/* clink73 - Issue #44 - I added "left: 0;" here because this will position the 
-			 footer to the very left bottom left corner since you are using flexbox. */
-	.footer {
-		display: flex;
-		background-color: var(--dark-primary-color);
-		justify-content: center;
-		border-top: 3px solid var(--accent-color); 
-		flex-wrap: wrap;
-		position: absolute;
-		bottom: 0;
-		left: 0;
-		width: 100%;
+.footer {
+	display: flex;
+	background-color: var(--dark-primary-color);
+	justify-content: center;
+	border-top: 3px solid var(--accent-color);
+	flex-wrap: wrap;
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	width: 100%;
 }
-			
+
 
 /* Links inside the footer */
 .footer-link {
-	color: var(--background-color); 
+	color: var(--background-color);
 	padding-top: 10px;
 	padding-bottom: 7px;
 }

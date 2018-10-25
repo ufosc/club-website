@@ -1,11 +1,14 @@
 <!DOCTYPE html>
 <html>
-	<head>
-		<title>Open Source Club</title>
-		<meta charset="utf-8"/>
-		<link rel="stylesheet" type="text/css" href="styles/login.css">
-	</head>
+
+<head>
+	<title>Open Source Club</title>
+	<meta charset="utf-8"/>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="shortcut icon" type="image/x-icon" href="assets/images/open-source-favicon-35x35.png">
+	<link rel="stylesheet" type="text/css" href="styles/login.css">
 	<!-- TODO: Give license credit to all fonts -->
+</head>
 
 <body>
 
@@ -39,14 +42,14 @@
 		<a href="javascript:void(0);" class="topnav-link topnav-menu-icon" onclick="dropDownMenu()">
 			&#9776;
 		</a>
-		
+
 	</div>
 	<!-- End of header bar -->
 		<!-- Page content -->
 	<div class="content">
 		<div class="ui sign-in form">
 			<form id = "sign-in form">
-				<!-- TODO: create request handler that connects to backend on submit-->											  					
+				<!-- TODO: create request handler that connects to backend on submit-->
         		<div class="field">																	<!-- Email field -->
 					<label> Email</label>
           			<input type="email" id="email" placeholder="yourname@ufl.edu" required>
@@ -61,7 +64,7 @@
 					<label> Last Name</label>
           			<input type="text" id="lname" placeholder="Doe">
 				</div>
-			
+
 				<div class="hiddenField">															<!-- GitHub field -->
 					<label> GitHub Handle</label>
           			<input type="link" id="gname" placeholder="github.com/yourname">
@@ -72,27 +75,27 @@
           			<input type="checkbox" id="emailList">
 				</div>
 
-				<div class="hiddenField">															
+				<div class="hiddenField">
 					<label> Share Info With ACM?</label>
           			<input type="checkbox" id="acmShare">
 				</div>
 
 				<!-- sign in button -->
 				<!-- TODO: switch type to submit -->
-				<div class="field">																	
+				<div class="field">
 					<button id ="sign-in" onclick="loginHandler()" type="button">Sign in</button>
 				</div>
 			</form>
 
 			<!-- temporary script to handle requests -->
-			<script>		
-				var expandedForm;																	
+			<script>
+				var expandedForm;
 				function loginHandler() {
 					var uemail = document.getElementById("email").value;
 					//eventually this line should replace "Jonathan" with a reference to the name the person signed up with.
 					//TODO: actually count the sign-in
 					if(uemail == "jperitz@ufl.edu" || Boolean(expandedForm)) {
-						document.getElementById("sign-in form").reset();																
+						document.getElementById("sign-in form").reset();
 						alert("Thanks Jonathan, your sign-in was successful!");
 					}
 					//if the email doesn't match the DB, unhide the extra fields
@@ -106,7 +109,7 @@
 					//the following line should only get executed if some error occurred.
 					else {
 						alert("Oops! Something went wrong. Please try again.");
-					}	
+					}
 				}
 			</script>
 		</div>
