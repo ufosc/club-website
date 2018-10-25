@@ -8,20 +8,18 @@ site if you need icons or want to update it */
 /* Pulling fonts from assets folder */
 @font-face {
 	font-family: 'NotoMono';
-	src: url('../assets/fonts/Noto-Mono/NotoMono-Regular.woff') format('woff'),
-	url('../assets/fonts/Noto-Mono/NotoMono-Regular.ttf') format('truetype');
+	src: url('../assets/fonts/Noto-Mono/NotoMono-Regular.ttf') format('truetype'),
+	src: url('../assets/fonts/Noto-Mono/NotoMono-Regular.woff') format('woff')`;
 }
 
 @font-face {
 	font-family: 'NotoSans';
-	src: url('../assets/fonts/Noto-Sans/NotoSans-Regular.woff') format('woff'),
-	url('../assets/fonts/Noto-Sans/NotoSans-Regular.ttf') format('truetype');
+	src: url('../assets/fonts/Noto-Sans/NotoSans-Regular.ttf') format('truetype');
 }
 
 @font-face {
 	font-family: 'NotoSerif';
-	src: url('../assets/fonts/Noto-Serif/NotoSerif-Regular.woff') format('woff'),
-	url('../assets/fonts/Noto-Serif/NotoSerif-Regular.ttf') format('truetype');
+	src: url('../assets/fonts/Noto-Serif/NotoSerif-Regular.ttf') format('truetype');
 }
 
 /* Default styling values used throughout the CSS */
