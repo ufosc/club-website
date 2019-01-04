@@ -1,101 +1,106 @@
 @import "unified.css";
 
-/* Bordered form */
+/* Center the forms  */
+.wrapper {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+}
+
+h1 {
+	margin: 0 0 .35rem;
+	text-align: center;
+}
+
+em {
+	text-align: center;
+}
+
+h1 + div {
+	margin-top: 1rem;
+}
+
+em + div {
+	margin-top: 2rem;
+}
+
+/* Make a nice looking box around the forms */
 form {
-    border: 3px solid #f1f1f1;
+	margin-top: 3rem;
+	width: 30rem;
+	padding: 1rem;
+	border: 1px solid var(--primary-color);
+	border-radius: 3px;
+	box-shadow: 0 4px 6px 0 var(--shadow-color);
 }
 
-/* low-width inputs */
-input[type=email], [type=text], [type=link] {
-    width: 20%;
-    padding: 12px 20px;
-    margin: 8px 0;
-    display: inline-block;
-    border: 1px solid #ccc;
-    box-sizing: border-box;
+div + div {
+	margin-top: 1rem;
 }
 
-/* hidden inputs 
-input[type=text] {
-    width: 20%;
-    padding: 12px 20px;
-    margin: 8px 0;
-    display: none;
-    border: 1px solid #ccc;
-    box-sizing: border-box;
+label {
+	/* Make sure the text boxes are all aligned together */
+	display: inline-block;
+	width: 8rem;
+	text-align: right;
+	margin-right: .9rem;
+}
+
+input, textarea {
+	font-size: .9rem;
+	box-sizing: border-box;
+}
+
+input[type=checkbox], input[type=radio] {
+	outline: none;
+}
+
+input[type=hidden] {
+	display: none;
+}
+
+button {
+	margin-top: 1rem;
+}
+
+/* input:focus{
+	border-color: #999;
 } */
 
-.hiddenField {
-    display: none;
+/* Center the buttons in the middle of the form */
+.center-horizontaly {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
 }
 
-/* Set a style for all buttons */
-button {
-    /*background-color: rgb(76, 119, 175);*/
-    background-color: var(--primary-color);
-    color: white;
-    padding: 14px 20px;
-    margin: 8px 0;
-    border: none;
-    cursor: pointer;
-    width: 20%;
+/* The checkbox label needs to not be cramped */
+.checkbox-label {
+	width: 18rem;
 }
 
-/* Add a hover effect for buttons */
-button:hover {
-    opacity: 0.8;
+/* The email sign in doesn't need to be aligned with the rest of the inputs */
+#sign-in-email-label {
+	width: 3rem;
 }
 
-/* Extra style for the cancel button (red) */
-.cancelbtn {
-    width: auto;
-    padding: 10px 18px;
-    background-color: #f44336;
-}
-
-/* Add padding to containers */
-.container {
-    padding: 16px;
-}
-
-/* The "Forgot password" text */
-span.psw {
-    float: right;
-    padding-top: 16px;
-}
-
-/* Change styles for span and cancel button on extra small screens */
-@media screen and (max-width: 300px) {
-    span.psw {
-        display: block;
-        float: none;
-    }
-    .cancelbtn {
-        width: 100%;
-    }
-}
-
-/* For mobile phones */
+/* Mobile devices */
 @media only screen and (max-width: 600px) {
+	form {
+		/* Go from both sides of the screen */
+		width: auto;
 
-    /* Full-width inputs */
-    input[type=email], input[type=text] {
-    width: 100%;
-    padding: 12px 20px;
-    margin: 8px 0;
-    display: inline-block;
-    border: 1px solid #ccc;
-    box-sizing: border-box;
-    }
+		/* No border in such a small area */
+		border: none;
+		box-shadow: none;
+	}
 
-    button {
-        /*background-color: rgb(76, 119, 175);*/
-        background-color: var(--primary-color);
-        color: white;
-        padding: 14px 20px;
-        margin: 8px 0;
-        border: none;
-        cursor: pointer;
-        width: 100%;
-    }
+	label {
+		width: 3rem;
+	}
+
+	.checkbox-label {
+		width: 15rem;
+	}
 }

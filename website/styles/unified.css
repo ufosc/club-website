@@ -145,6 +145,7 @@ body {
 	padding: 28px 16px;
 	text-decoration: none;
 	font-family: var(--header-font);
+	outline: none;
 }
 
 /* Keep the logo in the box */
@@ -163,6 +164,7 @@ body {
 .topnav .topnav-menu-icon {
 	display: none;
 	font-size: 20px;
+	outline: none;
 }
 
 /* Move each link to the right side of the page */
@@ -225,7 +227,7 @@ body {
 	/* Adjusted padding on nav links when in mobile view to try and tighten things up */
 
 	.topnav.drop-down-menu .topnav-link {
-		padding: 8px 16px;
+		padding: 18px 16px;
 	}
 
 	.topnav.drop-down-menu .topnav-link:last-child {
