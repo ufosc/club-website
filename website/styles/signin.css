@@ -40,16 +40,11 @@ div + div {
 }
 
 label {
-	/* Make sure the text boxes are all aligned together */
-	display: inline-block;
-	width: 8rem;
-	text-align: right;
 	margin-right: .9rem;
 }
 
 input, textarea {
 	font-size: .9rem;
-	box-sizing: border-box;
 }
 
 input[type=checkbox], input[type=radio] {
@@ -64,10 +59,6 @@ button {
 	margin-top: 1rem;
 }
 
-/* input:focus{
-	border-color: #999;
-} */
-
 /* Center the buttons in the middle of the form */
 .center-horizontaly {
 	display: flex;
@@ -75,9 +66,21 @@ button {
 	align-items: center;
 }
 
-/* The checkbox label needs to not be cramped */
-.checkbox-label {
-	width: 18rem;
+/* Make sure the inputs and labels are centered and alligned */
+.input-label {
+	display: flex;
+	width: 23rem;
+	flex-direction: row;
+	align-items: center;
+	justify-content: flex-end;
+}
+
+.input-label input[type="text"], .input-label input[type="email"], .input-label input[type="checkbox"] {
+	flex: 0 1 auto;
+}
+
+.input-label label {
+	flex: 1 1 auto;
 }
 
 /* The email sign in doesn't need to be aligned with the rest of the inputs */
@@ -96,11 +99,7 @@ button {
 		box-shadow: none;
 	}
 
-	label {
-		width: 3rem;
-	}
-
-	.checkbox-label {
-		width: 15rem;
+	.input-label {
+		width: 20rem;
 	}
 }
