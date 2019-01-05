@@ -88,6 +88,11 @@ button {
 	width: 3rem;
 }
 
+/* Hide the member create form */
+#member-create {
+	display: none;
+}
+
 /* Mobile devices */
 @media only screen and (max-width: 600px) {
 	form {
