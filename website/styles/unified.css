@@ -9,7 +9,7 @@ site if you need icons or want to update it */
 
 @font-face {
 	font-family: 'IBMPlexSans';
-	src: url('../assets/fonts/IBM_Plex_Sans/IBMPlexSans-Light.ttf') format('truetype');
+	src: url('../assets/fonts/IBM_Plex_Sans/IBMPlexSans-SemiBold.ttf') format('truetype');
 }
 
 @font-face {
