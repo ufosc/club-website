@@ -138,7 +138,6 @@ body {
 
 /* Links in the header*/
 .topnav .topnav-link {
-	float: left;
 	display: block;
 	color: var(--text-icon-color);
 	text-align: center;
@@ -169,6 +168,7 @@ body {
 
 /* Move each link to the right side of the page */
 .topnav .topnav-right {
+	display: flex;
 	float: right;
 }
 
@@ -219,7 +219,6 @@ body {
 
 	/* Display the links when menu is clicked */
 	.topnav.drop-down-menu .topnav-link {
-		float: none;
 		display: block;
 		text-align: left;
 	}
@@ -236,7 +235,7 @@ body {
 
 	/* Make the menu items be below the menu icon when clicked */
 	.topnav.drop-down-menu > .topnav-right {
-		display: block;
+		flex-direction: column;
 	}
 
 	/* Empty space between the top of the screen and the first menu item */
