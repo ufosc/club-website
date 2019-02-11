@@ -121,6 +121,8 @@ body {
 
 /* The header bar */
 .topnav {
+	display: flex;
+    justify-content: space-between;
 	overflow: hidden;
 	background-color: var(--primary-color);
 }
@@ -138,7 +140,6 @@ body {
 
 /* Links in the header*/
 .topnav .topnav-link {
-	display: block;
 	color: var(--text-icon-color);
 	text-align: center;
 	padding: 28px 16px;
@@ -169,7 +170,6 @@ body {
 /* Move each link to the right side of the page */
 .topnav .topnav-right {
 	display: flex;
-	float: right;
 }
 
 /* External link icon */
@@ -240,7 +240,6 @@ body {
 
 	/* Empty space between the top of the screen and the first menu item */
 	.topnav.drop-down-menu > .topnav-right > .topnav-placeholder {
-		float: none;
 		display: block;
 		height: 60px;
 	}
