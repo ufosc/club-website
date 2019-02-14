@@ -8,8 +8,8 @@ site if you need icons or want to update it */
 /* Pulling fonts from assets folder */
 @font-face {
 	font-family: 'NotoMono';
-	src: url('../assets/fonts/Noto-Mono/NotoMono-Regular.ttf') format('truetype'),
-	src: url('../assets/fonts/Noto-Mono/NotoMono-Regular.woff') format('woff')`;
+	src: url('../assets/fonts/Noto-Mono/NotoMono-Regular.ttf') format('truetype');
+	src: url('../assets/fonts/Noto-Mono/NotoMono-Regular.woff') format('woff');
 }
 
 @font-face {
@@ -26,9 +26,9 @@ site if you need icons or want to update it */
 :root {
 	/* Site colors */
 	--dark-primary-color: #303F9F;
- 	--light-primary-color: #C5CAE9;
- 	--primary-color: #3F51B5;
- 	--text-icon-color: #FFFFFF;
+	--light-primary-color: #C5CAE9;
+	--primary-color: #3F51B5;
+	--text-icon-color: #FFFFFF;
 	--accent-color: #4CAF50;
 	--divider-color: #BDBDBD;
 	--background-color: #FFFFFF;
@@ -44,7 +44,7 @@ site if you need icons or want to update it */
 	--title-font: 'NotoSans';
 
 	/* Other */
-	--phone-width: 600px; /* Don't use yet. Can not currently use CSS var in media queries */
+	--phone-width: 650px; /* Don't use yet. Can not currently use CSS var in media queries */
 }
 
 /* Logo Color Scheme */
@@ -121,18 +121,13 @@ body {
 
 /* The header bar */
 .topnav {
-	display: flex;
-    justify-content: space-between;
 	overflow: hidden;
 	background-color: var(--primary-color);
+	display: flex;
 }
 
 /* The logo in the header */
 .topnav .topnav-logo {
-	float: left;
-	display: block;
-	margin-left: auto;
-	margin-right: auto;
 	width: 50px;
 	height: 50px;
 	padding: 10px 16px;
@@ -140,6 +135,7 @@ body {
 
 /* Links in the header*/
 .topnav .topnav-link {
+	display: block;
 	color: var(--text-icon-color);
 	text-align: center;
 	padding: 28px 16px;
@@ -151,6 +147,7 @@ body {
 /* Keep the logo in the box */
 #logo-link {
 	box-sizing: initial;
+	flex: 1;
 }
 
 /* Links in the header when a mouse is over them */
@@ -170,6 +167,7 @@ body {
 /* Move each link to the right side of the page */
 .topnav .topnav-right {
 	display: flex;
+	flex-direction: row;
 }
 
 /* External link icon */
@@ -179,7 +177,7 @@ body {
 }
 
 /* Header settings for smaller devices */
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 650px) {
 
 	/* The logo in the header */
 	.topnav .topnav-logo {
@@ -200,7 +198,6 @@ body {
 
 	/* Make the menu icon visible */
 	.topnav-link.topnav-menu-icon {
-		float: right;
 		display: block;
 		padding: 18px 16px;
 	}
@@ -240,7 +237,6 @@ body {
 
 	/* Empty space between the top of the screen and the first menu item */
 	.topnav.drop-down-menu > .topnav-right > .topnav-placeholder {
-		display: block;
 		height: 60px;
 	}
 
