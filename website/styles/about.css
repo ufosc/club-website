@@ -14,3 +14,7 @@ ol {
 	padding-left: 22px;
 	padding-right: 10px;
 }
+
+li {
+	text-align: justify;
+}
