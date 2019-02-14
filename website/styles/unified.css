@@ -189,7 +189,7 @@ body {
 	}
 
 	/* Effect all header links except the logo */
-	.topnav-link:not(:first-child) {
+	.topnav-right {
 		display: none;
 	}
 
@@ -200,10 +200,6 @@ body {
 		padding: 18px 16px;
 	}
 
-	/* Header on smaller devices when clicked */
-	.topnav .drop-down-menu {
-		position: relative;
-	}
 
 	/* Keep the menu icon on the right when clicked */
 	.topnav.drop-down-menu .topnav-menu-icon {
@@ -240,12 +236,7 @@ body {
 		background-color: var(--primary-color);
 	}
 
-	/* Empty space between the top of the screen and the first menu item */
-	.topnav.drop-down-menu > .topnav-right > .topnav-placeholder {
-		float: none;
-		display: block;
-		height: 60px;
-	}
+	
 
 }
 
