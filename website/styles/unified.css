@@ -201,7 +201,7 @@ body {
 	}
 
 	/* Header on smaller devices when clicked */
-	.topnav.drop-down-menu {
+	.topnav .drop-down-menu {
 		position: relative;
 	}
 
@@ -230,8 +230,14 @@ body {
 	}
 
 	/* Make the menu items be below the menu icon when clicked */
+	/* Hover the menu over content in a less obtrusive way */
 	.topnav.drop-down-menu > .topnav-right {
 		display: block;
+		position: absolute;
+		z-index: 10;
+		top: 59px;
+		right: 0;
+		background-color: var(--primary-color);
 	}
 
 	/* Empty space between the top of the screen and the first menu item */
