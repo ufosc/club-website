@@ -186,7 +186,7 @@ body {
 	}
 
 	/* Effect all header links except the logo */
-	.topnav-link:not(:first-child) {
+	.topnav-right {
 		display: none;
 	}
 
@@ -196,10 +196,6 @@ body {
 		padding: 18px 16px;
 	}
 
-	/* Header on smaller devices when clicked */
-	.topnav.drop-down-menu {
-		position: relative;
-	}
 
 	/* Keep the menu icon on the right when clicked */
 	.topnav.drop-down-menu .topnav-menu-icon {
@@ -225,13 +221,15 @@ body {
 	}
 
 	/* Make the menu items be below the menu icon when clicked */
+	/* Hover the menu over content in a less obtrusive way */
 	.topnav.drop-down-menu > .topnav-right {
+		display: block;
+		position: absolute;
+		z-index: 10;
+		top: 59px;
+		right: 0;
+		background-color: var(--primary-color);
 		flex-direction: column;
-	}
-
-	/* Empty space between the top of the screen and the first menu item */
-	.topnav.drop-down-menu > .topnav-right > .topnav-placeholder {
-		height: 60px;
 	}
 
 }
