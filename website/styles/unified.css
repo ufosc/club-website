@@ -186,7 +186,7 @@ body {
 	}
 
 	/* Effect all header links except the logo */
-	.topnav-right {
+	.topnav-right .topnav-link{
 		display: none;
 	}
 
@@ -195,7 +195,6 @@ body {
 		display: block;
 		padding: 18px 16px;
 	}
-
 
 	/* Keep the menu icon on the right when clicked */
 	.topnav.drop-down-menu .topnav-menu-icon {
@@ -211,7 +210,6 @@ body {
 	}
 
 	/* Adjusted padding on nav links when in mobile view to try and tighten things up */
-
 	.topnav.drop-down-menu .topnav-link {
 		padding: 18px 16px;
 	}
