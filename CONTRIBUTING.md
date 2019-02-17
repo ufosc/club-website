@@ -43,4 +43,4 @@ Open it up in a browser.
 
 ## Style Guide
 
-[OSC general style guidelines ](https://github.com/ufosc/resources/blob/master/coding-guidelines/general-style.md)
+[OSC general style guidelines ](https://github.com/ufosc/club-resources/blob/master/generic-style-guidelines.md)

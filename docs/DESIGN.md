@@ -45,3 +45,8 @@ Below is a breakdown of what should be included in each web page.
 ## User Interface
 
 We are going for a modern style of our website. Some rough drafts of the designs are available in the [references folder](references/) in addition to some [example sites](references/other-sites.md) we took inspiration from.
+
+## Other Technology
+
+- We use [Font Awesome](https://fontawesome.com/) for all the icons (like the GutHub logo or heart). It makes it easy to add icons and customize them with HTML and CSS
+- We use [Git](https://github.com/ufosc/club-resources/tree/master/git) for managing and sharing our code

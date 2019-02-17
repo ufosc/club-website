@@ -22,15 +22,15 @@ Open up the index.html file (under the website folder) in a browser by dragging 
 
 ## Deployment
 
-TBD, probably deploying our own Nginx server.
+Our own Nginx server using the [club stack](https://github.com/ufosc/club-stack) project
 
 ## Built With
 
-- **HTML** - Short for Hypertext-Markup Language. It is the actual content of the page
-- **CSS** - Short for Cascading Style Sheets. It defines the look of the page
-- **JavaScript** -  Not short for anything. It adds the functionality to the page.
+- [HTML](https://github.com/ufosc/club-resources/blob/master/html.md) - Short for Hypertext-Markup Language. It is the actual content of the page
+- [CSS](https://github.com/ufosc/club-resources/blob/master/css.md) - Short for Cascading Style Sheets. It defines the look of the page
+- [JavaScript](https://github.com/ufosc/club-resources/blob/master/javascript.md) -  Not short for anything. It adds the functionality to the page.
 
-Check out the [RESOURCES.md](docs/RESOURCES.md) file in docs for a list of links to learn more about these technologies.
+Check out the [DESIGN.md](docs/DESIGN.md) file in docs folder for more information about the project.
 
 ## Contributing
 

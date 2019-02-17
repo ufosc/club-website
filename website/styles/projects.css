@@ -1,9 +1,9 @@
 @import "unified.css";
 
-/* 
+/*
 TODO: On this page
 1. Get images to resize as the size of the page changes (within reason)
-    - First desktop, then mobile 
+    - First desktop, then mobile
 2. Have the boxes resize in-kind with part 1
     - First desktop, then mobile
 3. Keep it fluid
@@ -25,16 +25,14 @@ TODO: On this page
 
 .project-subtitle {
     font-weight: lighter;
-    /* TODO: Gray, replace with a color from unified.css */
-    color: rgb(117, 117, 116);
-    border-bottom: 1px solid rgb(117, 117, 116);
+    color: var(--light-primary-color);
+    border-bottom: 1px solid var(--divider-color);
     margin-top: -20px;
 }
 
 .project-image {
     image-orientation: from-image;
     overflow: hidden;
-    /* display: block; */
     max-width: 20vw;
     min-width: 200px;
     max-height: 300px;
@@ -44,7 +42,6 @@ TODO: On this page
 }
 
 .project-footnote-text {
-    /* TODO: Replace with value from unified.css */
     font-size: small;
     margin-top: auto;
 }
@@ -65,6 +62,5 @@ TODO: On this page
 
     .project-element {
         max-width: 550px;
-    /* max-width: 400px; */
     }
 }
