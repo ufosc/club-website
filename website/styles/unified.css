@@ -20,11 +20,11 @@ site if you need icons or want to update it */
 :root {
 	/* Site colors */
 	--dark-primary-color: #303F9F;
-	--light-primary-color: #C5CAE9;
+	--light-primary-color: rgb(118, 122, 141);
 	--primary-color: #3F51B5;
 	--text-icon-color: #FFFFFF;
 	--accent-color: #4CAF50;
-	--divider-color: #BDBDBD;
+	--divider-color: rgb(126, 126, 126);
 	--background-color: #FFFFFF;
 	--shadow-color: hsla(0, 0%, 0%, 0.2);
 
