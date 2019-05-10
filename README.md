@@ -7,6 +7,8 @@ The website needs to be a central place for
  - Existing club members as a way to easily check what events are happening and what projects the club is working on
  - Students or others who are interested in open source in general and want to see how UF is involved with Open Source
 
+The project roadmap can be found [here](https://github.com/ufosc/club-website/issues/68).
+
 ## Getting Started
 
 Install
