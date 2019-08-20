@@ -15,15 +15,14 @@ const Header = () => {
 			<div className="topnav-right">
 				<Link className="topnav-link" to='/signin'>Sign in</Link>
 				<Link className="topnav-link" to='/projects'>Projects</Link>
-				<Link className="topnav-link"
-				   to="https://www.facebook.com/groups/ufosc/events/?source=4&action_history=null&filter=calendar">
+				<a className="topnav-link" target='_blank' href="https://www.facebook.com/groups/ufosc/events/?source=4&action_history=null&filter=calendar">
 					Events
 					<i className="fas fa-external-link-alt external-link" data-fa-transform="up-6"></i>
-				</Link>
-				<Link className="topnav-link" to="https://github.com/ufosc/club-resources">
+				</a>
+				<a className="topnav-link" target='_blank' href="https://github.com/ufosc/club-resources">
 					Resources
 					<i className="fas fa-external-link-alt external-link" data-fa-transform="up-6 right-4"></i>
-				</Link>
+				</a>
 				<Link className="topnav-link" to="/about">About</Link>
 			</div>
 		</div>
