@@ -1,5 +1,6 @@
 import React from 'react';
 import {Route, Switch, Redirect} from 'react-router-dom';
+import Header from './components/Header/Header';
 import NotFound from './views/NotFound';
 import Home from './views/Home';
 
@@ -7,6 +8,7 @@ import Home from './views/Home';
 export const Routes = () => {
 	return (
 		<div>
+			<Header />
 			<Switch>
 				<Route exact path="/Home" component={Home}/>
 				<Route exact path="/">

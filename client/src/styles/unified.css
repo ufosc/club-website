@@ -8,12 +8,12 @@ site if you need icons or want to update it */
 /* Pulling fonts from assets folder */
 @font-face {
 	font-family: 'IBMPlexSans';
-	src: url('../assets/fonts/IBM_Plex_Sans/IBMPlexSans-SemiBold.ttf') format('truetype');
+	src: url('../fonts/IBM_Plex_Sans/IBMPlexSans-SemiBold.ttf') format('truetype');
 }
 
 @font-face {
 	font-family: 'IBMPlexSerif';
-	src: url('../assets/fonts/IBM_Plex_Serif/IBMPlexSerif-Light.ttf') format('truetype');
+	src: url('../fonts/IBM_Plex_Serif/IBMPlexSerif-Light.ttf') format('truetype');
 }
 
 /* Default styling values used throughout the CSS */
