@@ -1,6 +1,6 @@
 import React from 'react';
 import {Route, Switch, Redirect} from 'react-router-dom';
-import Header from './components/Header/Header';
+import Header from './components/Header';
 import NotFound from './views/NotFound';
 import Home from './views/Home';
 import Footer from './components/Footer'

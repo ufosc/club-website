@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import '../../styles/index.css';
-import logo from './small-logo.png';
+import '../styles/index.css';
+import logo from '../images/small-logo.png';
 
 const Header = () => {
 	return (
@@ -15,11 +15,11 @@ const Header = () => {
 			<div className="topnav-right">
 				<Link className="topnav-link" to='/signin'>Sign in</Link>
 				<Link className="topnav-link" to='/projects'>Projects</Link>
-				<a className="topnav-link" target='_blank' href="https://www.facebook.com/groups/ufosc/events/?source=4&action_history=null&filter=calendar">
+				<a className="topnav-link" target='_blank' rel="noopener noreferrer" href="https://www.facebook.com/groups/ufosc/events/?source=4&action_history=null&filter=calendar">
 					Events
 					<i className="fas fa-external-link-alt external-link" data-fa-transform="up-6"></i>
 				</a>
-				<a className="topnav-link" target='_blank' href="https://github.com/ufosc/club-resources">
+				<a className="topnav-link" target='_blank' rel="noopener noreferrer" href="https://github.com/ufosc/club-resources">
 					Resources
 					<i className="fas fa-external-link-alt external-link" data-fa-transform="up-6 right-4"></i>
 				</a>
