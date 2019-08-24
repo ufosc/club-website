@@ -10,7 +10,7 @@ TODO: On this page
 4. Active/Inactive tag?
 */
 
-#wrapper {
+.wrapper {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
     grid-gap: 20px;
@@ -56,7 +56,7 @@ TODO: On this page
 
 /* Have the size  */
 @media screen and (max-width: 600px) {
-    #wrapper {
+    .wrapper {
         grid-template-columns: repeat(auto-fill, minmax(90vw, 400px));
     }
 

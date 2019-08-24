@@ -3,6 +3,7 @@ import {Route, Switch, Redirect} from 'react-router-dom';
 import Header from './components/Header';
 import NotFound from './views/NotFound';
 import Home from './views/Home';
+import Projects from './views/Projects';
 import Footer from './components/Footer'
 
 // This exports the different routes that will be used on the page
@@ -15,6 +16,7 @@ export const Routes = () => {
 				<Route exact path="/">
 					<Redirect to="/Home"/>
 				</Route>
+				<Route exact path="/Projects" component={Projects}/>
 				<Route component={NotFound}/>
 			</Switch>
 			<Footer />

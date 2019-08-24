@@ -3,6 +3,7 @@
   "version": "1.0.3-Snapshot",
   "private": true,
   "dependencies": {
+    "@csstools/normalize.css": "^10.1.0",
     "react": "^16.9.0",
     "react-dom": "^16.9.0",
     "react-scripts": "3.1.1"
