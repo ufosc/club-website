@@ -2,17 +2,19 @@
 	"name": "server",
 	"version": "1.0.0",
 	"description": "Server package.json",
-	"main": "server/src/authentication/server.js",
+	"main": "server/server.js",
 	"scripts": {
-		"start": "node server/src/authentication/server.js",
-		"server": "nodemon server/src/authentication/server.js"
+		"server": "node server/server.js",
+		"client": "cd client && npm start",
+		"start": "concurrently \"cd client && npm start\" \"node server/server.js\"",
+		"dev": "nodemon server/server.js"
 	},
 	"author": "",
 	"license": "MIT",
 	"dependencies": {
 		"bcryptjs": "^2.4.3",
 		"body-parser": "^1.18.3",
-		"concurrently": "^4.0.1",
+		"concurrently": "^4.1.2",
 		"express": "^4.16.4",
 		"is-empty": "^1.2.0",
 		"jsonwebtoken": "^8.3.0",
