@@ -1,9 +1,6 @@
 import React from 'react';
 import ProjectCard from '../components/ProjectCard';
-import "../styles/projects.css"
-
-//TODO: Insert proper bar on cards
-//TODO: Possibly use JSON to clean up this file
+import '../styles/projects.css'
 
 class Projects extends React.Component {
 	render() {
@@ -24,12 +21,13 @@ class Projects extends React.Component {
 	}
 }
 
+// Project data to remove once backend is stable
 const projectData = [
 	{
 		title: "Club Website",
 		subtitle: "The thing you're on right now",
 		description: `The website is built from scratch,
-		using basic HTML, CSS, and JavaScript, to be a one-stop-shop 
+		using the React framework, to be a one-stop-shop 
 		for information about the Open Source Club. It's provides 
 		information about what the club is, the projects we work on, 
 		and upcoming events.`,
@@ -54,25 +52,26 @@ const projectData = [
 	{
 		title: "MuddySwamp",
 		subtitle: "A simple UF themed Multi-User Dungeon",
-		description: `Multi-user dungeons, or "MUDs" are text-based 
-		role-playing games, that naturally evolved from the text-based
-		rpg and adventure games of the 1970s. This project aims to introduce 
-		a new generation—one that never experienced a world without 
-		broadband internet—to this classic game genre. While this code 
-		can be adapted for any setting, we intend to render our university 
-		in beautiful ASCII.`,
+		description: `"MUDs" are text-based RPGs, that naturally 
+		evolved from the text-based adventure games of the 1970s. 
+		This project aims to introduce a new generation—one that never 
+		experienced a world without broadband internet—to this classic 
+		game genre. While this code can be adapted for any setting, 
+		we intend to render our university in beautiful ASCII.`,
 		link: "https://github.com/ufosc/MuddySwamp",
 	},
 	{
 		title: "ALBot and ALBotA",
 		subtitle: "Discord bots written in Python",
-		description: `A python3 Discord bot used to run the Open Source 
-		Club's Discord server. The bot is using the Discord.py rewrite.`,
+		description: `"A Lame Bot" or as he's more affectionately known as, 
+		ALBot, is a python3 Discord bot used to run the Open Source 
+		Club's Discord server. Many features have been added to help make the
+		server feel alive. The bot is using the Discord.py rewrite.`,
 		link: "https://github.com/ufosc/albot-and-albota",
 	},
 	{
 		title: "Club Backend",
-		subtitle: "A RESTful API for club information (events, projects, sign-ins, etc)",
+		subtitle: "A RESTful API for club information (projects, sign-ins, etc)",
 		description: `A RESTful API for club information (events, projects, sign-ins, etc) 
 		that is used for the club website, bots, and any future projects related to 
 		administration. Built using Rust, Rocket, PostgreSQL, and Diesel.`,
