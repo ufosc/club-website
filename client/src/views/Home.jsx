@@ -1,47 +1,14 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import '../styles/index.css'
+import "../styles/index.css";
+import Slideshow from "../components/Slideshow";
+
 
 class Home extends React.Component {
 	render () {
 		return (
 			<div id="wrapper">
-
-				{/* Slideshow  */}
-				<div id="slideshow" className="page-element" style="padding: 0px">
-					<div className="slideshow-container">
-						<div className="mySlides fade">
-							<img className="slide" style="object-fit: contain; background-color: #262626;" src="../images/logo-text.png" />
-							<br />
-									{/*  This is here so the box is the same height as the other slides w/text */}
-						</div>
-						<div className="mySlides fade">
-							<img className="slide" style="object-position: 50% 35%" src="../images/casual-coding.jpg" />
-								<div className="text">Casual Coding</div>
-						</div>
-						<div className="mySlides fade">
-							<img className="slide" style="object-position: 50% 25%" src="../images/swamp-hacks-2017.jpg" />
-								<div className="text">Hackathons</div>
-						</div>
-						<div className="mySlides fade">
-							<img className="slide" style="object-position: 50% 30%" src="../images/lan-party.jpg" />
-								<div className="text">LAN parties</div>
-						</div>
-						<div className="mySlides fade">
-							<img className="slide" src="../images/mozilla-talk.jpg" />
-								<div className="text">Guest Speakers</div>
-						</div>
-						<a className="prev arrow" onClick="plusSlides(-1)">&#10094;</a>
-						<a className="next arrow" onClick="plusSlides(1)">&#10095;</a>
-					</div>
-					<div style="text-align:center; padding-bottom:10px;">
-						<span className="dot" onClick="currentSlide(1)"></span>
-						<span className="dot" onClick="currentSlide(2)"></span>
-						<span className="dot" onClick="currentSlide(3)"></span>
-						<span className="dot" onClick="currentSlide(4)"></span>
-						<span className="dot" onClick="currentSlide(5)"></span>
-					</div>
-				</div>
+				<Slideshow/>
 				<br />
 
 					{/* Tag line boxes  */}
@@ -49,7 +16,7 @@ class Home extends React.Component {
 						<h1 className="title">
 							Promote
 						</h1>
-						<i className="fas fa-bullhorn tagline-icon"></i>
+						<i className="fas fa-bullhorn tagline-icon"/>
 						<p className="text">
 							Spread information about the free and open source movement as well as FLOSS projects
 						</p>
@@ -59,7 +26,7 @@ class Home extends React.Component {
 						<h1 className="title">
 							Support
 						</h1>
-						<i className="fas fa-heart tagline-icon"></i>
+						<i className="fas fa-heart tagline-icon"/>
 						<p className="text">
 							Work on existing open source projects and collaborate with other clubs on and off campus
 						</p>
@@ -69,7 +36,7 @@ class Home extends React.Component {
 						<h1 className="title">
 							Create
 						</h1>
-						<i className="fas fa-lightbulb tagline-icon"></i>
+						<i className="fas fa-lightbulb tagline-icon"/>
 						<p className="text">
 							Build useful and fun projects with other club members to solve problems and learn
 						</p>
