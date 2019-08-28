@@ -1,14 +1,13 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import '../styles/index.css';
-import logo from '../images/small-logo.png';
+import '../styles/index.scss';
 
 const Header = () => {
 	return (
 		<div className='topnav'>
 			{/* Logo */}
 			<Link id="logo-link" to="/">
-				<img className="topnav-logo" src={ logo } alt="Open Source Club Logo" />
+				<img className="topnav-logo" src={ "/images/small-logo.png" } alt="Open Source Club Logo" />
 			</Link>
 
 			{/* Page Links */}

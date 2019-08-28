@@ -1,0 +1,42 @@
+[
+	{
+		"src": "/images/logo-text.png",
+		"style": {"object-fit": "contain", "background-color": "#262626"},
+		"div": {"display": "none"},
+		"text": "",
+		"lineBreak": {},
+		"container": "slideContainer fade"
+	},
+	{
+		"src": "/images/casual-coding.jpg",
+		"style": {"object-position": "50% 35%"},
+		"div": {},
+		"text": "Casual Coding",
+		"lineBreak": {"display": "none"},
+		"container": "slideContainer fade"
+	},
+	{
+		"src": "/images/swamp-hacks-2017.jpg",
+		"style": {"object-position": "50% 25%"},
+		"div": {},
+		"text": "Hackathons",
+		"lineBreak": {"display": "none"},
+		"container": "slideContainer fade"
+	},
+	{
+		"src": "/images/lan-party.jpg",
+		"style": {"object-position": "50% 30%"},
+		"div": {},
+		"text": "LAN Parties",
+		"lineBreak": {"display": "none"},
+		"container": "slideContainer fade"
+	},
+	{
+		"src": "/images/mozilla-talk.jpg",
+		"style": {},
+		"div": {},
+		"text": "Guest Speakers",
+		"lineBreak": {"display": "none"},
+		"container": "slideContainer fade"
+	}
+]
