@@ -9,11 +9,12 @@ class Slideshow extends Component {
 
 	render() {
 		return (
-			<div className={"slide-container"}>
-				<Carousel autoPlay={true} infiniteLoop={true} showStatus={false} showThumbs={false} interval={3000}
+			<div className={"app"}>
+				<Carousel className="carousel-wrapper" autoPlay={true} infiniteLoop={true} showStatus={false}
+						  showThumbs={false} interval={3000}
 						  dynamicHeight={false} stopOnHover={true} swipeable={true}>
 					{slides.map((slide, index) => (
-						<div>
+						<div className={"image-container"}>
 							<img src={slide.src}/>
 							{
 								slide.text !== "" ? <p className={"legend"}>{slide.text}</p> : <br/>
