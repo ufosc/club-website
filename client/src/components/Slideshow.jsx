@@ -11,15 +11,15 @@ class Slideshow extends Component {
 		return (
 			<div className={"app"}>
 				<Carousel className="carousel-wrapper" autoPlay={true} infiniteLoop={true} showStatus={false}
-						  showThumbs={false} interval={3000}
+						  showThumbs={false} interval={6000}
 						  dynamicHeight={false} stopOnHover={true} swipeable={true}>
 					{slides.map((slide, index) => (
-						<div className={"image-container"}>
-							<img src={slide.src}/>
-							{
-								slide.text !== "" ? <p className={"legend"}>{slide.text}</p> : <br/>
-							}
-						</div>
+							<div>
+								<img src={slide.src} className="slide" />
+								{
+									slide.text !== "" ? <p className={"legend"}>{slide.text}</p> : <br/>
+								}
+							</div>
 					))}
 				</Carousel>
 			</div>

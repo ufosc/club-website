@@ -1,42 +1,22 @@
 [
 	{
-		"src": "/images/logo-text.png",
-		"style": {"object-fit": "contain", "background-color": "#262626"},
-		"div": {"display": "none"},
-		"text": "",
-		"lineBreak": {},
-		"container": "slideContainer fade"
+		"src": "/images/logomod.png",
+		"text": ""
 	},
 	{
 		"src": "/images/casual-coding.jpg",
-		"style": {"object-position": "50% 35%"},
-		"div": {},
-		"text": "Casual Coding",
-		"lineBreak": {"display": "none"},
-		"container": "slideContainer fade"
+		"text": "Casual Coding"
 	},
 	{
 		"src": "/images/swamp-hacks-2017.jpg",
-		"style": {"object-position": "50% 25%"},
-		"div": {},
-		"text": "Hackathons",
-		"lineBreak": {"display": "none"},
-		"container": "slideContainer fade"
+		"text": "Hackathons"
 	},
 	{
 		"src": "/images/lan-party.jpg",
-		"style": {"object-position": "50% 30%"},
-		"div": {},
-		"text": "LAN Parties",
-		"lineBreak": {"display": "none"},
-		"container": "slideContainer fade"
+		"text": "LAN Parties"
 	},
 	{
 		"src": "/images/mozilla-talk.jpg",
-		"style": {},
-		"div": {},
-		"text": "Guest Speakers",
-		"lineBreak": {"display": "none"},
-		"container": "slideContainer fade"
+		"text": "Guest Speakers"
 	}
 ]
