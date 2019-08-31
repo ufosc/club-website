@@ -7,6 +7,14 @@ import slides from "../config/slides";
 
 class Slideshow extends Component {
 
+	constructor(props) {
+		super(props);
+		// init state
+		this.state = {
+			legend: ""
+		};
+	}
+
 	render() {
 		return (
 			<div className={"app"}>
@@ -14,14 +22,12 @@ class Slideshow extends Component {
 						  showThumbs={false} interval={6000}
 						  dynamicHeight={false} stopOnHover={true} swipeable={true}>
 					{slides.map((slide, index) => (
-							<div>
-								<img src={slide.src} className="slide" />
-								{
-									slide.text !== "" ? <p className={"legend"}>{slide.text}</p> : <br/>
-								}
-							</div>
-					))}
+						<div>
+							<img src={slide.src} className="slide"/>
+						</div>
+						))}
 				</Carousel>
+				<p>{"text"}</p> {/*Style this and update states on a timer.*/}
 			</div>
 		);
 	}

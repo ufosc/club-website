@@ -177,6 +177,38 @@ hr {
 	border-radius: 3px 3px 3px 3px;
 }
 
+.carousel .slide .legend {
+	-webkit-transition: all .5s ease-in-out !important;
+	-moz-transition: all .5s ease-in-out !important;
+	-ms-transition: all .5s ease-in-out !important;
+	-o-transition: all .5s ease-in-out !important;
+	transition: all .5s ease-in-out !important;
+	position: absolute !important;
+	display: flex;
+	justify-content: center;
+	transform: translateY(200%);
+	bottom: 40px !important;
+	left: 50% !important;
+	margin-left: -45% !important;
+	width: 90% !important;
+	border-radius: 10px !important;
+	background: #fff !important;
+	color: #000 !important;
+	padding: 10px !important;
+	font-size: 12px !important;
+	text-align: center !important;
+	opacity: .25 !important;
+	-webkit-transition: opacity .35s ease-in-out !important;
+	-moz-transition: opacity .35s ease-in-out !important;
+	-ms-transition: opacity .35s ease-in-out !important;
+	-o-transition: opacity .35s ease-in-out !important;
+	transition: opacity .35s ease-in-out !important;
+}
+
+.carousel:hover .slide .legend {
+	opacity: 1 !important;
+}
+
 /* Next & previous buttons */
 .arrow {
 	cursor: pointer;
