@@ -40,7 +40,7 @@ class Slideshow extends Component {
 	render() {
 		const {slideIndex} = this.state;
 		return (
-			<div className={"app"}>
+			<div className="app">
 				<Carousel className="carousel-wrapper" autoPlay={true} infiniteLoop={true} showStatus={false}
 						  showThumbs={false} interval={6000} selectedItem={slideIndex}
 						  dynamicHeight={false} stopOnHover={true} swipeable={true}

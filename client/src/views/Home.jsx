@@ -2,50 +2,24 @@ import React from 'react';
 import {Link} from 'react-router-dom';
 import "../styles/index.scss";
 import Slideshow from "../components/Slideshow";
+import HomeGrid from "../components/HomeGrid/HomeGrid";
 
 
 class Home extends React.Component {
 	render() {
 		return (
-			<div id="wrapper">
-				<div id="slideshow" className="page-element" style={{"padding": "0px"}}>
+			<div id="homeBody">
+				<div className="page-element" style={{"padding": "0px"}}>
 					<Slideshow/>
 				</div>
 				<br/>
 
 				{/* Tag line boxes  */}
-				<div id="promote" className="page-element">
-					<h1 className="title">
-						Promote
-					</h1>
-					<i className="fas fa-bullhorn tagline-icon"/>
-					<p className="text">
-						Spread information about the free and open source movement as well as FLOSS projects
-					</p>
-				</div>
-
-				<div id="support" className="page-element">
-					<h1 className="title">
-						Support
-					</h1>
-					<i className="fas fa-heart tagline-icon"/>
-					<p className="text">
-						Work on existing open source projects and collaborate with other clubs on and off campus
-					</p>
-				</div>
-
-				<div id="create" className="page-element">
-					<h1 className="title">
-						Create
-					</h1>
-					<i className="fas fa-lightbulb tagline-icon"/>
-					<p className="text">
-						Build useful and fun projects with other club members to solve problems and learn
-					</p>
-				</div>
+				<HomeGrid className="cardGrid"/>
+				<br/>
 
 				{/* Get involved box  */}
-				<div id="get-involved" className="page-element">
+				<div className="page-element">
 					<h1 className="title" id="get-involved-title">
 						Get Involved
 					</h1>

@@ -4,7 +4,7 @@ import '../styles/about.css'
 class About extends React.Component {
 	render () {
 		return (
-			<div className="wrapper">
+			<div className="tempWrapper">
 				<div id="about" className="page-element">
 					<h1 class="title">About OSC</h1>
 					<p className="text">

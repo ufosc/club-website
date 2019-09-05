@@ -11,6 +11,29 @@
 	margin: 20px auto 0;
 }
 
+.cardList {
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	flex-wrap: nowrap;
+	width: 100%;
+}
+
+.cardGrid
+	{
+	display:flex;
+	flex-direction: row;
+}
+
+#homeBody {
+	display: flex;
+	justify-content: space-between;
+	flex-direction: column;
+	width: 97%;
+	margin: 20px auto 0;
+	max-width: 1000px;
+}
+
 /* Position of each element */
 #slideshow {
 	grid-column: 1 / 4;
