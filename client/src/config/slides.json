@@ -1,0 +1,22 @@
+[
+	{
+		"src": "/images/logomod.png",
+		"text": ""
+	},
+	{
+		"src": "/images/casual-coding.jpg",
+		"text": "Casual Coding"
+	},
+	{
+		"src": "/images/swamp-hacks-2017.jpg",
+		"text": "Hackathons"
+	},
+	{
+		"src": "/images/lan-party.jpg",
+		"text": "LAN Parties"
+	},
+	{
+		"src": "/images/mozilla-talk.jpg",
+		"text": "Guest Speakers"
+	}
+]
