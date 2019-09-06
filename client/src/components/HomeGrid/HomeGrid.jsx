@@ -20,7 +20,7 @@ const HomeGrid = () => {
 			))}
 		</div>
 	)
-}
+};
 
 export default HomeGrid;
 

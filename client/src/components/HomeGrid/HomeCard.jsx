@@ -13,6 +13,6 @@ const HomeCard = ({title, icon, description}) => {
 			</p>
 		</div>
 	)
-}
+};
 
 export default HomeCard;

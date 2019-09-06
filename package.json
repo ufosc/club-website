@@ -4,12 +4,13 @@
 	"description": "Server package.json",
 	"main": "server/server.js",
 	"scripts": {
-		"server": "node server/server.js",
-		"client": "cd client && npm start",
-		"start": "concurrently \"cd client && npm start\" \"node server/server.js\"",
-		"dev": "nodemon server/server.js"
+		"client-install": "npm install --prefix client",
+		"start": "node server/server.js",
+		"server": "nodemon server/server.js",
+		"client": "npm start --prefix client",
+		"dev": "concurrently \"npm run client\" \"npm run server\""
 	},
-	"author": "",
+	"author": "Jon",
 	"license": "MIT",
 	"dependencies": {
 		"bcryptjs": "^2.4.3",
@@ -22,6 +23,7 @@
 		"node-sass": "^4.12.0",
 		"passport": "^0.4.0",
 		"passport-jwt": "^4.0.0",
+		"prop-types": "^15.7.2",
 		"react-awesome-slider": "^1.0.1",
 		"ts-node-dev": "^1.0.0-pre.40",
 		"validator": "^10.9.0"
