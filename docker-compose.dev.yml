@@ -23,6 +23,7 @@ services:
     volumes:
       - ./server/:/app/server/
       - /app/node_modules/
+      - /app/server/config/
     ports:
       - "5000:5000"
   db:
