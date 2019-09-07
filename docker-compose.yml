@@ -12,8 +12,8 @@ services:
       - "db"
   db:
     image: mongo
-    ports:
-      - "27017:27017"
+    expose:
+      - "27017"
     environment:
       MONGO_INITDB_DATABASE: clubsite
       MONGO_INITDB_USERNAME: admin
