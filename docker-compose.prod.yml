@@ -1,0 +1,20 @@
+version: '3.7'
+services:
+  client:
+    build:
+      context: .
+      dockerfile: client.Dockerfile
+      target: nginx
+    environment:
+      - NODE_ENV=production
+    volumes:
+      - /var/www/ufopensource:/data/letsencrypt
+      - /etc/letsencrypt:/etc/letsencrypt
+  server:
+    build:
+      context: .
+      dockerfile: server.Dockerfile
+    environment:
+      - NODE_ENV=production
+    ports:
+      - "5000:5000"

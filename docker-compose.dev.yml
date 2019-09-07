@@ -1,0 +1,27 @@
+version: '3.7'
+services:
+  client:
+    build:
+      context: .
+      dockerfile: client.Dockerfile
+      target: build-stage
+    command: npm run start
+    environment:
+      - NODE_ENV=development
+    volumes:
+      - ./client/:/app/
+      - /app/node_modules/
+    ports:
+      - "3000:3000"
+  server:
+    build:
+      context: .
+      dockerfile: server.Dockerfile
+    command: nodemon server/server.js
+    environment:
+      - NODE_ENV=development
+    volumes:
+      - ./server/:/app/server/
+      - /app/node_modules/
+    ports:
+      - "5000:5000"

@@ -46,6 +46,34 @@ _**If working with the frontend follow these instructions**_:
 
 Our own Nginx server using the [club stack](https://github.com/ufosc/club-stack) project
 
+## Docker Deployment
+
+Another option for running the site is with docker. Here are the different deployment options.
+
+### Development
+
+Run the development server with the following command. This will mount your local client directory for live changes.
+
+```bash
+$ NODE_ENV=development docker-compose -f docker-compose.yml -f docker-compose.dev.yml up
+```
+
+### Production
+
+Run the production nginx server with the following command.
+
+```bash
+$ docker-compose -f docker-compose.yml -f docker-compose.prod.yml up
+```
+
+### Bringing down the servers
+
+Bring the servers down with the following command.
+
+```bash
+$ docker-compose down
+```
+
 ## Built With
 
 - [React](https://reactjs.org/) - Used for the frontend, it helps define the layout into components and manage page elements/components dynamically.
