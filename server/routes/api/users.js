@@ -52,6 +52,15 @@ router.post("/register", (req, res) => {
 });
 
 /**
+ * @route POST api/users/event-signin
+ * @desc sign users into an event with authentication.
+ * @access Public
+ */
+router.post("/event-signin", (req, res) => {
+
+});
+
+/**
  * @route POST api/users/login
  * @desc Login user and return JWT token
  * @access Public

@@ -18,6 +18,10 @@ const UserSchema = new Schema({
 	date: {
 		type: Date,
 		default: Date.now
+	},
+	events: {
+		type: Array,
+		default: {}
 	}
 });
 
