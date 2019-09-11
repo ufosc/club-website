@@ -8,9 +8,13 @@ const passport = require("passport");
 // Load input validation
 const validateRegisterInput = require("../../validation/register");
 const validateLoginInput = require("../../validation/login");
+const validateEventSigninInput = require("../../validation/eventSignin");
+const validateEventCreation = require("../../validation/eventSignin");
+const eventHandler = require("../../events/eventhandler");
 
 // Load User model
 const User = require("../../models/User");
+const ClubEvent = require("../../models/ClubEvent");
 
 /**
  * @route POST api/users/register
@@ -56,7 +60,42 @@ router.post("/register", (req, res) => {
  * @desc sign users into an event with authentication.
  * @access Public
  */
-router.post("/event-signin", (req, res) => {
+router.post("/eventSignin", (req, res) => {
+	// form validation
+
+	const {errors, isValid} = validateEventSigninInput(req.body);
+
+	// check validation
+	if (!isValid)
+		return res.status(400).json(errors);
+
+
+	User.findOneAndUpdate({email: req.body.email}, (err, user) => {
+		if (err) throw err;
+		// update user's attended events
+		if (user) {
+
+			if (eventHandler.isClubEventEnabled()) {
+
+				user.events.push();
+			}
+
+		}
+	});
+});
+
+router.post("/createEvent", (req, res) => {
+
+	const {errors, isValid} = validateEventCreation(req.body);
+
+	if (!isValid)
+		return res.status(400).json(errors);
+
+	const {eventCode} = req.body.eventcode;
+	const {eventName} = req.body.eventname;
+	const {endTime} = req.body.endtime;
+
+	eventHandler.clubEventEmitter.emit('enable', eventCode, eventName, endTime);
 
 });
 
@@ -81,7 +120,7 @@ router.post("/login", (req, res) => {
 	User.findOne({email}).then(user => {
 		// check if user exists
 		if (!user)
-			return res.status(404).json({emailnotfound: "Email not found"});
+			return res.status(404).json({emailnotfound: "Email not found."});
 
 		// check password
 		bcrypt.compare(password, user.password).then(isMatch => {
@@ -110,7 +149,7 @@ router.post("/login", (req, res) => {
 			} else
 				return res
 					.status(400)
-					.json({passwordincorrect: "Password incorrect"});
+					.json({passwordincorrect: "Incorrect password."});
 		});
 	});
 });
