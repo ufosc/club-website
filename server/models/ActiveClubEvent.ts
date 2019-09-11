@@ -8,4 +8,4 @@ const ActiveClubEventSchema = new Schema({
 	}
 });
 
-module.exports = ActiveClubEvent = mongoose.model('activeclubevent', ActiveClubEventSchema);
+module.exports = ActiveClubEvent = mongoose.model('ActiveClubEvent', ActiveClubEventSchema, "activeclubevents");

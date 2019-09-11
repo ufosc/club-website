@@ -86,16 +86,11 @@ router.post("/eventSignin", (req, res) => {
 
 router.post("/createEvent", (req, res) => {
 
-	const {errors, isValid} = validateEventCreation(req.body);
+	const {eventcode} = req.body.eventcode;
+	const {eventname} = req.body.eventname;
+	const {endtime} = req.body.endtime;
 
-	if (!isValid)
-		return res.status(400).json(errors);
-
-	const {eventCode} = req.body.eventcode;
-	const {eventName} = req.body.eventname;
-	const {endTime} = req.body.endtime;
-
-	eventHandler.clubEventEmitter.emit('enable', eventCode, eventName, endTime);
+	eventHandler.clubEventEmitter.emit('enable', eventcode, eventname, endtime, req, res);
 
 });
 
