@@ -1,27 +1,24 @@
-const express = require("express");
+import express from 'express';
 const router = express.Router();
-const bcrypt = require("bcryptjs");
-const jwt = require("jsonwebtoken");
-const keys = require("../../config/keys");
-const passport = require("passport");
+import * as bcrypt from 'bcryptjs';
+import * as jwt from 'jsonwebtoken';
+import * as keys from '../../config/keys';
 
 // Load input validation
-const validateRegisterInput = require("../../validation/register");
-const validateLoginInput = require("../../validation/login");
-const validateEventSigninInput = require("../../validation/eventSignin");
-const validateEventCreation = require("../../validation/eventSignin");
-const eventHandler = require("../../events/eventhandler");
-
+import validateRegisterInput from '../../validation/register';
+import validateLoginInput from "../../validation/login";
+import validateEventSigninInput from "../../validation/eventSignin";
+import * as eventHandler from "../../events/eventhandler";
 // Load User model
-const User = require("../../models/User");
-const ClubEvent = require("../../models/ClubEvent");
+// @ts-ignore
+import {User} from "../../models/User";
 
 /**
  * @route POST api/users/register
  * @desc Register user
  * @access Public
  **/
-router.post("/register", (req, res) => {
+router.post("/register", (req: express.Request, res: express.Response) => {
 	// form validation
 
 	const {errors, isValid} = validateRegisterInput(req.body);
@@ -60,7 +57,7 @@ router.post("/register", (req, res) => {
  * @desc sign users into an event with authentication.
  * @access Public
  */
-router.post("/eventSignin", (req, res) => {
+router.post("/eventSignin", (req: express.Request, res: express.Response) => {
 	// form validation
 
 	const {errors, isValid} = validateEventSigninInput(req.body);
@@ -84,13 +81,13 @@ router.post("/eventSignin", (req, res) => {
 	});
 });
 
-router.post("/createEvent", (req, res) => {
+router.post("/createEvent", (req: express.Request, res: express.Response) => {
 
-	const {eventcode} = req.body.eventcode;
-	const {eventname} = req.body.eventname;
-	const {endtime} = req.body.endtime;
+	const eventCode = req.body.eventcode;
+	const eventName = req.body.eventname;
+	const endTime = req.body.endtime;
 
-	eventHandler.clubEventEmitter.emit('enable', eventcode, eventname, endtime, req, res);
+	eventHandler.clubEventEmitter.emit('enable', eventCode, eventName, endTime, res);
 
 });
 
@@ -99,7 +96,7 @@ router.post("/createEvent", (req, res) => {
  * @desc Login user and return JWT token
  * @access Public
  **/
-router.post("/login", (req, res) => {
+router.post("/login", (req: express.Request, res: express.Response) => {
 	// Form validation
 
 	const {errors, isValid} = validateLoginInput(req.body);

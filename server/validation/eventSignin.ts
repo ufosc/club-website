@@ -1,8 +1,8 @@
 const Validator = require("validator");
 const isEmpty = require("is-empty");
 
-module.exports = function validateEventSignInInput(data) {
-	let errors = {};
+export default function validateEventSignInInput(data : any) {
+	let errors : any = {};
 	data.name = data.name || "";
 	data.email = data.email || "";
 

@@ -1,4 +1,4 @@
-const mongoose = require("mongoose");
+import * as mongoose from 'mongoose';
 const Schema = mongoose.Schema;
 
 // create schema
@@ -24,4 +24,5 @@ const ClubEventSchema = new Schema({
 	}
 });
 
+let ClubEvent: mongoose.Model<any>;
 module.exports = ClubEvent = mongoose.model("ClubEvent", ClubEventSchema, "clubevents");

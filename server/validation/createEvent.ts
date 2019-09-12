@@ -1,8 +1,8 @@
 const Validator = require("validator");
 const isEmpty = require("is-empty");
 
-module.exports = function validateEventCreation(data) {
-	let errors = {};
+module.exports = function validateEventCreation(data : any) {
+	let errors : any = {};
 
 	data.eventcode = data.eventcode || "";
 	data.eventname = data.eventname || "";
