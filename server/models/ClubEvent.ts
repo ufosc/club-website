@@ -12,11 +12,14 @@ const ClubEventSchema = new Schema({
 		required: true
 	},
 	startDate: {
+		required: true,
 		type: Date,
 		default: Date.now
 	},
 	endDate: {
-
+		required: true,
+		type: Date,
+		default: Date.now
 	},
 	attendees: {
 		type: Array,

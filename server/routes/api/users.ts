@@ -8,6 +8,7 @@ import * as keys from '../../config/keys';
 import validateRegisterInput from '../../validation/register';
 import validateLoginInput from "../../validation/login";
 import validateEventSigninInput from "../../validation/eventSignin";
+import validateEventCreation from "../../validation/createEvent";
 import * as eventHandler from "../../events/eventhandler";
 // Load User model
 // @ts-ignore
@@ -83,11 +84,17 @@ router.post("/eventSignin", (req: express.Request, res: express.Response) => {
 
 router.post("/createEvent", (req: express.Request, res: express.Response) => {
 
+	const {errors, isValid} = validateEventCreation(req.body);
+
+	if (!isValid)
+		return res.status(400).json(errors);
+
 	const eventCode = req.body.eventcode;
 	const eventName = req.body.eventname;
+	const startTime = req.body.starttime;
 	const endTime = req.body.endtime;
 
-	eventHandler.clubEventEmitter.emit('enable', eventCode, eventName, endTime, res);
+	eventHandler.clubEventEmitter.emit('enable', eventCode, eventName, new Date(startTime.date), new Date(endTime), res);
 
 });
 

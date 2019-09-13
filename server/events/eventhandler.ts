@@ -3,6 +3,51 @@ import * as mongoose from "mongoose";
 const EventEmitter = require('events');
 import * as express from 'express';
 
+let clubEventQueue: Array<ScheduledClubEvent> = [];
+
+class ScheduledClubEvent {
+	private eventBegin: Date;
+	private eventEnd: Date;
+	private eventCode: String;
+	private eventName: String;
+
+	constructor(eventBegin, eventEnd, eventCode, eventName) {
+		this.eventBegin = eventBegin;
+		this.eventEnd = eventEnd;
+		this.eventCode = eventCode;
+		this.eventName = eventName;
+	}
+
+	public schedule() {
+	}
+}
+
+function ClubEventQueue() {
+	this.queue = [];
+}
+
+ClubEventQueue.prototype.enqueue = (item: ScheduledClubEvent) => {
+	this.queue.push(item);
+};
+
+ClubEventQueue.prototype.dequeue = () => {
+	return this.queue.shift();
+};
+
+ClubEventQueue.prototype.insertAt = (item: ScheduledClubEvent, index) => {
+	this.queue.splice(index, 0, item);
+};
+
+ClubEventQueue.prototype.size = () => {
+	return this.queue.length;
+};
+
+ClubEventQueue.prototype.sort = (a: Date, b: Date) => {
+	return this.queue.sort(() => {
+		return b.getDate() - a.getDate();
+	})
+};
+
 class ClubEventEmitter extends EventEmitter {
 }
 
@@ -36,11 +81,10 @@ const activeEvent = async () => {
 	});
 };
 
-clubEventEmitter.on('enable', (eventCode: String, eventName: String, endTime: String, res: express.Response) => {
+clubEventEmitter.on('enable', (eventCode: String, eventName: String, startTime: Date, endTime: Date, res: express.Response) => {
 	setImmediate(async () => {
-		console.log("Enabling a new event...");
+		console.log("Attempting to enable a new event...");
 		const isActive: boolean = await isClubEventEnabled();
-		console.log('result in variable: ' + isActive);
 
 		if (isActive) {
 			console.log(`Event creation failed, event with code '${activeEventCode}' is already running.`);
@@ -58,8 +102,8 @@ clubEventEmitter.on('enable', (eventCode: String, eventName: String, endTime: St
 	})
 });
 
-module.exports.clubEventEmitter.on('disable', () => {
-	setImmediate(() => {
+clubEventEmitter.on('disable', () => {
+	setImmediate(async () => {
 
 	});
 });
