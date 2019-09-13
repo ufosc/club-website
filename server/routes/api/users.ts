@@ -94,7 +94,7 @@ router.post("/createEvent", (req: express.Request, res: express.Response) => {
 	const startTime = req.body.starttime;
 	const endTime = req.body.endtime;
 
-	eventHandler.clubEventEmitter.emit('enable', eventCode, eventName, new Date(startTime.date), new Date(endTime), res);
+	eventHandler.clubEventEmitter.emit('schedule', eventCode, eventName, new Date(startTime.date), new Date(endTime), res);
 
 });
 
