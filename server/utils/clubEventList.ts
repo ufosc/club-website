@@ -1,16 +1,28 @@
-import {ScheduledClubEvent} from "../events/eventhandler";
+import {ScheduledEvent} from "../events/eventhandler";
 
 /**
  * This util provides an ordered list implementation that maintains order upon insertion.
  * Insertion is done by using a binary search and insertion so that order is maintained.
  * @constructor The default constructor.
  */
-export let ClubEventList = function () {
+export function ClubEventList() {
 	this.list = [];
+}
+
+ClubEventList.prototype.size = function() {
+	console.log(this.list.length);
+	return this.list.length;
 };
 
-ClubEventList.prototype.size = () => {
-	return this.list.length;
+ClubEventList.prototype.insert = function(element : ScheduledEvent) {
+	this.list[0] = element;
+};
+
+ClubEventList.prototype.remove = function(index) {
+	console.log(`Removing an event from event scheduler.`);
+	console.log("before: " + this.size());
+	this.list.splice(index, 1);
+	console.log("after: " + this.size());
 };
 
 // https://stackoverflow.com/questions/12369824/javascript-binary-search-insertion-preformance
@@ -19,7 +31,7 @@ ClubEventList.prototype.size = () => {
     comparator: (optional) a method for comparing the target object type
     return value: index of a matching item in the array if one exists, otherwise the bitwise complement of the index where the item belongs
 */
-ClubEventList.prototype.binarySearch = (target, comparator) => {
+ClubEventList.prototype.binarySearch = function(target, comparator) {
 	let low = 0,
 		h = this.list.length - 1,
 		m, comparison;
@@ -45,7 +57,7 @@ ClubEventList.prototype.binarySearch = (target, comparator) => {
     comparator: (optional) a method for comparing the target object type
     return value: the index where the object was inserted into the array, or the index of a matching object in the array if a match was found and the duplicate parameter was false
 */
-ClubEventList.prototype.binaryInsert = (target: ScheduledClubEvent, duplicate, comparator) => {
+ClubEventList.prototype.binaryInsert = function(target: ScheduledEvent, duplicate, comparator) {
 	let i = this.binarySearch(target, comparator);
 	if (i >= 0) { /* if the binarySearch return value was zero or positive, a matching object was found */
 		if (!duplicate)
@@ -59,9 +71,9 @@ ClubEventList.prototype.binaryInsert = (target: ScheduledClubEvent, duplicate, c
 	return i;
 };
 
-ClubEventList.prototype.validateInsertion = (target: ScheduledClubEvent, index: number): boolean => {
+ClubEventList.prototype.validateInsertion = function(target: ScheduledEvent, index: number): boolean {
 	if (this.list[index + 1]) {
-		let tmp: ScheduledClubEvent = this.list[index + 1];
+		let tmp: ScheduledEvent = this.list[index + 1];
 		if (isOverlapping(tmp.getEventBegin(), tmp.getEventEnd(), target.getEventBegin(), target.getEventEnd()))
 			return false;
 		if (this.list[index - 1]) {

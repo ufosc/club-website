@@ -2,7 +2,7 @@ import * as mongoose from 'mongoose';
 const Schema = mongoose.Schema;
 
 // create schema
-const ClubEventSchema = new Schema({
+export const ClubEventSchema = new Schema({
 	code: {
 		type: String,
 		required: true
@@ -12,14 +12,14 @@ const ClubEventSchema = new Schema({
 		required: true
 	},
 	startDate: {
-		required: true,
 		type: Date,
-		default: Date.now
+		default: Date.now,
+		required: true
 	},
 	endDate: {
-		required: true,
 		type: Date,
-		default: Date.now
+		default: Date.now,
+		required: true
 	},
 	attendees: {
 		type: Array,

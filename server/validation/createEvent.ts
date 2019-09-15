@@ -15,10 +15,10 @@ export default function validateEventCreation(data : any) {
 	if (Validator.isEmpty(data.eventname))
 		errors.email = "Event name is required.";
 
-	if (Validator.isISO8601(data.starttime))
+	if (!Validator.isISO8601(data.starttime))
 		errors.starttime = "Invalid event start time.";
 
-	if (Validator.isISO8601(data.endtime))
+	if (!Validator.isISO8601(data.endtime))
 		errors.endtime = "Invalid event end time.";
 
 	return {

@@ -3,14 +3,15 @@ import * as mongoose from "mongoose";
 const EventEmitter = require('events');
 import * as express from 'express';
 import {ClubEventList} from "../utils/clubEventList";
+import {ScheduledClubEvent} from "../models/ScheduledClubEvents";
 
-let clubEventList: any = new ClubEventList();
+let clubEventList = new ClubEventList();
 
-export class ScheduledClubEvent {
-	private eventBegin: Date;
-	private eventEnd: Date;
-	private eventCode: String;
-	private eventName: String;
+export class ScheduledEvent {
+	private readonly eventBegin: Date;
+	private readonly eventEnd: Date;
+	private readonly eventCode: String;
+	private readonly eventName: String;
 
 	constructor(eventBegin, eventEnd, eventCode, eventName) {
 		this.eventBegin = eventBegin;
@@ -37,18 +38,29 @@ export class ScheduledClubEvent {
 
 	public async schedule() {
 		if (clubEventList.size() > 0) {
-			if (clubEventList.size() > 0) {
-				return new Promise((resolve, reject) => {
-					let val = clubEventList.binaryInsert(this, false, (a: Date, b: Date) => {
-						return (a.getDate() < b.getDate() ? -1 : (a.getDate() > b.getDate() ? 1 : 0));
-					});
-					if (val === -1)
-						reject();
-					else
-						resolve(val);
+			return new Promise((resolve, reject) => {
+				let val = clubEventList.binaryInsert(this, false, (a: Date, b: Date) => {
+					return (a < b ? -1 : (a > b ? 1 : 0));
 				});
-			}
-		}
+				if (val === -1)
+					reject();
+				else
+					resolve(val);
+			});
+		} else
+			clubEventList.insert(this);
+	}
+
+	public static async rescheduleEvents() {
+		return new Promise((resolve, reject) => {
+			Promise.all([
+				ScheduledClubEvent.deleteMany({startDate: {"$lte": Date.now()}}),
+				ScheduledClubEvent.find({})
+			]).then(results => {
+				const [deletions, toSchedule] = results;
+				resolve([deletions, toSchedule]); // TODO: HANDLE RESOLVE/REJECT IN APP.TS
+			}).catch(err => reject(err));
+		});
 	}
 }
 
@@ -98,42 +110,62 @@ clubEventEmitter.on('enable', (eventCode: String, eventName: String, startTime: 
 		const event = {code: eventCode};
 		ActiveClubEvent.collection.insertOne(event);
 
+		let eventLength : any = (endTime.getTime() - startTime.getTime()),
+			seconds : any = Math.floor((eventLength / 1000) % 60),
+			minutes : any = Math.floor((eventLength / (1000 * 60)) % 60),
+			hours : any = Math.floor((eventLength / (1000 * 60 * 60)) % 24);
+
+		hours = (hours < 10) ? "0" + hours : hours;
+		minutes = (minutes < 10) ? "0" + minutes : minutes;
+		seconds = (seconds < 10) ? "0" + seconds : seconds;
+
 		res.status(200).json({
 			success: true,
 			message: `Successfully started new event: ${eventName} with event code ( ${eventCode} ).`,
-			endtime: `${endTime}`
+			starttime: `${startTime}`,
+			endtime: `${endTime}`,
+			duration: `This event will last for ${hours}h:${minutes}m:${seconds}s`
 		});
 	})
 });
 
 clubEventEmitter.on("schedule", (eventCode: String, eventName: String, startTime: Date, endTime: Date, res: express.Response) => {
 	setImmediate(async () => {
-		let event = new ScheduledClubEvent(startTime, endTime, eventCode, eventName);
+		let event = new ScheduledEvent(startTime, endTime, eventCode, eventName);
 
 		event.schedule().then((val) => {
-			res.status(200).json({success: `Successfully scheduled a new event from ${String(startTime)}->${String(endTime)}, with event code ( ${eventCode} ) and with name ${eventName}`});
-			return val;
-		}).then((val) => {
-			const timeDiff = startTime.getTime() - Date.now();
+			const timeDiff: number = startTime.getTime() - Date.now();
+			const eventLength: number = endTime.getTime() - startTime.getTime();
 			if (timeDiff < 0) {
 				throw new Error("You attempted to schedule an event in the past. No time travelling allowed!");
 			} else {
-				setTimeout(() => {
-					clubEventList.remove(val);
-					clubEventEmitter.on('enable', eventCode, eventName, startTime, endTime);
-				}, timeDiff);
+				if (eventLength <= 0)
+					throw new Error("Event times were arranged wrongly, event must start before event end.");
+				else {
+					// start event when time has been reached
+					setTimeout(() => {
+						clubEventList.remove(val);
+						clubEventEmitter.emit('enable', eventCode, eventName, startTime, endTime, res);
+
+						setTimeout(() => {
+							clubEventEmitter.emit('disable', eventCode, eventName);
+						}, endTime.getTime() - startTime.getTime());
+					}, timeDiff);
+				}
 			}
 		}).catch((err) => {
-			if (err)
+			if (err) {
+				console.log(err);
 				res.status(400).json({schedulingFailed: `${err}`});
-			else
+			} else
 				res.status(400).json({schedulingFailed: `Insertion failed due to overlapping scheduling times. Please verify that you entered the correct date and time combinations for your event.`});
 		});
 	});
 });
 
-clubEventEmitter.on('disable', () => {
+clubEventEmitter.on('disable', (eventCode, eventName) => {
 	setImmediate(async () => {
-
+		await ActiveClubEvent.collection.remove({});
+		console.log(`Event with name '${eventName}' ( ${eventCode } ) has ended.`)
 	});
 });
