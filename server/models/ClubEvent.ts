@@ -27,5 +27,4 @@ export const ClubEventSchema = new Schema({
 	}
 });
 
-let ClubEvent: mongoose.Model<any>;
-module.exports = ClubEvent = mongoose.model("ClubEvent", ClubEventSchema, "clubevents");
+export let ClubEvent: mongoose.Model<any> = mongoose.model("ClubEvent", ClubEventSchema, "clubevents");
