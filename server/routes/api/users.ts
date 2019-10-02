@@ -1,23 +1,25 @@
-const express = require("express");
+import express from 'express';
 const router = express.Router();
-const bcrypt = require("bcryptjs");
-const jwt = require("jsonwebtoken");
-const keys = require("../../config/keys");
-const passport = require("passport");
+import * as bcrypt from 'bcryptjs';
+import * as jwt from 'jsonwebtoken';
+import * as keys from '../../config/keys';
 
 // Load input validation
-const validateRegisterInput = require("../../validation/register");
-const validateLoginInput = require("../../validation/login");
-
+import validateRegisterInput from '../../validation/register';
+import validateLoginInput from "../../validation/login";
+import validateEventSigninInput from "../../validation/eventSignin";
+import validateEventCreation from "../../validation/createEvent";
+import * as eventHandler from "../../events/eventhandler";
 // Load User model
-const User = require("../../models/User");
+// @ts-ignore
+import {User} from "../../models/User";
 
 /**
  * @route POST api/users/register
  * @desc Register user
  * @access Public
  **/
-router.post("/register", (req, res) => {
+router.post("/register", (req: express.Request, res: express.Response) => {
 	// form validation
 
 	const {errors, isValid} = validateRegisterInput(req.body);
@@ -52,11 +54,56 @@ router.post("/register", (req, res) => {
 });
 
 /**
+ * @route POST api/users/event-signin
+ * @desc sign users into an event with authentication.
+ * @access Public
+ */
+router.post("/eventSignin", (req: express.Request, res: express.Response) => {
+	// form validation
+
+	const {errors, isValid} = validateEventSigninInput(req.body);
+
+	// check validation
+	if (!isValid)
+		return res.status(400).json(errors);
+
+
+	User.findOneAndUpdate({email: req.body.email}, (err, user) => {
+		if (err) throw err;
+		// update user's attended events
+		if (user) {
+
+			if (eventHandler.isClubEventEnabled()) {
+
+				user.events.push();
+			}
+
+		}
+	});
+});
+
+router.post("/createEvent", (req: express.Request, res: express.Response) => {
+
+	const {errors, isValid} = validateEventCreation(req.body);
+
+	if (!isValid)
+		return res.status(400).json(errors);
+
+	const eventCode = req.body.eventcode;
+	const eventName = req.body.eventname;
+	const startTime = req.body.starttime;
+	const endTime = req.body.endtime;
+
+	eventHandler.clubEventEmitter.emit('schedule', eventCode, eventName, new Date(Date.parse(startTime)), new Date(Date.parse(endTime)), res);
+
+});
+
+/**
  * @route POST api/users/login
  * @desc Login user and return JWT token
  * @access Public
  **/
-router.post("/login", (req, res) => {
+router.post("/login", (req: express.Request, res: express.Response) => {
 	// Form validation
 
 	const {errors, isValid} = validateLoginInput(req.body);
@@ -72,7 +119,7 @@ router.post("/login", (req, res) => {
 	User.findOne({email}).then(user => {
 		// check if user exists
 		if (!user)
-			return res.status(404).json({emailnotfound: "Email not found"});
+			return res.status(404).json({emailnotfound: "Email not found."});
 
 		// check password
 		bcrypt.compare(password, user.password).then(isMatch => {
@@ -101,7 +148,7 @@ router.post("/login", (req, res) => {
 			} else
 				return res
 					.status(400)
-					.json({passwordincorrect: "Password incorrect"});
+					.json({passwordincorrect: "Incorrect password."});
 		});
 	});
 });
