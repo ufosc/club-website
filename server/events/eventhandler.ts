@@ -70,12 +70,11 @@ export class ScheduledEvent {
 				const [deletions, toSchedule]: Array<any> = results;
 				resolve([deletions, toSchedule]);
 			}).then((res) => {
+				// Reschedule the events.
 				console.log(`Removed ${res[0].length} events from the scheduler on startup. They are now in the past.`);
-				for (const obj in res[1].events) {
+				const evts = JSON.parse(res[1].events) as any;
+				evts.forEach(event => clubEventEmitter.emit('schedule', event.code, event.event, new Date(event.startDate), new Date(event.endDate)));
 					// eventCode: String, eventName: String, startTime: Date, endTime: Date
-					// todo: fill in event emitter
-					clubEventEmitter.emit('schedule')
-				}
 			}).catch(err => console.log(err));
 		});
 	}
@@ -125,7 +124,7 @@ clubEventEmitter.on('enable', (eventCode: String, eventName: String, startTime: 
 	})
 });
 
-clubEventEmitter.on("schedule", (eventCode: String, eventName: String, startTime: Date, endTime: Date, res?: express.Response) => {
+clubEventEmitter.on('schedule', (eventCode: String, eventName: String, startTime: Date, endTime: Date, res?: express.Response) => {
 	setImmediate(async () => {
 		let event = new ScheduledEvent(startTime, endTime, eventCode, eventName);
 
@@ -151,7 +150,8 @@ clubEventEmitter.on("schedule", (eventCode: String, eventName: String, startTime
 									{
 										'code': `${eventCode}`,
 										'name': `${eventName}`,
-										'': ''
+										'startDate': `${startTime.toISOString()}`,
+										'endDate': `${endTime.toISOString()}`
 									})
 							]
 						};
