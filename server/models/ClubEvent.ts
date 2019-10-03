@@ -1,5 +1,4 @@
-import * as mongoose from 'mongoose';
-const Schema = mongoose.Schema;
+import {Schema, model} from 'mongoose';
 
 // create schema
 export const ClubEventSchema = new Schema({
@@ -27,4 +26,7 @@ export const ClubEventSchema = new Schema({
 	}
 });
 
-export let ClubEvent: mongoose.Model<any> = mongoose.model("ClubEvent", ClubEventSchema, "clubevents");
+let ClubEvent = model("ClubEvent", ClubEventSchema, "clubevents");
+export {
+	ClubEvent
+}

@@ -3,7 +3,6 @@ import * as mongoose from "mongoose";
 const EventEmitter = require('events');
 import * as express from 'express';
 import {ClubEventList} from "../utils/clubEventList";
-import {ScheduledClubEvent} from "../models/ScheduledClubEvents";
 import {ClubEvent} from "../models/ClubEvent";
 
 let clubEventList = new ClubEventList();
@@ -59,24 +58,14 @@ export class ScheduledEvent {
 
 	public static async rescheduleEvents() {
 		return new Promise((resolve, reject) => {
-			if (!ScheduledClubEvent) {
+			if (!ClubEvent) {
 				console.log('There were no events to reschedule.');
 				return;
 			}
-			Promise.all([
-				ScheduledClubEvent.remove({startDate: {"$lte": Date.now()}}),
-				ScheduledClubEvent.find({})
-			]).then(results => {
-				const [deletions, toSchedule]: Array<any> = results;
-				resolve([deletions, toSchedule]);
-			}).then((res) => {
-				// Reschedule the events.
-				console.log(`Removed ${res[0].length} events from the scheduler on startup. They are now in the past.`);
-				const evts = JSON.parse(res[1].events) as any;
-				evts.forEach(event => clubEventEmitter.emit('schedule', event.code, event.event, new Date(event.startDate), new Date(event.endDate)));
-					// eventCode: String, eventName: String, startTime: Date, endTime: Date
-			}).catch(err => console.log(err));
-		});
+			ClubEvent.find({startDate: {"$gte": Date.now()}}, (err, events) => {
+				events.forEach((event: any) => clubEventEmitter.emit('schedule', event.code, event.event, new Date(event.startDate), new Date(event.endDate)));
+			})
+		}).catch(err => console.log(err));
 	}
 }
 
@@ -145,17 +134,12 @@ clubEventEmitter.on('schedule', (eventCode: String, eventName: String, startTime
 							hours: any = Math.floor((eventLength / (1000 * 60 * 60)) % 24);
 
 						const evt: object = {
-							'events': [
-								new ClubEvent(
-									{
-										'code': `${eventCode}`,
-										'name': `${eventName}`,
-										'startDate': `${startTime.toISOString()}`,
-										'endDate': `${endTime.toISOString()}`
-									})
-							]
+							'code': `${eventCode}`,
+							'name': `${eventName}`,
+							'startDate': `${startTime.toISOString()}`,
+							'endDate': `${endTime.toISOString()}`
 						};
-						ScheduledClubEvent.collection.insertOne(evt);
+						ClubEvent.collection.insertOne(evt);
 
 						hours = (hours < 10) ? "0" + hours : hours;
 						minutes = (minutes < 10) ? "0" + minutes : minutes;
