@@ -138,6 +138,10 @@ body {
 	outline: none;
 }
 
+.topnav-link:hover {
+	cursor: pointer;
+}
+
 /* Keep the logo in the box */
 #logo-link {
 	box-sizing: initial;
