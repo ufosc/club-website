@@ -52,6 +52,9 @@ class Home extends React.Component {
 						page</Link>.
 					</p>
 				</div>
+
+				<div class="g-signin2" data-onsuccess="onSignIn"></div>
+
 			</div>
 		)
 	}
