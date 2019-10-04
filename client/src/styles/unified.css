@@ -81,9 +81,8 @@ body {
 /* Each card used on the site */
 .page-element {
 	background: var(--background-color);
-	border: 1px solid var(--primary-color);
-	border-radius: 3px 3px 3px 3px;
-	box-shadow: 0 4px 6px 0 var(--shadow-color);
+	border: 0.75rem;
+	box-shadow: 0px 5px 4px 1px var(--shadow-color);
 	justify-content: flex-start;
 	padding: 10px;
 	margin: 10px;
@@ -169,6 +168,7 @@ body {
 .external-link {
 	color: var(--light-primary-color);
 	font-size: .75em;
+	padding-left: 0.75rem;
 }
 
 /* Header settings for smaller devices */
