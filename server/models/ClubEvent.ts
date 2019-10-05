@@ -20,13 +20,7 @@ export const ClubEventSchema = new Schema({
 		default: Date.now,
 		required: true
 	},
-	attendees: {
-		type: Array,
-		default: {}
-	}
+	attendees: [String]
 });
 
-let ClubEvent = model("ClubEvent", ClubEventSchema, "clubevents");
-export {
-	ClubEvent
-}
+export let ClubEvent = model("ClubEvent", ClubEventSchema, "clubevents");
