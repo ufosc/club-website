@@ -9,7 +9,6 @@ import validateRegisterInput from '../../validation/register';
 import validateLoginInput from "../../validation/login";
 import validateEventSigninInput from "../../validation/eventSignin";
 import validateEventCreation from "../../validation/createEvent";
-import * as eventHandler from "../../events/eventhandler";
 // Load User model
 // @ts-ignore
 import {User} from "../../models/User";
@@ -51,51 +50,6 @@ router.post("/register", (req: express.Request, res: express.Response) => {
 			});
 		}
 	});
-});
-
-/**
- * @route POST api/users/event-signin
- * @desc sign users into an event with authentication.
- * @access Public
- */
-router.post("/eventSignin", (req: express.Request, res: express.Response) => {
-	// form validation
-
-	const {errors, isValid} = validateEventSigninInput(req.body);
-
-	// check validation
-	if (!isValid)
-		return res.status(400).json(errors);
-
-
-	User.findOneAndUpdate({email: req.body.email}, (err, user) => {
-		if (err) throw err;
-		// update user's attended events
-		if (user) {
-
-			if (eventHandler.isClubEventEnabled()) {
-
-				user.events.push();
-			}
-
-		}
-	});
-});
-
-router.post("/createEvent", (req: express.Request, res: express.Response) => {
-
-	const {errors, isValid} = validateEventCreation(req.body);
-
-	if (!isValid)
-		return res.status(400).json(errors);
-
-	const eventCode = req.body.eventcode;
-	const eventName = req.body.eventname;
-	const startTime = req.body.starttime;
-	const endTime = req.body.endtime;
-
-	eventHandler.clubEventEmitter.emit('schedule', eventCode, eventName, new Date(Date.parse(startTime)), new Date(Date.parse(endTime)), res);
-
 });
 
 /**
