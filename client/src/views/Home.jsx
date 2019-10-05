@@ -6,6 +6,17 @@ import HomeGrid from "../components/HomeGrid/HomeGrid";
 
 
 class Home extends React.Component {
+
+	componentDidMount () {
+		const script = document.createElement("script");
+	
+		script.src = "https://apis.google.com/js/platform.js";
+		script.async = true;
+		script.defer = true;
+	
+		document.body.appendChild(script);
+	}
+	
 	render() {
 		return (
 			<div id="homeBody">
@@ -41,6 +52,9 @@ class Home extends React.Component {
 						page</Link>.
 					</p>
 				</div>
+
+				<div class="g-signin2" data-onsuccess="onSignIn"></div>
+
 			</div>
 		)
 	}
