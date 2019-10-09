@@ -31,7 +31,7 @@ _**If working with backend follow these instructions**_:
 
 **2.** Once completed, go ahead and run `npm install nodemon -g`, this will allow for automatic reloading of the server when you update your codebase.
 
-**3.** Now run nodemon `nodemon server/server.js`.
+**3.** Now run nodemon `nodemon server/server.ts`.
 
 **4.** The backend development server should now be running!
 
