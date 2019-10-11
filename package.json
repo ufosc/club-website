@@ -4,7 +4,7 @@
 	"description": "Server package.json",
 	"main": "dist/index.js",
 	"scripts": {
-		"client-install": "npm install --prefix client",
+		"client-install": "cd client && npm install",
 		"start": "node server/server.ts",
 		"server": "nodemon server/server.ts",
 		"client": "npm start --prefix client",
