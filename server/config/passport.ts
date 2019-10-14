@@ -4,11 +4,14 @@ const mongoose = require("mongoose");
 const User = mongoose.model("users");
 const keys = require("./keys");
 
-const opts = {};
+const opts = {
+	jwtFromRequest: String,
+	secretOrKey: String
+};
 opts.jwtFromRequest = ExtractJwt.fromAuthHeaderAsBearerToken();
 opts.secretOrKey = keys.secret;
 
-module.exports = passport => {
+export = passport => {
 	passport.use(
 		new JwtStrategy(opts, (jwt_payload, done) => {
 			User.findById(jwt_payload.id)

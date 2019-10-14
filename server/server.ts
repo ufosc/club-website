@@ -5,7 +5,7 @@ const mongoose = require("mongoose");
 const bodyParser = require("body-parser");
 const passport = require("passport");
 
-const users = require("./routes/api/users.ts");
+const users = require("./routes/api/users");
 
 const app = express();
 
@@ -18,7 +18,7 @@ app.use(
 app.use(bodyParser.json());
 
 // db config
-const db = require("./config/keys.js").mongoURI;
+const db = require("./config/keys").mongoURI;
 
 // establish connection to db
 mongoose.connect(db, {useNewUrlParser: true})
