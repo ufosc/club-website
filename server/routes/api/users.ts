@@ -2,7 +2,7 @@ import express from 'express';
 const router = express.Router();
 import * as bcrypt from 'bcryptjs';
 import * as jwt from 'jsonwebtoken';
-import * as keys from '../../config/keys';
+import keys from '../../config/keys';
 
 // Load input validation
 import validateRegisterInput from '../../validation/register';

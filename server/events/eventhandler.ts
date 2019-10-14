@@ -75,7 +75,10 @@ export class ScheduledEvent {
 					events.forEach((event: any) => clubEventEmitter.emit('schedule', event.code, event.name, new Date(event.startDate), new Date(event.endDate)));
 			});
 			// reactivate ACTIVE event (only one active event may occur at a time)
-			await ClubEvent.findOne({startDate: {'$lte': Date.now()}, endDate: {'$gt': Date.now()}}, (err, event: any) => {
+			await ClubEvent.findOne({
+				startDate: {'$lte': Date.now()},
+				endDate: {'$gt': Date.now()}
+			}, (err, event: any) => {
 				if (err)
 					console.log(err);
 				else if (event)
@@ -135,7 +138,10 @@ class Event {
 	}
 
 	public addAttendee(email: String): void {
-		ClubEvent.findOneAndUpdate({code: this.code, attendees: {$ne: email}}, {$addToSet: {attendees: email}}, (err, results) => {
+		ClubEvent.findOneAndUpdate({
+			code: this.code,
+			attendees: {$ne: email}
+		}, {$addToSet: {attendees: email}}, (err, results) => {
 			if (results)
 				this.attendees.push(email);
 		});
@@ -247,6 +253,10 @@ clubEventEmitter.on('schedule', (eventCode: String, eventName: String, startTime
 		});
 	});
 });
+
+export const isClubEventEnabled = () : boolean => {
+	return false;
+};
 
 clubEventEmitter.on('disable', (eventCode, eventName) => {
 	setImmediate(async () => {
