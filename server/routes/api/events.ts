@@ -34,7 +34,6 @@ router.post("/eventSignin", (req: express.Request, res: express.Response) => {
 		if (user) {
 
 			if (eventHandler.isClubEventEnabled()) {
-
 				user.events.push();
 			}
 
