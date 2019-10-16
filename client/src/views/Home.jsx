@@ -3,23 +3,12 @@ import {Link} from 'react-router-dom';
 import "../styles/index.scss";
 import Slideshow from "../components/Slideshow";
 import HomeGrid from "../components/HomeGrid/HomeGrid";
-import GoogleLogin from 'react-google-login';
 
-const responseGoogle = (response) => {
-                       console.log(response);
-                }
+
+
 
 class Home extends React.Component {
 
-	componentDidMount () {
-		const script = document.createElement("script");
-	
-		script.src = "https://apis.google.com/js/platform.js";
-		script.async = true;
-		script.defer = true;
-	
-		document.body.appendChild(script);
-	}
 	
 	render() {
 		return (
@@ -32,16 +21,7 @@ class Home extends React.Component {
 				{/* Tag line boxes  */}
 				<HomeGrid className="cardGrid"/>
 				<br/>
-                
-                
-    <GoogleLogin
-    clientId="218365048814-n2ukcbljenpiqdr0n978dm663mkc4ofe.apps.googleusercontent.com"
-    buttonText="Login"
-    onSuccess={responseGoogle}
-    onFailure={responseGoogle}
-    cookiePolicy={'single_host_origin'}
-  />,
-                
+
 				{/* Get involved box  */}
 				<div className="page-element">
 					<h1 className="title" id="get-involved-title">
@@ -65,7 +45,6 @@ class Home extends React.Component {
 						page</Link>.
 					</p>
 				</div>
-
 
 
 			</div>
