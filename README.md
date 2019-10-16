@@ -25,21 +25,23 @@ Install
 
 ### Testing
 
-_**If working with backend follow these instructions**_:
+#### _**If working with backend follow these instructions**_:
 
-**1.** if you haven't already, run npm install once navigated into the _club-wesbite/server_ directory.
+**1.**  The first step is to run `npm install` in the root project repository.
 
 **2.** Once completed, go ahead and run `npm install nodemon -g`, this will allow for automatic reloading of the server when you update your codebase.
 
-**3.** Now run nodemon `nodemon server/server.ts`.
+**3.** Now run `npm run-script server` to startup the server.
 
-**4.** The backend development server should now be running!
+**4.** The backend development server should now be running! For testing with a database connect to a mongoDB database either locally or remotely.
 
-_**If working with the frontend follow these instructions**_:
+#### _**If working with the frontend follow these instructions**_:
 
-**1.** if you haven't already, run npm install once navigated into the _club-wesbite/client_ directory.
+**1.** if you haven't already, run `npm run-script client-install` from the root directory (alternatively run `npm client install` once navigated into the _club-wesbite/client_ directory).
 
-**2.** Run the command `react-scripts start` while still in the same directory.
+**2.** Run the command `npm run-script client` from the root directory (alternatively run `npm start` in the _club-wesbite/client_ directory).
+
+**3.** The server should now be running on http://localhost:3000
 
 
 ## Deployment

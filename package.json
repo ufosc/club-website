@@ -5,10 +5,9 @@
 	"main": "dist/index.js",
 	"scripts": {
 		"client-install": "cd client && npm install",
-		"start": "node server/server.ts",
-		"server": "nodemon server/server.ts",
 		"client": "npm start --prefix client",
-		"dev": "concurrently \"npm run client\" \"npm run server\""
+		"server": "concurrently \"tsc -w\" \"nodemon dist/server.js\"",
+		"dev": "concurrently \"npm run-script server\" \"npm run-script client\""
 	},
 	"author": "Jon",
 	"license": "MIT",
