@@ -1,5 +1,5 @@
-const EventEmitter = require('events');
-import * as express from 'express';
+import EventEmitter from 'events';
+import express from 'express';
 import {ClubEventList} from "../utils/clubEventList";
 import {ClubEvent} from "../models/ClubEvent";
 import LoopUtils from "../utils/loopUtils";

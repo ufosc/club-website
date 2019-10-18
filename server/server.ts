@@ -1,11 +1,11 @@
 import {ScheduledEvent} from "./events/eventhandler";
 
-const express = require("express");
-const mongoose = require("mongoose");
-const bodyParser = require("body-parser");
-const passport = require("passport");
+import express from 'express';
+import  mongoose from 'mongoose';
+import bodyParser from 'body-parser';
+import passport from 'passport';
 
-const users = require("./routes/api/users");
+import userRouter from './routes/api/users';
 
 const app = express();
 
@@ -18,10 +18,10 @@ app.use(
 app.use(bodyParser.json());
 
 // db config
-const db = require("./config/keys").mongoURI;
+import keys from './config/keys';
 
 // establish connection to db
-mongoose.connect(db, {useNewUrlParser: true})
+mongoose.connect(keys.mongoURI, {useNewUrlParser: true})
 	.then(() => console.log("Successfully established connection to MongoDB."))
 	.catch(err => console.log(err));
 
@@ -32,7 +32,7 @@ app.use(passport.initialize());
 require("./config/passport")(passport);
 
 // Routes
-app.use("/api/users", users);
+app.use("/api/users", userRouter);
 app.use("../client/public", express.static('public'));
 
 const port = process.env.PORT || 5000;

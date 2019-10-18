@@ -1,5 +1,6 @@
 import express from 'express';
-const router = express.Router();
+
+const userRouter = express.Router();
 import * as bcrypt from 'bcryptjs';
 import * as jwt from 'jsonwebtoken';
 import keys from '../../config/keys';
@@ -18,7 +19,7 @@ import {User} from "../../models/User";
  * @desc Register user
  * @access Public
  **/
-router.post("/register", (req: express.Request, res: express.Response) => {
+userRouter.post("/register", (req: express.Request, res: express.Response) => {
 	// form validation
 
 	const {errors, isValid} = validateRegisterInput(req.body);
@@ -57,7 +58,7 @@ router.post("/register", (req: express.Request, res: express.Response) => {
  * @desc Login user and return JWT token
  * @access Public
  **/
-router.post("/login", (req: express.Request, res: express.Response) => {
+userRouter.post("/login", (req: express.Request, res: express.Response) => {
 	// Form validation
 
 	const {errors, isValid} = validateLoginInput(req.body);
@@ -107,4 +108,4 @@ router.post("/login", (req: express.Request, res: express.Response) => {
 	});
 });
 
-module.exports = router;
+export default userRouter;
