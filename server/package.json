@@ -13,7 +13,6 @@
 	"dependencies": {
 		"bcryptjs": "^2.4.3",
 		"body-parser": "^1.18.3",
-		"concurrently": "^4.1.2",
 		"express": "^4.16.4",
 		"is-empty": "^1.2.0",
 		"jsonwebtoken": "^8.3.0",
@@ -38,6 +37,8 @@
 		"@types/mongoose": "^5.5.11",
 		"@types/node": "^12.6.8",
 		"@types/passport": "^1.0.1",
+		"concurrently": "^5.0.0",
+		"nodemon": "^1.19.4",
 		"tslint": "^5.19.0",
 		"typescript": "^3.5.3"
 	}
