@@ -16,32 +16,29 @@ Install
 - An IDE or text editor like [WebStorm](https://www.jetbrains.com/webstorm/), [VSCode](https://code.visualstudio.com/), [Atom](https://atom.io/), or [Sublime Text](https://www.sublimetext.com/)
 	- Install an [EditorConfig](https://editorconfig.org/) plugin if available, to help ensure consistent formatting
 - Node.js (whatever version is the latest, there shouldn't be any issues unless on an ancient version)
+- Yarn - [Instructions to install here](https://yarnpkg.com/en/docs/install)
 
 [Then clone this repo](https://help.github.com/articles/cloning-a-repository/)
 #### Verifying your installs
 
-- run `npm -v` and `node -v`, these should output a version number along the lines of `v10.16.0` or `6.11.3`
+- run `yarn -v` and `node -v`, these should output a version number along the lines of `v10.16.0` or `6.11.3`
 - if these commands fail, make sure you have node.js properly installed.
 
 ### Testing
 
 #### _**If working with backend follow these instructions**_:
 
-**1.**  The first step is to run `npm install` in the root project repository.
+**1.**  The first step is to run `yarn install` in the root project repository.
 
-**2.** Once completed, go ahead and run `npm install nodemon -g`, this will allow for automatic reloading of the server when you update your codebase.
+**2.** Now run `yarn workspace server watch` to startup the server.
 
-**3.** Now run `npm run-script server` to startup the server.
-
-**4.** The backend development server should now be running! For testing with a database connect to a mongoDB database either locally or remotely.
+**3.** The backend development server should now be running! For testing with a database connect to a mongoDB database either locally or remotely.
 
 #### _**If working with the frontend follow these instructions**_:
 
-**1.** if you haven't already, run `npm run-script client-install` from the root directory (alternatively run `npm client install` once navigated into the _club-wesbite/client_ directory).
+**1.** Run the command `yarn workspace client start` from the root directory.
 
-**2.** Run the command `npm run-script client` from the root directory (alternatively run `npm start` in the _club-wesbite/client_ directory).
-
-**3.** The server should now be running on http://localhost:3000
+**2.** The server should now be running on http://localhost:3000
 
 
 ## Deployment
