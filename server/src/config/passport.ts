@@ -1,26 +1,27 @@
 import * as jwt from 'passport-jwt';
-import mongoose from 'mongoose';
 import keys from './keys';
-const JwtStrategy : jwt.Strategy = jwt.Strategy;
-const ExtractJwt : jwt.ExtractJwt = jwt.ExtractJwt;
-const User = mongoose.model("users");
+const JwtStrategy: jwt.Strategy = jwt.Strategy;
+const ExtractJwt: jwt.ExtractJwt = jwt.ExtractJwt;
+
+import {User} from '../models/User';
 
 const opts = {
 	jwtFromRequest: ExtractJwt.fromAuthHeaderAsBearerToken(),
 	secretOrKey: keys.secret
 };
 
-export = passport => {
+export = (passport) => {
 	passport.use(
-		new JwtStrategy(opts, (jwt_payload, done) => {
-			User.findById(jwt_payload.id)
-				.then(user => {
-					if (user)
+		new JwtStrategy(opts, (jwtPayload, done) => {
+			User.findById(jwtPayload.id)
+				.then((user) => {
+					if (user) {
 						return done(null, user);
+					}
 
 					return done(null, false);
 				})
-				.catch(err => console.log(err));
+				.catch((err) => console.log(err));
 		})
 	);
 };

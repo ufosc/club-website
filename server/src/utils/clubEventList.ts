@@ -1,4 +1,4 @@
-import {ScheduledEvent} from "../events/eventhandler";
+import {ScheduledEvent} from "../events/ScheduledEvent";
 
 /**
  * This util provides an ordered list implementation that maintains order upon insertion.

@@ -1,4 +1,4 @@
-import {Schema, model} from 'mongoose';
+import {model, Schema} from 'mongoose';
 
 // create schema
 export const ClubEventSchema = new Schema({
@@ -23,4 +23,4 @@ export const ClubEventSchema = new Schema({
 	attendees: [String]
 });
 
-export let ClubEvent = model("ClubEvent", ClubEventSchema, "clubevents");
+export const ClubEvent = model('ClubEvent', ClubEventSchema, 'clubevents');

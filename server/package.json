@@ -32,6 +32,7 @@
 		"@types/express": "^4.17.0",
 		"@types/express-session": "^1.15.13",
 		"@types/express-validator": "^3.0.0",
+		"@types/is-empty": "^1.2.0",
 		"@types/jsonwebtoken": "^8.3.2",
 		"@types/mongodb": "^3.1.31",
 		"@types/mongoose": "^5.5.11",
