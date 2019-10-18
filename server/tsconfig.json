@@ -7,16 +7,9 @@
 		"moduleResolution": "node",
 		"sourceMap": true,
 		"outDir": "dist",
-		"baseUrl": ".",
-		"paths": {
-			"*": [
-				"node_modules/*"
-			]
-		}
+		"baseUrl": "."
 	},
 	"include": [
-		"client/src/**/*",
-		"server/**/*.ts",
-		"src/**/*"
+		"src/**/*.ts",
 	]
 }
