@@ -1,7 +1,7 @@
 import * as jwt from 'passport-jwt';
 import keys from './keys';
-const JwtStrategy: jwt.Strategy = jwt.Strategy;
-const ExtractJwt: jwt.ExtractJwt = jwt.ExtractJwt;
+const JwtStrategy = jwt.Strategy;
+const ExtractJwt = jwt.ExtractJwt;
 
 import {User} from '../models/User';
 
@@ -10,7 +10,7 @@ const opts = {
 	secretOrKey: keys.secret
 };
 
-export = (passport) => {
+export = (passport: any) => {
 	passport.use(
 		new JwtStrategy(opts, (jwtPayload, done) => {
 			User.findById(jwtPayload.id)

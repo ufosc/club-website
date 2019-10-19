@@ -1,5 +1,5 @@
 import isEmpty from 'is-empty';
-import { Validator } from 'validator';
+import Validator from 'validator';
 
 export default function validateEventCreation(data: any) {
 	const errors: any = {};

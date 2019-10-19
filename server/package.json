@@ -38,6 +38,8 @@
 		"@types/mongoose": "^5.5.11",
 		"@types/node": "^12.6.8",
 		"@types/passport": "^1.0.1",
+		"@types/passport-jwt": "^3.0.2",
+		"@types/validator": "^10.11.3",
 		"concurrently": "^5.0.0",
 		"nodemon": "^1.19.4",
 		"tslint": "^5.19.0",

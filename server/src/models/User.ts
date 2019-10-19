@@ -25,4 +25,12 @@ const UserSchema = new Schema({
 	}
 });
 
-export const User: mongoose.Model<any> = mongoose.model('users', UserSchema);
+interface IUser extends mongoose.Document {
+	name: string;
+	email: string;
+	password: string;
+	date?: Date;
+	events: any[];
+}
+
+export const User = mongoose.model<IUser>('users', UserSchema);
