@@ -7,6 +7,7 @@ import passport from 'passport';
 
 import passportJWT from './config/passport';
 import userRouter from './routes/api/users';
+import eventRouter from './routes/api/events';
 
 const app = express();
 
@@ -34,6 +35,7 @@ passportJWT(passport);
 
 // Routes
 app.use('/api/users', userRouter);
+app.use('/api/events', eventRouter);
 app.use('../client/public', express.static('public'));
 
 const port = process.env.PORT || 5000;

@@ -1,5 +1,5 @@
 import express from 'express';
-const router = express.Router();
+const eventRouter = express.Router();
 
 import * as eventHandler from '../../events/eventhandler';
 import validateEventCreation from '../../validation/createEvent';
@@ -19,7 +19,7 @@ import {User} from '../../models/User';
  * @desc sign users into an event with authentication.
  * @access Public
  */
-router.post('/eventSignin', (req: express.Request, res: express.Response) => {
+eventRouter.post('/eventSignin', (req: express.Request, res: express.Response) => {
 	// form validation
 	const {errors, isValid} = validateEventSigninInput(req.body);
 
@@ -45,7 +45,7 @@ router.post('/eventSignin', (req: express.Request, res: express.Response) => {
  * @desc allow authenticated users to create new events.
  * @access Public
  */
-router.post('/createEvent', (req: express.Request, res: express.Response) => {
+eventRouter.post('/createEvent', (req: express.Request, res: express.Response) => {
 	const {errors, isValid} = validateEventCreation(req.body);
 
 	if (!isValid) {
@@ -62,3 +62,5 @@ router.post('/createEvent', (req: express.Request, res: express.Response) => {
 		new Date(Date.parse(endTime)), res);
 
 });
+
+export default eventRouter;

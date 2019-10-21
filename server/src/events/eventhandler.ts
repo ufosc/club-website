@@ -16,7 +16,7 @@ clubEventEmitter.on('enable', (eventCode: string, eventName: string, startTime: 
 	setImmediate(async () => {
 		console.log('Attempting to enable a new event...');
 
-		if (activeEvent) {
+		if (isClubEventEnabled()) {
 			console.log(`Event creation failed, event with code '${activeEvent.code}' is already running.`);
 			return res.status(400).json({eventActive: `An event with code: '${activeEvent.code}', is already active.`});
 		}
@@ -34,40 +34,54 @@ clubEventEmitter.on('schedule', (eventCode: string, eventName: string, startTime
 			startDate: startTime.getTime(),
 			endDate: endTime.getTime()
 		};
-		await ClubEvent.updateOne({code: evt.code}, {}, {upsert: true}, (err, result) => {
+
+		await ClubEvent.updateOne({code: evt.code}, {}, (err, result) => {
 			// if the event does not exist
 			if (~result.n) {
+
 				event.schedule().then((val: number) => {
 					const timeDiff: number = startTime.getTime() - Date.now();
 					const eventLength: number = endTime.getTime() - startTime.getTime();
 					if (timeDiff < 0) {
+						res.status(403).json({
+							message: 'You attempted to schedule an event in the past. No time travelling allowed!'
+						});
 						throw new Error('You attempted to schedule an event in the past. No time travelling allowed!');
 					} else {
 						if (eventLength <= 0) {
+							res.status(403).json({
+								message: 'Event times were arranged wrongly, event must start before event end.'
+							});
 							throw new Error('Event times were arranged wrongly, event must start before event end.');
 						} else {
 							// start event when start time has been reached
+							let seconds: any = Math.floor((eventLength / 1000) % 60);
+							let minutes: any = Math.floor((eventLength / (1000 * 60)) % 60);
+							let hours: any = Math.floor((eventLength / (1000 * 60 * 60)) % 24);
+
+							hours = (hours < 10) ? '0' + hours : hours;
+							minutes = (minutes < 10) ? '0' + minutes : minutes;
+							seconds = (seconds < 10) ? '0' + seconds : seconds;
+							if (res) {
+								res.status(200).json({
+									success: true,
+									message: `Successfully started new event: ${eventName} with event code ( ${eventCode} ).`,
+									starttime: startTime,
+									endtime: endTime,
+									duration: `This event will last for ${hours}h:${minutes}m:${seconds}s`
+								});
+							}
+
+							ClubEvent.collection.insertOne({
+								code: evt.code,
+								name: evt.name,
+								startDate: evt.startDate,
+								endDate: evt.endDate
+							});
+
 							setTimeout(() => {
 								ClubEventList.remove(val);
-								let seconds: any = Math.floor((eventLength / 1000) % 60);
-								let minutes: any = Math.floor((eventLength / (1000 * 60)) % 60);
-								let hours: any = Math.floor((eventLength / (1000 * 60 * 60)) % 24);
-
-								hours = (hours < 10) ? '0' + hours : hours;
-								minutes = (minutes < 10) ? '0' + minutes : minutes;
-								seconds = (seconds < 10) ? '0' + seconds : seconds;
-								if (res) {
-									res.status(200).json({
-										success: true,
-										message: `Successfully started new event: ${eventName} with event code ( ${eventCode} ).`,
-										starttime: startTime,
-										endtime: endTime,
-										duration: `This event will last for ${hours}h:${minutes}m:${seconds}s`
-									});
-								}
-
 								console.log(`Successfully started new event: ${eventName} with event code ( ${eventCode} ).\n\nThis event will last for ${hours}h:${minutes}m:${seconds}s`);
-
 								clubEventEmitter.emit('enable', eventCode, eventName, startTime, endTime, res);
 
 								setTimeout(() => {
@@ -80,7 +94,7 @@ clubEventEmitter.on('schedule', (eventCode: string, eventName: string, startTime
 					if (err) {
 						console.log(err);
 						if (res) {
-							res.status(400).json({schedulingFailed: err});
+							res.status(400).json({schedulingFailed: `${err}`});
 						}
 					} else {
 						if (res) {

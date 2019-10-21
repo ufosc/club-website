@@ -19,14 +19,15 @@ export class ScheduledEvent {
 					if (err) {
 						console.log(err);
 					} else {
-						events.forEach((event: any) =>
+						events.forEach((event: any) => {
+							console.log(`Rescheduling event: ${event.code}`);
 							clubEventEmitter.emit(
 								'schedule',
 								event.code,
 								event.name,
 								new Date(event.startDate),
-								new Date(event.endDate)
-							)
+								new Date(event.endDate));
+							}
 						);
 					}
 				}

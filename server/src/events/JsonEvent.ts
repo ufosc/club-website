@@ -31,7 +31,7 @@ class JsonEvent {
 		await LoopUtils.asyncForEach(events, async (event) => {
 			eventList.push(new JsonEvent(event));
 		});
-	}
+	};
 
 	private readonly code: string = null;
 	private readonly name: string = null;
