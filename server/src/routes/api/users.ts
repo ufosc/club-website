@@ -26,15 +26,15 @@ userRouter.post('/register', (req: express.Request, res: express.Response) => {
 	const { errors, isValid } = validateRegisterInput(req.body);
 
 	// check validation
-	if (!isValid) { return res.status(400).json(errors); }
+	if (!isValid) return res.status(400).json(errors);
 
-	User.findOne({ email: req.body.eventname }).then((user) => {
+	User.findOne({ email: req.body.email }).then((user : any) => {
 		if (user) {
 			return res.status(400).json({ email: 'Email already exists' });
 		} else {
 			const newUser = new User({
 				name: req.body.name,
-				email: req.body.eventname,
+				email: req.body.email,
 				password: req.body.password
 			});
 
@@ -66,11 +66,11 @@ userRouter.post('/login', (req: express.Request, res: express.Response) => {
 	// Check validation
 	if (!isValid) { return res.status(400).json(errors); }
 
-	const email = req.body.eventname;
+	const email = req.body.email;
 	const password = req.body.password;
 
-	// find user by eventname
-	User.findOne({ email }).then((user) => {
+	// find user by email
+	User.findOne({ email: email }).then((user) => {
 		// check if user exists
 		if (!user) {
 			return res.status(404).json({ emailnotfound: 'Email not found.' });

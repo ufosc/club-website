@@ -21,7 +21,7 @@ const UserSchema = new Schema({
 	},
 	events: {
 		type: Array,
-		default: {}
+		default: []
 	}
 });
 
@@ -30,7 +30,7 @@ interface IUser extends mongoose.Document {
 	email: string;
 	password: string;
 	date?: Date;
-	events: any[];
+	events: [any];
 }
 
 export const User = mongoose.model<IUser>('users', UserSchema);

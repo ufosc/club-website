@@ -24,7 +24,7 @@ import keys from './config/keys';
 import {ClubEventList} from "./utils/clubEventList";
 
 // establish connection to db
-mongoose.connect(keys.mongoURI, {useNewUrlParser: true})
+mongoose.connect(keys.mongoURI, {useNewUrlParser: true, useFindAndModify: false})
 	.then(() => console.log('Successfully established connection to MongoDB.'))
 	.catch((err) => console.log(err));
 

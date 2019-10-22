@@ -1,35 +1,35 @@
 import LoopUtils from '../utils/loopUtils';
-import { ClubEvent } from '../models/ClubEvent';
+import {ClubEvent} from '../models/ClubEvent';
 
 /**
  *  @desc Wrapper for JSON event objects.
  * @class Event
  */
-export class JsonEvent {
+export class ClubEventWrapper {
 	/**
 	 * Return all events within a range of dates.
 	 * @param dateBegin the date to begin selection from
 	 * @param dateEnd the date to end selection at
 	 * @return returns an unsorted list of events within a provided rage
 	 */
-	public static async getEvents(dateBegin, dateEnd): Promise<JsonEvent[]> {
-		const eventList: JsonEvent[] = [];
+	public static async getEvents(dateBegin, dateEnd): Promise<ClubEventWrapper[]> {
+		const eventList: ClubEventWrapper[] = [];
 		await ClubEvent.find(
-			{ startDate: { $lte: Date.now() }, endDate: { $gte: Date.now() } },
+			{startDate: {$lte: Date.now()}, endDate: {$gte: Date.now()}},
 			(err, events) => {
 				if (err) {
 					console.log(err);
 				} else {
-					JsonEvent.addEvents(events, eventList);
+					ClubEventWrapper.addEvents(events, eventList);
 				}
 			}
 		);
 		return eventList;
 	}
 
-	private static addEvents = async (events: any, eventList: JsonEvent[]) => {
+	private static addEvents = async (events: any, eventList: ClubEventWrapper[]) => {
 		await LoopUtils.asyncForEach(events, async (event) => {
-			eventList.push(new JsonEvent(event));
+			eventList.push(new ClubEventWrapper(event));
 		});
 	};
 
@@ -49,6 +49,10 @@ export class JsonEvent {
 			this.attendees = event.attendees && (this.attendees = event.attendees);
 			this.eventObj = event;
 		}
+	}
+
+	public toJson(): any {
+		return this.eventObj;
 	}
 
 	public getCode(): string {
@@ -75,13 +79,14 @@ export class JsonEvent {
 		ClubEvent.findOneAndUpdate(
 			{
 				code: this.code,
-				attendees: { $ne: email }
+				attendees: {$ne: email}
 			},
-			{ $addToSet: { attendees: email } },
+			{$addToSet: {attendees: email}},
 			(err, results) => {
-				if (results) {
+				if (err)
+					console.log(err);
+				else if (this.attendees.includes(email))
 					this.attendees.push(email);
-				}
 			}
 		);
 	}

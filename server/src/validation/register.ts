@@ -9,24 +9,26 @@ export default function validateRegisterInput(data: any) {
 	data.password2 = !isEmpty(data.password2) ? data.password2 : '';
 
 	// validate name field
-	if (Validator.isEmpty(data.name)) {
+	if (isEmpty(data.name)) {
 		errors.name = 'Name field is required.';
 	}
 
-	// validate eventname field
+	console.log(`IS THE EMAIL EMPTY: ${Validator.isEmpty(data.email)}`);
+
+	// validate email field
 	if (Validator.isEmpty(data.email)) {
-		errors.eventname = 'Email field is required.';
+		errors.email = 'Email field is required.';
 	} else if (!Validator.isEmail(data.email)) {
-		errors.eventname = 'Please enter a valid eventname address.';
+		errors.email = 'Please enter a valid email address.';
 	}
 
 	// validate password field
-	if (Validator.isEmpty(data.password)) {
+	if (isEmpty(data.password)) {
 		errors.password = 'Password field is required.';
 	}
 
 	// validate password confirmation
-	if (Validator.isEmpty(data.password2)) {
+	if (isEmpty(data.password2)) {
 		errors.password2 = 'Confirm password field is required.';
 	}
 

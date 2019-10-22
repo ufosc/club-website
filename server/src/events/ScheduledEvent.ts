@@ -1,7 +1,7 @@
-import { ClubEvent } from '../models/ClubEvent';
-import { ClubEventList } from '../utils/clubEventList';
-import { clubEventEmitter } from './eventhandler';
-import {JsonEvent} from "./JsonEvent";
+import {ClubEvent} from '../models/ClubEvent';
+import {ClubEventList} from '../utils/clubEventList';
+import {clubEventEmitter} from './eventhandler';
+import {ClubEventWrapper} from "./ClubEventWrapper";
 
 export class ScheduledEvent {
 	/**
@@ -15,36 +15,37 @@ export class ScheduledEvent {
 		} else {
 			// reschedule all events that have NOT occurred yet
 			await ClubEvent.find(
-				{ startDate: { $gte: new Date(Date.now()) } },
+				{startDate: {$gte: new Date(Date.now())}},
 				(err, events) => {
 					if (err) {
 						console.log(err);
 					} else {
 						console.log(`Rescheduling ${events.length} events now!`);
 						events.forEach((event: any) => {
-							console.log(`Rescheduling event: ${event.code}`);
-							clubEventEmitter.emit(
-								'schedule',
-								event.code,
-								event.name,
-								new Date(event.startDate),
-								new Date(event.endDate), true);
+								console.log(`Rescheduling event: ${event.code}`);
+								clubEventEmitter.emit(
+									'schedule',
+									event.code,
+									event.name,
+									new Date(event.startDate),
+									new Date(event.endDate), true);
 							}
 						);
 
-						this.getActiveEvent().then((activeEvent: JsonEvent) => {
-							clubEventEmitter.emit(
-								'enable',
-								activeEvent.getCode(),
-								activeEvent.getName(),
-								new Date(activeEvent.getStartDate()),
-								new Date(activeEvent.getEndDate())
-							);
+						this.getActiveEvent().then((activeEvent: ClubEventWrapper) => {
+							if (activeEvent) {
+								clubEventEmitter.emit(
+									'enable',
+									activeEvent.getCode(),
+									activeEvent.getName(),
+									new Date(activeEvent.getStartDate()),
+									new Date(activeEvent.getEndDate())
+								);
+							} else
+								console.log('No events to re-enable!');
 						}).catch((err) => {
 							if (err)
 								console.log(err);
-							else
-								console.log('No events to re-enable!');
 						});
 					}
 				}
@@ -54,18 +55,18 @@ export class ScheduledEvent {
 		}
 	}
 
-	public static async getActiveEvent() : Promise<JsonEvent> {
+	public static async getActiveEvent(): Promise<ClubEventWrapper> {
 		let evt = null;
 		await ClubEvent.findOne(
 			{
-				startDate: { $lte: Date.now() },
-				endDate: { $gt: Date.now() }
+				startDate: {$lte: Date.now()},
+				endDate: {$gt: Date.now()}
 			},
 			(err, event: any) => {
-				if (err) {
+				if (err)
 					console.log(err);
-				}
-				evt = new JsonEvent(event);
+				else if (event)
+					evt = new ClubEventWrapper(event);
 			}
 		);
 

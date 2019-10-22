@@ -8,9 +8,9 @@ export default function validateLoginInput(data: any) {
 	data.password = !isEmpty(data.password) ? data.password : '';
 
 	if (Validator.isEmpty(data.email)) {
-		errors.eventname = 'Email field is required.';
+		errors.email = 'Email field is required.';
 	} else if (!Validator.isEmail(data.email)) {
-		errors.eventname = 'Email is invalid.';
+		errors.email = 'Email is invalid.';
 	}
 
 	if (Validator.isEmpty(data.password)) {

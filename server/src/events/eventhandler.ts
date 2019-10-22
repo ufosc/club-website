@@ -3,7 +3,7 @@ import express from 'express';
 import {ClubEvent} from '../models/ClubEvent';
 import {ClubEventList} from '../utils/clubEventList';
 import {ScheduledEvent} from './ScheduledEvent';
-import {JsonEvent} from "./JsonEvent";
+import {ClubEventWrapper} from "./ClubEventWrapper";
 
 class ClubEventEmitter extends EventEmitter {
 }
@@ -18,6 +18,7 @@ clubEventEmitter.on('enable', (eventCode: string, eventName: string, startTime: 
 		console.log(`Attempting to enable a new event with code: ${eventCode}`);
 
 		if (isClubEventEnabled()) {
+			activeEvent = ScheduledEvent.getActiveEvent();
 			console.log(`Event creation failed, event with code '${activeEvent.code}' is already running.`);
 			return res.status(400).json({eventActive: `An event with code: '${activeEvent.code}', is already active.`});
 		}
@@ -108,7 +109,7 @@ clubEventEmitter.on('schedule', (eventCode: string, eventName: string, startTime
 });
 
 export const isClubEventEnabled = () : boolean => {
-	return ScheduledEvent.getActiveEvent() !== null;
+	return activeEvent !== null;
 };
 
 clubEventEmitter.on('disable', (eventCode, eventName) => {

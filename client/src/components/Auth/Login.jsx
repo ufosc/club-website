@@ -40,7 +40,7 @@ class Login extends Component {
 	onSubmit = e => {
 		e.preventDefault();
 		const userData = {
-			email: this.state.eventname,
+			email: this.state.email,
 			password: this.state.password
 		};
 		this.props.loginUser(userData); // since we handle redirect within our component,
@@ -74,17 +74,17 @@ class Login extends Component {
 							<div className="input-field col s12">
 								<input
 									onChange={this.onChange}
-									value={this.state.eventname}
-									error={errors.eventname}
+									value={this.state.email}
+									error={errors.email}
 									id="email"
 									type="email"
 									className={classnames("", {
-										invalid: errors.eventname || errors.emailnotfound
+										invalid: errors.email || errors.emailnotfound
 									})}
 								/>
 								<label htmlFor="email">Email</label>
 								<span className="red-text">
-                  					{errors.eventname}
+                  					{errors.email}
 									{errors.emailnotfound}
                					 </span>
 							</div>
