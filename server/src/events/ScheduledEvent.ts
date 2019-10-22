@@ -8,17 +8,18 @@ export class ScheduledEvent {
 	 * @returns void
 	 */
 	public static async rescheduleEvents() {
-		console.log('Rescheduling events...');
+		console.log('Attempting to reschedule events...');
 		if (!ClubEvent) {
 			console.log('There were no events to reschedule.');
 		} else {
 			// reschedule all events that have NOT occurred yet
 			await ClubEvent.find(
-				{ startDate: { $gte: Date.now() } },
+				{ startDate: { $gte: new Date(Date.now()) } },
 				(err, events) => {
 					if (err) {
 						console.log(err);
 					} else {
+						console.log(`Rescheduling ${events.length} events now!`);
 						events.forEach((event: any) => {
 							console.log(`Rescheduling event: ${event.code}`);
 							clubEventEmitter.emit(

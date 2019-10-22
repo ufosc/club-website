@@ -31,8 +31,8 @@ clubEventEmitter.on('schedule', (eventCode: string, eventName: string, startTime
 		const evt: any = {
 			code: eventCode,
 			name: eventName,
-			startDate: startTime.getTime(),
-			endDate: endTime.getTime()
+			startDate: startTime,
+			endDate: endTime
 		};
 
 		await ClubEvent.updateOne({code: evt.code}, {}, (err, result) => {
@@ -72,12 +72,7 @@ clubEventEmitter.on('schedule', (eventCode: string, eventName: string, startTime
 								});
 							}
 
-							ClubEvent.collection.insertOne({
-								code: evt.code,
-								name: evt.name,
-								startDate: evt.startDate,
-								endDate: evt.endDate
-							});
+							ClubEvent.collection.insertOne(evt);
 
 							setTimeout(() => {
 								ClubEventList.remove(val);
