@@ -83,7 +83,7 @@ button {
 	flex: 1 1 auto;
 }
 
-/* The email sign in doesn't need to be aligned with the rest of the inputs */
+/* The eventname sign in doesn't need to be aligned with the rest of the inputs */
 #sign-in-email-label {
 	width: 3rem;
 }

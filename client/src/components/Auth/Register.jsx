@@ -39,7 +39,7 @@ class Register extends Component {
 		e.preventDefault();
 		const newUser = {
 			name: this.state.name,
-			email: this.state.email,
+			email: this.state.eventname,
 			password: this.state.password,
 			password2: this.state.password2
 		};
@@ -89,16 +89,16 @@ class Register extends Component {
 							<div className="input-field col s12">
 								<input
 									onChange={this.onChange}
-									value={this.state.email}
-									error={errors.email}
+									value={this.state.eventname}
+									error={errors.eventname}
 									id="email"
 									type="email"
 									className={classnames("", {
-										invalid: errors.email
+										invalid: errors.eventname
 									})}
 								/>
 								<label htmlFor="email">Email</label>
-								<span className="red-text">{errors.email}</span>
+								<span className="red-text">{errors.eventname}</span>
 							</div>
 							<div className="input-field col s12">
 								<input

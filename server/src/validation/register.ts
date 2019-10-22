@@ -13,11 +13,11 @@ export default function validateRegisterInput(data: any) {
 		errors.name = 'Name field is required.';
 	}
 
-	// validate email field
+	// validate eventname field
 	if (Validator.isEmpty(data.email)) {
-		errors.email = 'Email field is required.';
+		errors.eventname = 'Email field is required.';
 	} else if (!Validator.isEmail(data.email)) {
-		errors.email = 'Please enter a valid email address.';
+		errors.eventname = 'Please enter a valid eventname address.';
 	}
 
 	// validate password field

@@ -2,7 +2,8 @@ import EventEmitter from 'events';
 import express from 'express';
 import {ClubEvent} from '../models/ClubEvent';
 import {ClubEventList} from '../utils/clubEventList';
-import { ScheduledEvent } from './ScheduledEvent';
+import {ScheduledEvent} from './ScheduledEvent';
+import {JsonEvent} from "./JsonEvent";
 
 class ClubEventEmitter extends EventEmitter {
 }
@@ -14,7 +15,7 @@ let activeEvent = null;
 // tslint:disable: max-line-length
 clubEventEmitter.on('enable', (eventCode: string, eventName: string, startTime: Date, endTime: Date, res?: express.Response) => {
 	setImmediate(async () => {
-		console.log('Attempting to enable a new event...');
+		console.log(`Attempting to enable a new event with code: ${eventCode}`);
 
 		if (isClubEventEnabled()) {
 			console.log(`Event creation failed, event with code '${activeEvent.code}' is already running.`);
@@ -24,7 +25,7 @@ clubEventEmitter.on('enable', (eventCode: string, eventName: string, startTime: 
 	});
 });
 
-clubEventEmitter.on('schedule', (eventCode: string, eventName: string, startTime: Date, endTime: Date, res?: express.Response) => {
+clubEventEmitter.on('schedule', (eventCode: string, eventName: string, startTime: Date, endTime: Date, rescheduling: boolean, res?: express.Response) => {
 	setImmediate(async () => {
 		const event = new ScheduledEvent(startTime, endTime, eventCode, eventName);
 
@@ -35,11 +36,10 @@ clubEventEmitter.on('schedule', (eventCode: string, eventName: string, startTime
 			endDate: endTime
 		};
 
-		await ClubEvent.updateOne({code: evt.code}, {}, (err, result) => {
-			// if the event does not exist
-			if (~result.n) {
-
-				event.schedule().then((val: number) => {
+		await ClubEvent.countDocuments({code: evt.code}, (err, result) => {
+			// if event is rescheduling OR the event does not exist
+			if (rescheduling || result === 0) {
+				schedule: event.schedule().then((val: number) => {
 					const timeDiff: number = startTime.getTime() - Date.now();
 					const eventLength: number = endTime.getTime() - startTime.getTime();
 					if (timeDiff < 0) {
@@ -72,7 +72,8 @@ clubEventEmitter.on('schedule', (eventCode: string, eventName: string, startTime
 								});
 							}
 
-							ClubEvent.collection.insertOne(evt);
+							if (!rescheduling)
+								ClubEvent.collection.insertOne(evt);
 
 							setTimeout(() => {
 								ClubEventList.remove(val);
@@ -106,8 +107,8 @@ clubEventEmitter.on('schedule', (eventCode: string, eventName: string, startTime
 	});
 });
 
-export const isClubEventEnabled = () => {
-	return false;
+export const isClubEventEnabled = () : boolean => {
+	return ScheduledEvent.getActiveEvent() !== null;
 };
 
 clubEventEmitter.on('disable', (eventCode, eventName) => {

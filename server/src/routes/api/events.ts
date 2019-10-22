@@ -28,14 +28,13 @@ eventRouter.post('/eventSignin', (req: express.Request, res: express.Response) =
 		return res.status(400).json(errors);
 	}
 
-	User.findOneAndUpdate({email: req.body.email}, (err, user) => {
+	User.findOneAndUpdate({email: req.body.eventname}, (err, user) => {
 		if (err) { throw err; }
 		// update user's attended events
 		if (user) {
 			if (eventHandler.isClubEventEnabled()) {
 				user.events.push();
 			}
-
 		}
 	});
 });
@@ -59,7 +58,7 @@ eventRouter.post('/createEvent', (req: express.Request, res: express.Response) =
 
 	eventHandler.clubEventEmitter.emit('schedule', eventCode, eventName,
 		new Date(Date.parse(startTime)),
-		new Date(Date.parse(endTime)), res);
+		new Date(Date.parse(endTime)), false, res);
 
 });
 

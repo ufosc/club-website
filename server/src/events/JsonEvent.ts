@@ -1,11 +1,11 @@
-import LoopUtils from 'src/utils/loopUtils';
+import LoopUtils from '../utils/loopUtils';
 import { ClubEvent } from '../models/ClubEvent';
 
 /**
  *  @desc Wrapper for JSON event objects.
  * @class Event
  */
-class JsonEvent {
+export class JsonEvent {
 	/**
 	 * Return all events within a range of dates.
 	 * @param dateBegin the date to begin selection from
@@ -41,12 +41,14 @@ class JsonEvent {
 	private eventObj: any = null;
 
 	constructor(event: any) {
-		this.code = event.code;
-		this.name = event.name;
-		this.startDate = event.startDate;
-		this.endDate = event.endDate;
-		this.attendees = event.attendees;
-		this.eventObj = event;
+		if (event) {
+			this.code = event.code && (this.code = event.code);
+			this.name = event.name && (this.name = event.name);
+			this.startDate = event.startDate && (this.startDate = event.startDate);
+			this.endDate = event.endDate && (this.endDate = event.endDate);
+			this.attendees = event.attendees && (this.attendees = event.attendees);
+			this.eventObj = event;
+		}
 	}
 
 	public getCode(): string {

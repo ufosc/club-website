@@ -11,7 +11,7 @@ export default function validateEventSignInInput(data: any) {
 	}
 
 	if (!Validator.isEmail(data.email)) {
-		errors.email = 'Please enter a valid email address.';
+		errors.eventname = 'Please enter a valid eventname address.';
 	}
 
 	return {
