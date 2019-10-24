@@ -37,8 +37,9 @@ export class ClubEventWrapper {
 	private readonly name: string = null;
 	private readonly startDate: number = null;
 	private readonly endDate: number = null;
-	private attendees: string[] = [];
-	private eventObj: any = null;
+	private readonly objectId : string = null;
+	private readonly attendees: string[] = [];
+	private readonly eventObj: any = null;
 
 	constructor(event: any) {
 		if (event) {
@@ -47,6 +48,7 @@ export class ClubEventWrapper {
 			this.startDate = event.startDate && (this.startDate = event.startDate);
 			this.endDate = event.endDate && (this.endDate = event.endDate);
 			this.attendees = event.attendees && (this.attendees = event.attendees);
+			this.eventObj = event.objectId && (this.eventObj = event._id);
 			this.eventObj = event;
 		}
 	}
@@ -73,6 +75,10 @@ export class ClubEventWrapper {
 
 	public getAttendees(): string[] {
 		return this.attendees;
+	}
+
+	public getObjectId(): string {
+		return this.objectId;
 	}
 
 	public addAttendee(email: string): void {

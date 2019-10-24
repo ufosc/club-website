@@ -3,7 +3,6 @@ import express from 'express';
 import {ClubEvent} from '../models/ClubEvent';
 import {ClubEventList} from '../utils/clubEventList';
 import {ScheduledEvent} from './ScheduledEvent';
-import {ClubEventWrapper} from "./ClubEventWrapper";
 
 class ClubEventEmitter extends EventEmitter {
 }

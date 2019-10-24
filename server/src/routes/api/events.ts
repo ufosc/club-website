@@ -18,11 +18,11 @@ import {ClubEventWrapper} from "../../events/ClubEventWrapper";
  */
 
 /**
- * @route POST api/events/event-signin
+ * @route POST api/events/signin
  * @desc sign users into an event with authentication.
  * @access Public
  */
-eventRouter.post('/signIn', (req: express.Request, res: express.Response) => {
+eventRouter.post('/signin', (req: express.Request, res: express.Response) => {
 	// form validation
 	const {errors, isValid} = validateEventSigninInput(req.body);
 
@@ -36,14 +36,14 @@ eventRouter.post('/signIn', (req: express.Request, res: express.Response) => {
 	evt.then((event: ClubEventWrapper) => {
 		if (event) {
 			if (!event.getAttendees().includes(email)) {
-				User.collection.findOneAndUpdate({email: email}, {'$push': {events: event.getCode()}}, (err, user : any) => {
+				User.collection.findOneAndUpdate({email: email}, {'$addToSet': {events: event.getObjectId()}}, (err, user : any) => {
 					if (err)
 						throw err;
 					// update user's attended events
 					event.addAttendee(email);
 					res.status(200).json({
 						success: true,
-						event: event.toJson(),
+						event: event.getObjectId(),
 						user: email,
 						message: 'Successfully signed the listed user into the active event!'
 					});
@@ -59,11 +59,11 @@ eventRouter.post('/signIn', (req: express.Request, res: express.Response) => {
 });
 
 /**
- * @route POST api/events/createEvent
+ * @route POST api/events/create
  * @desc allow authenticated users to create new events.
  * @access Public
  */
-eventRouter.post('/createEvent', (req: express.Request, res: express.Response) => {
+eventRouter.post('/create', (req: express.Request, res: express.Response) => {
 	const {errors, isValid} = validateEventCreation(req.body);
 
 	if (!isValid)
