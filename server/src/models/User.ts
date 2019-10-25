@@ -22,6 +22,16 @@ const UserSchema = new Schema({
 	events: {
 		type: Array,
 		default: []
+	},
+	admin: {
+		type: Boolean,
+		required: true,
+		default: false
+	},
+	discord: {
+		type: String,
+		required: false,
+		default: ''
 	}
 });
 
@@ -31,6 +41,8 @@ interface IUser extends mongoose.Document {
 	password: string;
 	date?: Date;
 	events: [any];
+	admin: boolean;
+	discord: string;
 }
 
 export const User = mongoose.model<IUser>('users', UserSchema);
