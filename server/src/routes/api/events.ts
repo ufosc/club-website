@@ -21,6 +21,8 @@ import {ClubEventWrapper} from "../../events/ClubEventWrapper";
  * @route POST api/events/signin
  * @desc sign users into an event with authentication.
  * @access Public
+ * Post body requirements:
+ * -
  */
 eventRouter.post('/signin', (req: express.Request, res: express.Response) => {
 	// form validation
@@ -45,7 +47,7 @@ eventRouter.post('/signin', (req: express.Request, res: express.Response) => {
 						success: true,
 						event: event.getObjectId(),
 						user: email,
-						message: 'Successfully signed the listed user into the active event!'
+						message: `Successfully signed user '${email}' into the active event!`
 					});
 				});
 			}
@@ -61,10 +63,17 @@ eventRouter.post('/signin', (req: express.Request, res: express.Response) => {
 /**
  * @route POST api/events/create
  * @desc allow authenticated users to create new events.
- * @access Public
+ * @access Private
+ * Post body requirements:
+ * - eventcode
+ * - eventname
+ * - starttime
+ * - endtime
+ * - sender
+ * - discord? <- optional
  */
-eventRouter.post('/create', (req: express.Request, res: express.Response) => {
-	const {errors, isValid} = validateEventCreation(req.body);
+eventRouter.post('/create', async (req: express.Request, res: express.Response) => {
+	const {errors, isValid} = await validateEventCreation(req.body);
 
 	if (!isValid)
 		return res.status(400).json(errors);

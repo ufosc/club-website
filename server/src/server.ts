@@ -6,6 +6,7 @@ import {ClubEventList} from "./utils/clubEventList";
 	TODO: Please create a .env with the following attributes from your testing discord Bot:
 	- CLIENT_ID=your_client_id_here
 	- CLIENT_SECRET=your_client_secret_here
+	- ADMINS=your_email_goes_here@gmail.com,more_emails@gmail.com <-- please format this way
  */
 
 import bodyParser from 'body-parser';
@@ -29,6 +30,7 @@ import passportJWT from './config/passport';
 import userRouter from './routes/api/users';
 import eventRouter from './routes/api/events';
 import discordRouter from './routes/api/discord';
+import {User} from "./models/User";
 
 //export const dotenvParseOutput = result.dotenvParseOutput;
 
@@ -95,5 +97,12 @@ process.on('SIGUSR2', exitHandler.bind(null, {exit: true}));
 
 //catches uncaught exceptions
 process.on('uncaughtException', exitHandler.bind(null, {exit: true}));
+
+const users = process.env.ADMINS.split(',');
+console.log(users);
+users.forEach((user) => {
+	console.log(user);
+	User.collection.updateOne({email: user}, {$set: {admin: true}}).catch(err => console.log(err));
+});
 
 ScheduledEvent.rescheduleEvents();
