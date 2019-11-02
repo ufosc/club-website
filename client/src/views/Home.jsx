@@ -22,6 +22,7 @@ class Home extends React.Component {
 				<HomeGrid className="cardGrid"/>
 				<br/>
 
+	
 				{/* Get involved box  */}
 				<div className="page-element">
 					<h1 className="title" id="get-involved-title">
