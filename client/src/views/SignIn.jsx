@@ -16,7 +16,7 @@ class SignIn extends React.Component {
 		return (
 			
 				<GoogleLogin
-clientId="secret"
+clientId=secrets.google_oAuth;
 buttonText="Login"
 onSuccess={responseGoogle}
 onFailure={responseGoogle}
