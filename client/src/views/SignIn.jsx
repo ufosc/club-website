@@ -6,6 +6,11 @@ const responseGoogle = (response) => {
 	console.log(response);
 
 }
+axios.post(`https://ufopensource.club/users`, { responseGoogle })
+      .then(res => {
+        console.log(res);
+        console.log(res.data);
+      })
 
 module.exports = {
   token: response.Zi.id_token;
