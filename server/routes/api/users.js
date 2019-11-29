@@ -11,7 +11,43 @@ const validateLoginInput = require("../../validation/login");
 
 // Load User model
 const User = require("../../models/User");
-const googleOAuth = require("../../models/config/oAuthMiddleWare");
+
+//route google sign-in
+
+router.route('/auth/google')
+	.post(passport.authenticate('google-token',{session: false}), function(req,res) {
+	if(!req.user){
+		return res.send(401, "Unsuccesful authentication!');
+	}
+
+
+
+
+				// user matched
+				// create JWT Payload
+				const payload = {
+					id: req.user.id,
+					name: user.name
+				};
+
+				// sign token
+				jwt.sign(
+					payload,
+					keys.secret,
+					{
+						expiresIn: 31556926 // 1 year in seconds
+					},
+					(err, token) => {
+						res.json({
+							success: true,
+							token: "Bearer " + token
+						});
+					}
+				);
+		});
+	});
+});
+	
 /**
  * @route POST api/users/register
  * @desc Register user
