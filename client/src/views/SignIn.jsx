@@ -1,6 +1,6 @@
 import React from 'react';
 import config from './config.json';
-import GoogleLogin from 'react-google-login';
+import {GoogleLogin} from 'react-google-login';
 
 
 
@@ -27,12 +27,12 @@ class SignIn extends React.Component {
 			mode: 'cors'
 			cache: 'default'
 		};
-		axios('http://localhost:4000/api/v1/aauth/google', options)
+		axios('http://localhost:4000/api/v1/auth/google', options)
 			.then(r => {
 				const token = r.headers.get('x-auth-token');
 				r.json().then(user=> {
 					if(token){
-						this.setState({Authenticated: true, user, token})
+						this.setState({Authenticated: true, googleUser, jwtToken})
 					}
 				});
 		        })
@@ -40,6 +40,7 @@ class SignIn extends React.Component {
 
 	}
 	render() {
+
 		return (
 			
 				<GoogleLogin
