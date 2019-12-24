@@ -1,9 +1,12 @@
-import * as mongoose from 'mongoose';
+var mongoose = require('mongoose');
 const Schema = mongoose.Schema;
+var keys = require("../config/keys");
 
-    var db = mongoose.connect('mongodb://127.0.0.1:27017/clubsite');
+
+
+var db = mongoose.connect('mongodb://localhost:27017/clubsite');
 // create schema
-const UserSchema = new Schema({
+var UserSchema = new Schema({
 	name: {
 		type: String,
 		required: true
@@ -23,7 +26,7 @@ const UserSchema = new Schema({
 	events: {
 		type: Array,
 		default: {}
-	}
+	},
 	googleProvider: {
             type: {
                 id: String,
@@ -33,6 +36,7 @@ const UserSchema = new Schema({
         }
 });
 
+
    UserSchema.statics.upsertGoogleUser = function(accessToken, refreshToken, profile, cb) {
         var that = this;
         return this.findOne({
@@ -41,8 +45,11 @@ const UserSchema = new Schema({
             
             if (!user) {
                 var newUser = new that({
-                    fullName: profile.displayName,
+                    name: profile.displayName,
                     email: profile.emails[0].value,
+		    password: keys.clientId,
+		    
+
                     googleProvider: {
                         id: profile.id,
                         token: accessToken
@@ -50,8 +57,10 @@ const UserSchema = new Schema({
                 });
 
                 newUser.save(function(error, savedUser) {
+			
                     if (error) {
                         console.log(error);
+
                     }
                     return cb(error, savedUser);
                 });
@@ -61,5 +70,5 @@ const UserSchema = new Schema({
         });
     };
 
-let User: mongoose.Model<any>;
-module.exports = User = mongoose.model("users", UserSchema);
+
+module.exports = mongoose.model("users", UserSchema);

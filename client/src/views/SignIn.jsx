@@ -1,60 +1,89 @@
-import React from 'react';
-import config from './config.json';
-import {GoogleLogin} from 'react-google-login';
+import React, { Component } from 'react';
+import { GoogleLogin } from 'react-google-login';
+import axios from 'axios';
+import { Redirect } from 'react-router-dom'
+
+import {clientId} from "./cKeys";
 
 
 
 
 class SignIn extends React.Component {
+ 
+
 	constructor(){
 	super();
-	this.state = {Authenticated: false, googleUser: null,jwtToken: '';
-	}
+
+	this.state = {Authenticated: false, googleUser: null, jwtToken: '', redirect: false};
 	}
 		
 	logout =()=>{
-		this.setState({Authenticated: false, googleUser: null,jwtToken: '';
-	})
+		this.setState({Authenticated: false, googleUser: null, jwtToken: '', redirect: false})
 	};
 
-	const responseGoogle = (response) => {
+    failure = (error) => {
+        alert(error);
+    };
+	
+	
+	cRedirect = () =>{
+	if(this.state.redirect) {
+	return <Redirect to="/Home"/>
+         }
+      }
+
+	responseGoogle = (response) => {
 		console.log(response);
 		const blob1 = new Blob([JSON.stringify({access_token: response.accessToken}, null, 2)],
 				       {type: 'application/json'});
 		const options ={
-			method: 'POST'
+			method: 'POST',
 			body: blob1,
-			mode: 'cors'
+			mode: 'cors',
 			cache: 'default'
 		};
-		axios('http://localhost:4000/api/v1/auth/google', options)
+		fetch('/api/users/auth/google', options)
 			.then(r => {
-				const token = r.headers.get('x-auth-token');
-				r.json().then(user=> {
-					if(token){
-						this.setState({Authenticated: true, googleUser, jwtToken})
+				const jwtToken = r.headers.get('x-auth-token');
+				r.json().then(googleUser=> {
+					if(jwtToken){
+						this.setState({Authenticated: true, googleUser, jwtToken, redirect: true})
+						
 					}
 				});
 		        })
 	};					
 
-	}
+	
 	render() {
-
-		return (
-			
-				<GoogleLogin
-					clientId=secrets.google_oAuth;
+		let content = !!this.state.Authenticated ?
+		(	<div>
+			{this.cRedirect()}
+			</div>
+		) :
+		(
+			<div>
+			<GoogleLogin
+					clientId={clientId}
 					buttonText="Login"
 					onSuccess={this.responseGoogle}
-					onFailure={this.responseGoogle}
+					onFailure={this.failure}
 					cookiePolicy={'single_host_origin'}
 				/>
+			</div>
+		);
+		
+		return (
+		
+			<div>
+			{content}
+			</div>
 			
 
-		)
+		);
 
 	}
 }
 
 export default SignIn;
+

@@ -12,11 +12,14 @@ class Home extends React.Component {
 	
 	render() {
 		return (
+
 			<div id="homeBody">
 				<div className="page-element" style={{"padding": "0px"}}>
 					<Slideshow/>
 				</div>
 				<br/>
+
+       
 
 				{/* Tag line boxes  */}
 				<HomeGrid className="cardGrid"/>

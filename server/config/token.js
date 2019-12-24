@@ -1,5 +1,7 @@
 // from https://medium.com/@alexanderleon/implement-social-authentication-with-react-restful-api-9b44f4714fa
 
+const jwt = require("jsonwebtoken");
+
 var createToken = function(auth) {
     return jwt.sign({
             id: auth.id

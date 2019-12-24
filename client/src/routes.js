@@ -5,6 +5,7 @@ import About from './views/About';
 import NotFound from './views/NotFound';
 import Home from './views/Home';
 import Projects from './views/Projects';
+import SignIn from './views/SignIn';
 import Footer from './components/Footer'
 
 // This exports the different routes that will be used on the page
@@ -19,7 +20,7 @@ export const Routes = () => {
 				</Route>
 				<Route exact path="/About" component={About}/>
 				<Route exact path="/Projects" component={Projects}/>
-				<Route component={NotFound}/>
+				<Route exact path ="/SignIn" component={SignIn}/>
 			</Switch>
 			<Footer />
 		</div>
