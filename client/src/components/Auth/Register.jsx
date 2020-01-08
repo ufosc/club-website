@@ -71,6 +71,8 @@ class Register extends Component {
 								Already have an account? <Link to="/login">Log in</Link>
 							</p>
 						</div>
+
+						{/* User registration form requiring user name, email, password, and password confirmation */}
 						<form noValidate onSubmit={this.onSubmit}>
 							<div className="input-field col s12">
 								<input
@@ -82,8 +84,9 @@ class Register extends Component {
 									className={classnames("", {
 										invalid: errors.name
 									})}
+									placeholder={"Name"}
 								/>
-								<label htmlFor="name">Name</label>
+								{/*<label htmlFor="name">Name</label>*/}
 								<span className={"red-text"}>{errors.name}</span>
 							</div>
 							<div className="input-field col s12">
@@ -96,8 +99,9 @@ class Register extends Component {
 									className={classnames("", {
 										invalid: errors.email
 									})}
+									placeholder={"Email"}
 								/>
-								<label htmlFor="email">Email</label>
+								{/*<label htmlFor="email">Email</label>*/}
 								<span className="red-text">{errors.email}</span>
 							</div>
 							<div className="input-field col s12">
@@ -110,8 +114,9 @@ class Register extends Component {
 									className={classnames("", {
 										invalid: errors.password
 									})}
+									placeholder={"Password"}
 								/>
-								<label htmlFor="password">Password</label>
+								{/*<label htmlFor="password">Password</label>*/}
 								<span className="red-text">{errors.password}</span>
 							</div>
 							<div className="input-field col s12">
@@ -124,8 +129,9 @@ class Register extends Component {
 									className={classnames("", {
 										invalid: errors.password2
 									})}
+									placeholder={"Confirm Password"}
 								/>
-								<label htmlFor="password2">Confirm Password</label>
+								{/*<label htmlFor="password2">Confirm Password</label>*/}
 								<span className="red-text">{errors.password2}</span>
 							</div>
 							<div className="col s12" style={{paddingLeft: "11.250px"}}>

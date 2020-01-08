@@ -50,7 +50,7 @@ class Login extends Component {
 	render() {
 		const {errors} = this.state;
 		return (
-			<html>
+			<div>
 			<title>Register</title>
 			<link rel="stylesheet"
 				  href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"/>
@@ -70,6 +70,8 @@ class Login extends Component {
 								Don't have an account? <Link to="/register">Register</Link>
 							</p>
 						</div>
+
+						{/* Login form requiring user email and password */}
 						<form noValidate onSubmit={this.onSubmit}>
 							<div className="input-field col s12">
 								<input
@@ -79,14 +81,11 @@ class Login extends Component {
 									id="email"
 									type="email"
 									className={classnames("", {
-										invalid: errors.email || errors.emailnotfound
+										invalid: errors.email
 									})}
+									placeholder={"Email"}
 								/>
-								<label htmlFor="email">Email</label>
-								<span className="red-text">
-                  					{errors.email}
-									{errors.emailnotfound}
-               					 </span>
+								{/*<label htmlFor="email">Email</label>*/}
 							</div>
 							<div className="input-field col s12">
 								<input
@@ -96,10 +95,11 @@ class Login extends Component {
 									id="password"
 									type="password"
 									className={classnames("", {
-										invalid: errors.password || errors.passwordincorrect
+										invalid: errors.password
 									})}
+									placeholder={"Password"}
 								/>
-								<label htmlFor="password">Password</label>
+								{/*<label htmlFor="password">Password</label>*/}
 								<span className="red-text">
                  					 {errors.password}
 									{errors.passwordincorrect}
@@ -124,7 +124,7 @@ class Login extends Component {
 					</div>
 				</div>
 			</div>
-			</html>
+			</div>
 		);
 	}
 }

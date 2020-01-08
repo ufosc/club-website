@@ -47,7 +47,7 @@ class Slideshow extends Component {
 						  onChange={this.onChangeCarouselIndex}>
 					{slides.map((slide, index) => (
 						<div>
-							<img src={slide.src} className="slide"/>
+							<img src={slide.src} className="slide" alt={slide.name}/>
 						</div>
 					))}
 
