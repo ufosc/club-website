@@ -22,7 +22,7 @@ class Login extends Component {
 		}
 	}
 
-	componentWillReceiveProps(nextProps: Readonly<P>, nextContext: any): void {
+	UNSAFE_componentWillReceiveProps(nextProps: Readonly<P>, nextContext: any): void {
 		if (nextProps.auth.isAuthenticated) {
 			this.props.history.push("/dashboard"); // push user to dashboard when they login
 		}
