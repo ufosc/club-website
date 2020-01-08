@@ -2,8 +2,24 @@ import React, {Component} from "react";
 import PropTypes from "prop-types";
 import {connect} from "react-redux";
 import {logoutUser} from "../../actions/authActions";
+import Dashprofile from "./Dashprofile.js";
 
 class Dashboard extends Component {
+	constructor(props){
+		super(props);
+		this.state = {
+			showPopup: false
+		};
+	}
+
+	// sets the showPopup state to not the current value
+	togglePopup = e => {
+		e.preventDefault();
+		this.setState({
+			showPopup: !this.state.showPopup
+		});
+	}
+
 	onLogoutClick = e => {
 		e.preventDefault();
 		this.props.logoutUser();
@@ -13,7 +29,7 @@ class Dashboard extends Component {
 		const {user} = this.props.auth;
 		return (
 			<html>
-			<head>
+			<head title={"Dashboard"}>
 				<link rel="stylesheet"
 					  href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"/>
 				<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"/>
@@ -27,6 +43,16 @@ class Dashboard extends Component {
 								You are logged into the OSC website!
 							</p>
 						</h4>
+
+						<button onClick={this.togglePopup}> Edit Profile</button>
+						{this.state.showPopup ?
+							<Dashprofile
+								text='Click "Close Button" to hide popup'
+								closePopup={this.togglePopup}
+								user={user}
+							/>
+							: null
+						}
 						<button
 							style={{
 								width: "150px",
