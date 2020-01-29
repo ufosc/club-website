@@ -54,6 +54,8 @@ class SignIn extends React.Component {
 				r.json().then(googleUser=> {
 					if(jwtToken){
 						this.setState({Authenticated: true, googleUser, jwtToken, redirect: true})
+
+						// lines 58 thru 64 only work when merged into master; if it doesnt work just delete
 						
 			                        localStorage.setItem("jwtToken", jwtToken);
 			                       // set token to auth header
