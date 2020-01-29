@@ -2,9 +2,15 @@ import React, { Component } from 'react';
 import { GoogleLogin } from 'react-google-login';
 import axios from 'axios';
 import { Redirect } from 'react-router-dom'
-
+import setAuthToken from "../utils/setAuthToken";
+import jwt_decode from "jwt-decode";
 import {clientId} from "./cKeys";
 
+import {
+	GET_ERRORS,
+	SET_CURRENT_USER,
+	USER_LOADING
+} from "../actions/types";
 
 
 
@@ -48,6 +54,14 @@ class SignIn extends React.Component {
 				r.json().then(googleUser=> {
 					if(jwtToken){
 						this.setState({Authenticated: true, googleUser, jwtToken, redirect: true})
+						
+			                        localStorage.setItem("jwtToken", jwtToken);
+			                       // set token to auth header
+			                       setAuthToken(jwtToken);
+			                       // decode token to get user
+			                       const decoded = jwt_decode(jwtToken);
+			                       // set current user
+			                       dispatch(setCurrentUser(decoded));
 						
 					}
 				});
