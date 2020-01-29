@@ -2,8 +2,8 @@
 # Created by https://www.gitignore.io/api/macos,windows,linux,node,git,python,java,c++,c,csharp,ruby,android,visualstudio,visualstudiocode,eclipse,netbeans,sublimetext,intellij,xcode,codeblocks,pycharm
 
 # config
-keys.js
-cKeys.js
+**/server/keys.js
+**/client/src/views/cKeys.js
 
 ### Android ###
 # Built application files
