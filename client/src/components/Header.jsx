@@ -1,8 +1,21 @@
-import React from 'react';
+import React, {useState, useEffect} from 'react';
 import { Link } from 'react-router-dom';
+import PropTypes from 'prop-types';
+import {connect} from "react-redux";
 import '../styles/index.scss';
+import {loginUser} from "../actions/authActions";
 
-const Header = () => {
+const Header = (props) => {
+	const [loggedIn, setLoggedIn] = useState("");
+
+	function handleStatusChange(status) {
+		setLoggedIn(status);
+	}
+
+	useEffect(()=> {
+		{props.auth.isAuthenticated ? handleStatusChange("Profile") :  handleStatusChange("Sign In")}
+	});
+
 	return (
 		<div className='topnav'>
 			{/* Logo */}
@@ -12,7 +25,7 @@ const Header = () => {
 
 			{/* Page Links */}
 			<div className="topnav-right">
-				<Link className="topnav-link" to='/Register'>Sign in</Link>
+				<Link className="topnav-link" to='/Register'>{loggedIn}</Link>
 				<Link className="topnav-link" to='/projects'>Projects</Link>
 				<a className="topnav-link" target='_blank' rel="noopener noreferrer" href="https://www.facebook.com/groups/ufosc/events/?source=4&action_history=null&filter=calendar">
 					Events
@@ -26,6 +39,20 @@ const Header = () => {
 			</div>
 		</div>
 	)
-}
 
-export default Header;
+};
+
+
+Header.propTypes = {
+	loginUser: PropTypes.func.isRequired,
+	auth: PropTypes.object.isRequired
+};
+
+const mapStateToProps = state => ({
+	auth: state.auth,
+});
+
+export default connect(
+	mapStateToProps,
+	{loginUser}
+)(Header);

@@ -78,9 +78,5 @@ class Dashprofile extends React.Component {
 	}
 }
 
-Dashprofile.propTyppes = {
-
-}
-
 // Export the component to use it in other components.
 export default Dashprofile;
