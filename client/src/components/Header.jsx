@@ -8,13 +8,9 @@ import {loginUser} from "../actions/authActions";
 const Header = (props) => {
 	const [loggedIn, setLoggedIn] = useState("");
 
-	function handleStatusChange(status) {
-		setLoggedIn(status);
-	}
-
 	useEffect(()=> {
-		{props.auth.isAuthenticated ? handleStatusChange("Profile") :  handleStatusChange("Sign In")}
-	});
+		props.auth.isAuthenticated ? setLoggedIn("Profile") :  setLoggedIn("Sign In")
+	}, [props]);
 
 	return (
 		<div className='topnav'>
@@ -29,11 +25,11 @@ const Header = (props) => {
 				<Link className="topnav-link" to='/projects'>Projects</Link>
 				<a className="topnav-link" target='_blank' rel="noopener noreferrer" href="https://www.facebook.com/groups/ufosc/events/?source=4&action_history=null&filter=calendar">
 					Events
-					<i className="fas fa-external-link-alt external-link" data-fa-transform="up-6"></i>
+					<i className="fas fa-external-link-alt external-link" data-fa-transform="up-6"/>
 				</a>
 				<a className="topnav-link" target='_blank' rel="noopener noreferrer" href="https://github.com/ufosc/club-resources">
 					Resources
-					<i className="fas fa-external-link-alt external-link" data-fa-transform="up-6 right-4"></i>
+					<i className="fas fa-external-link-alt external-link" data-fa-transform="up-6 right-4"/>
 				</a>
 				<Link className="topnav-link" to="/about">About</Link>
 			</div>
@@ -41,7 +37,6 @@ const Header = (props) => {
 	)
 
 };
-
 
 Header.propTypes = {
 	loginUser: PropTypes.func.isRequired,
