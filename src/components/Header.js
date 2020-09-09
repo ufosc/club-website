@@ -1,6 +1,5 @@
-import React, {useState, useEffect} from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom';
-import {connect} from "react-redux";
 import '../styles/index.scss';
 
 const Header = (props) => {
@@ -27,7 +26,6 @@ const Header = (props) => {
 			</div>
 		</div>
 	)
-
 };
 
 export default Header;
