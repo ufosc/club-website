@@ -1,16 +1,9 @@
 import React, {useState, useEffect} from 'react';
 import { Link } from 'react-router-dom';
-import PropTypes from 'prop-types';
 import {connect} from "react-redux";
 import '../styles/index.scss';
-import {loginUser} from "../actions/authActions";
 
 const Header = (props) => {
-	const [loggedIn, setLoggedIn] = useState("");
-
-	useEffect(()=> {
-		props.auth.isAuthenticated ? setLoggedIn("Profile") :  setLoggedIn("Sign In")
-	}, [props]);
 
 	return (
 		<div className='topnav'>
@@ -21,7 +14,6 @@ const Header = (props) => {
 
 			{/* Page Links */}
 			<div className="topnav-right">
-				<Link className="topnav-link" to='/Register'>{loggedIn}</Link>
 				<Link className="topnav-link" to='/projects'>Projects</Link>
 				<a className="topnav-link" target='_blank' rel="noopener noreferrer" href="https://www.facebook.com/groups/ufosc/events/?source=4&action_history=null&filter=calendar">
 					Events
@@ -38,16 +30,4 @@ const Header = (props) => {
 
 };
 
-Header.propTypes = {
-	loginUser: PropTypes.func.isRequired,
-	auth: PropTypes.object.isRequired
-};
-
-const mapStateToProps = state => ({
-	auth: state.auth,
-});
-
-export default connect(
-	mapStateToProps,
-	{loginUser}
-)(Header);
+export default Header;
