@@ -23,6 +23,8 @@ const Header = (props) => {
 					<i className="fas fa-external-link-alt external-link" data-fa-transform="up-6 right-4"/>
 				</a>
 				<Link className="topnav-link" to="/about">About</Link>
+				<Link className="topnav-link" to="/login">Login</Link>
+				<Link className="topnav-link" to="/signup">SignUp</Link>
 			</div>
 		</div>
 	)
