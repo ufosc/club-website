@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Route, Switch, Redirect } from 'react-router-dom';
 
 import PrivateRoute from "./components/PrivateRoute";
@@ -15,8 +15,16 @@ import { AuthContext } from "./context/auth"
 
 // This exports the different routes that will be used on the page
 export const Routes = () => {
+	const existingTokens = JSON.parse(localStorage.getItem("tokens"));
+	const [authTokens, setAuthTokens] = useState(existingTokens);
+
+	const setTokens = (data) => {
+		localStorage.setItem("tokens", JSON.stringify(data));
+		setAuthTokens(data);
+	}
+
 	return (
-		<AuthContext.Provider value={false}>
+		<AuthContext.Provider value={ {authTokens, setAuthTokens: setTokens}}>
 			<Header/>
 			<Switch>
 				<Route exact path="/Home" component={Home}/>

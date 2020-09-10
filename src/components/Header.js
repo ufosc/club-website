@@ -24,7 +24,7 @@ const Header = (props) => {
 				</a>
 				<Link className="topnav-link" to="/about">About</Link>
 				<Link className="topnav-link" to="/login">Login</Link>
-				<Link className="topnav-link" to="/signup">SignUp</Link>
+				<Link className="topnav-link" to="/signup">Signup</Link>
 			</div>
 		</div>
 	)

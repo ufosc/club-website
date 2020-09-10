@@ -2,4 +2,4 @@
 const { hostname } = window.location
 
 // export the server host
-export const server = hostname.includes('localhost') ? 'http://localhost:8080/api' : '/api'
+export const server = hostname.includes('localhost') ? 'http://localhost:4000/api' : '/api'
