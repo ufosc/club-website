@@ -8,12 +8,12 @@ site if you need icons or want to update it */
 /* Pulling fonts from assets folder */
 @font-face {
 	font-family: 'IBMPlexSans';
-	src: url('../assets/fonts/IBM_Plex_Sans/IBMPlexSans-SemiBold.ttf') format('truetype');
+	src: url('../fonts/IBM_Plex_Sans/IBMPlexSans-SemiBold.ttf') format('truetype');
 }
 
 @font-face {
 	font-family: 'IBMPlexSerif';
-	src: url('../assets/fonts/IBM_Plex_Serif/IBMPlexSerif-Light.ttf') format('truetype');
+	src: url('../fonts/IBM_Plex_Serif/IBMPlexSerif-Light.ttf') format('truetype');
 }
 
 /* Default styling values used throughout the CSS */
@@ -81,11 +81,11 @@ body {
 /* Each card used on the site */
 .page-element {
 	background: var(--background-color);
-	border: 1px solid var(--primary-color);
-	border-radius: 3px 3px 3px 3px;
-	box-shadow: 0 4px 6px 0 var(--shadow-color);
+	border: 0.75rem;
+	box-shadow: 0px 5px 4px 1px var(--shadow-color);
 	justify-content: flex-start;
 	padding: 10px;
+	margin: 10px;
 	text-align: center;
 }
 
@@ -138,6 +138,10 @@ body {
 	outline: none;
 }
 
+.topnav-link:hover {
+	cursor: pointer;
+}
+
 /* Keep the logo in the box */
 #logo-link {
 	box-sizing: initial;
@@ -168,6 +172,7 @@ body {
 .external-link {
 	color: var(--light-primary-color);
 	font-size: .75em;
+	padding-left: 0.75rem;
 }
 
 /* Header settings for smaller devices */

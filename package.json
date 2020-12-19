@@ -1,0 +1,41 @@
+{
+  "name": "ufosc-club-website",
+  "version": "1.0.3-Snapshot",
+  "private": true,
+  "dependencies": {
+    "@csstools/normalize.css": "^11.0.1",
+    "axios": "^0.21.0",
+    "classnames": "^2.2.6",
+    "sass": "^1.30.0",
+    "react": "^17.0.1",
+    "react-awesome-slider": "^4.1.0",
+    "react-dom": "^17.0.1",
+    "react-responsive-carousel-variable-height": "^3.0.17",
+    "react-scripts": "4.0.1"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
+  },
+  "eslintConfig": {
+    "extends": "react-app"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "devDependencies": {
+    "react-responsive-carousel": "^3.1.50",
+    "react-router-dom": "^5.0.1"
+  }
+}

@@ -10,7 +10,7 @@ TODO: On this page
 4. Active/Inactive tag?
 */
 
-#wrapper {
+.wrapper {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
     grid-gap: 20px;
@@ -19,8 +19,19 @@ TODO: On this page
 }
 
 .project-element {
+    border-radius: 0.5rem;
     display: flex;
     flex-direction: column;
+}
+
+/* .project-element:hover {
+    box-shadow: 0 0.25rem 0.25rem rgba(50,50,93,.1);
+    transform: translateY(-0.75px);
+    transition: transform .1s ease-in-out;
+} */
+
+.project-title:hover {
+    color: #303F9F;
 }
 
 .project-subtitle {
@@ -56,7 +67,7 @@ TODO: On this page
 
 /* Have the size  */
 @media screen and (max-width: 600px) {
-    #wrapper {
+    .wrapper {
         grid-template-columns: repeat(auto-fill, minmax(90vw, 400px));
     }
 
