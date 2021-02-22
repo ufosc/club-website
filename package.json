@@ -1,17 +1,25 @@
 {
-  "name": "ufosc-club-website",
-  "version": "1.0.3-Snapshot",
+  "name": "frontend",
+  "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "@csstools/normalize.css": "^11.0.1",
-    "axios": "^0.21.0",
-    "classnames": "^2.2.6",
-    "sass": "^1.30.0",
+    "@chakra-ui/icons": "^1.0.5",
+    "@chakra-ui/react": "^1.0.0",
+    "@emotion/react": "^11.0.0",
+    "@emotion/styled": "^11.0.0",
+    "@testing-library/jest-dom": "^5.9.0",
+    "@testing-library/react": "^10.2.1",
+    "@testing-library/user-event": "^12.0.2",
+    "axios": "^0.21.1",
+    "framer-motion": ">=3.0.0",
     "react": "^17.0.1",
-    "react-awesome-slider": "^4.1.0",
     "react-dom": "^17.0.1",
-    "react-responsive-carousel-variable-height": "^3.0.17",
-    "react-scripts": "4.0.1"
+    "react-icons": "^3.0.0",
+    "react-responsive-carousel": "^3.2.12",
+    "react-router-dom": "^5.2.0",
+    "react-scripts": "4.0.2",
+    "sass": "^1.32.8",
+    "web-vitals": "^0.2.2"
   },
   "scripts": {
     "start": "react-scripts start",
@@ -33,9 +41,5 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-  },
-  "devDependencies": {
-    "react-responsive-carousel": "^3.1.50",
-    "react-router-dom": "^5.0.1"
   }
 }
