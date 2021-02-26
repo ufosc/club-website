@@ -25,7 +25,7 @@ const Routes = () => {
 
 	return (
 		<AuthContext.Provider value={{authTokens, setAuthTokens: setTokens}}>
-			<ChakraProvider theme={Theme}>
+			<ChakraProvider >
 				<Header/>
 				<Switch>
 					<Route exact path="/Home" component={Home}/>
