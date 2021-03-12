@@ -1,12 +1,12 @@
 import React from 'react';
-import '../styles/about.css'
+import {Flex, HStack, Text, Box, Heading} from '@chakra-ui/react'
 
 const About = () => {
 	return (
-		<div className="tempWrapper">
-			<div id="about" className="page-element">
-				<h1 class="title">About OSC</h1>
-				<p className="text">
+		<HStack spacing="6">
+			<Flex height="80vh" width="33%" m="3" direction="column" alignItems="center" border="2px solid black" borderRadius="25px" shadow="-5px 5px 5px gray">
+				<Heading as="h1" size="lg" paddingBottom="6" paddingTop="3">About OSC</Heading>
+				<Text align="center" paddingLeft="5" paddingRight="5">
 					OSC is the Open Source Club at the University of Florida. We are a community of makers, who want to
 					solve problems and improve our world using open source projects.
 					<br/> <br/>
@@ -28,16 +28,16 @@ const About = () => {
 					To learn how to get involved, check out the <a href="https://github.com/ufosc/getting-started">getting
 					started
 					guide</a>.
-				</p>
-			</div>
+				</Text>
+			</Flex>
 
-			<div id="meetings" className="page-element">
-				<h1 className="title">Meetings</h1>
-				<p className="text">
+			<Flex height="80vh" width="33%" m="3" direction="column" alignItems="center" border="2px solid black" borderRadius="25px" shadow="-5px 5px 5px gray">
+				<Heading as="h1" size="lg" paddingBottom="6" paddingTop="3">Meetings</Heading>
+				<Text align="center">
 					We have a couple types of meetings. Check our <a
 					href="https://www.facebook.com/groups/ufosc/">Facebook</a> for
 					times and locations.
-					<ol className="text">
+					<ol>
 						<li>Casual Coding Sessions are laid back meetings. You can work on projects, homework, or just
 							hang out! They
 							happen twice weekly. It's a great time to find people with similar interest and create
@@ -57,11 +57,11 @@ const About = () => {
 							own!
 						</li>
 					</ol>
-				</p>
-			</div>
+				</Text>
+			</Flex>
 
-			<div id="history" className="page-element">
-				<h1 className="title">History</h1>
+			<Flex height="80vh" width="33%" m="3" direction="column" alignItems="center" border="2px solid black" borderRadius="25px" shadow="-5px 5px 5px gray">
+				<Heading as="h1" size="lg" paddingBottom="6" paddingTop="3">History</Heading>
 				<h2 className="subtitle">Getting Started</h2>
 				<div className="text">
 					After noticing a lack of general project focused clubs on campus, Matthew Booe (President) brought
@@ -113,8 +113,8 @@ const About = () => {
 					<br/><br/>
 					To be continued...
 				</div>
-			</div>
-		</div>
+			</Flex>
+		</HStack>
 	)
 
 
