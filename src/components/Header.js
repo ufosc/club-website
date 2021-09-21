@@ -22,8 +22,8 @@ const Header = (props) => {
 					Resources <ExternalLinkIcon boxSize={3} />
 				</Link>
 				<Link as={ReactLink} className="topnav-link" to="/about">About</Link>
-				<Link as={ReactLink} className="topnav-link" to="/login">Login</Link>
-				<Link as={ReactLink} className="topnav-link" to="/signup">Signup</Link>
+				{/* <Link as={ReactLink} className="topnav-link" to="/login">Login</Link>
+				<Link as={ReactLink} className="topnav-link" to="/signup">Signup</Link> */}
 				<ColorModeSwitcher justifySelf="flex-end" />
 			</HStack>
 		</Flex>

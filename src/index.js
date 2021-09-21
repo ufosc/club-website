@@ -1,17 +1,17 @@
 import { ColorModeScript } from '@chakra-ui/react';
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { BrowserRouter } from 'react-router-dom'
+import { BrowserRouter } from 'react-router-dom';
 import Routes from './Routes';
 import reportWebVitals from './reportWebVitals';
 import * as serviceWorker from './serviceWorker';
 
 ReactDOM.render(
-  <BrowserRouter>
-    <ColorModeScript />
-    <Routes />
-  </BrowserRouter>,
-  document.getElementById('root')
+	<BrowserRouter>
+		<ColorModeScript />
+		<Routes />
+	</BrowserRouter>,
+	document.getElementById('root')
 );
 
 // If you want your app to work offline and load faster, you can change
