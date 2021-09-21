@@ -1,7 +1,9 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link as ReactLink } from 'react-router-dom';
 import '../styles/index.scss';
-import { Flex, Box } from '@chakra-ui/layout';
+import { Flex, Box, Heading, Text } from '@chakra-ui/react';
+import { Link, Spacer } from '@chakra-ui/react';
+import { ExternalLinkIcon } from '@chakra-ui/icons';
 import Slideshow from '../components/Slideshow';
 import HomeGrid from '../components/HomeGrid/HomeGrid';
 
@@ -41,31 +43,40 @@ const Home = () => {
 				textAlign="center"
 				justifyContent="flex-start"
 			>
-				<h1 className="title" id="get-involved-title">
+				<Heading as="h1" size="sm" marginBottom="20px">
 					Get Involved
-				</h1>
-				<p className="get-involved-text">
+				</Heading>
+				<Text top="20px" margin-bottom="0">
 					OSC is the Open Source Club at the University of Florida. We are a
 					community of makers, who want to solve problems and improve our world
 					using open source projects.
 					<br />
 					<br />
 					Our{' '}
-					<a href="https://github.com/ufosc/getting-started">
-						getting started guide
-					</a>{' '}
+					{/* <Link  href="https://github.com/ufosc/club-resources" isExternal>
+					Resources <ExternalLinkIcon boxSize={3} />
+				</Link>
+				<Link as={ReactLink} className="topnav-link" to="/about">About</Link> */}
+					<Link href="https://github.com/ufosc/getting-started" isExternal>
+						getting started guide <ExternalLinkIcon boxSize={4} />
+					</Link>{' '}
 					should help you learn about the club and how we operate. Sign up for
 					our{' '}
-					<a href="https://www.facebook.com/groups/ufosc/">Facebook group</a>{' '}
+					<Link href="https://www.facebook.com/groups/ufosc/" isExternal>
+						Facebook group <ExternalLinkIcon boxSize={4} />
+					</Link>{' '}
 					for meeting announcements and join our
-					<a href="https://discord.gg/Gsxej6u">Discord</a> to communicate with
-					other members and ask questions. And of course, come to our meetings!
-					Introduce yourself, work on projects, and have fun.
+					<Link href="https://discord.gg/Gsxej6u" isExternal>
+						Discord <ExternalLinkIcon boxSize={4} />
+					</Link>{' '}
+					to communicate with other members and ask questions. And of course,
+					come to our meetings! Introduce yourself, work on projects, and have
+					fun.
 					<br />
 					<br />
 					You can find our more about us and our history in the{' '}
 					<Link to="/about">about page</Link>.
-				</p>
+				</Text>
 			</Box>
 		</Flex>
 	);
