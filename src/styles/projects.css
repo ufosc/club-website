@@ -1,4 +1,4 @@
-@import "unified.css";
+@import 'unified.css';
 
 /*
 TODO: On this page
@@ -11,17 +11,17 @@ TODO: On this page
 */
 
 .wrapper {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
-    grid-gap: 20px;
-    justify-items: stretch;
-    margin: 20px;
+	display: grid;
+	grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+	grid-gap: 20px;
+	justify-items: stretch;
+	margin: 20px;
 }
 
 .project-element {
-    border-radius: 0.5rem;
-    display: flex;
-    flex-direction: column;
+	border-radius: 0.5rem;
+	display: flex;
+	flex-direction: column;
 }
 
 /* .project-element:hover {
@@ -31,47 +31,47 @@ TODO: On this page
 } */
 
 .project-title:hover {
-    color: #303F9F;
+	color: #303f9f;
 }
 
 .project-subtitle {
-    font-weight: lighter;
-    color: var(--light-primary-color);
-    border-bottom: 1px solid var(--divider-color);
-    margin-top: -20px;
+	font-weight: lighter;
+	color: var(--light-primary-color);
+	border-bottom: 1px solid var(--divider-color);
+	margin-top: -20px;
 }
 
 .project-image {
-    image-orientation: from-image;
-    overflow: hidden;
-    max-width: 20vw;
-    min-width: 200px;
-    max-height: 300px;
-    border-radius: 15px;
-    border-style: solid;
-    border-width: 2px;
+	image-orientation: from-image;
+	overflow: hidden;
+	max-width: 20vw;
+	min-width: 200px;
+	max-height: 300px;
+	border-radius: 15px;
+	border-style: solid;
+	border-width: 2px;
 }
 
 .project-footnote-text {
-    font-size: small;
-    margin-top: auto;
+	font-size: small;
+	margin-top: auto;
 }
 
 .fa-github {
-    font-size: 24px
+	font-size: 24px;
 }
 
 .fa-users {
-    font-size: 20px;
+	font-size: 20px;
 }
 
 /* Have the size  */
 @media screen and (max-width: 600px) {
-    .wrapper {
-        grid-template-columns: repeat(auto-fill, minmax(90vw, 400px));
-    }
+	.wrapper {
+		grid-template-columns: repeat(auto-fill, minmax(90vw, 400px));
+	}
 
-    .project-element {
-        max-width: 550px;
-    }
+	.project-element {
+		max-width: 550px;
+	}
 }
