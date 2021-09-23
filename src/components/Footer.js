@@ -1,32 +1,34 @@
 import React from 'react';
+import { FaDiscord, FaGithubSquare, FaFacebookSquare } from 'react-icons/fa'
+import { MdEmail } from 'react-icons/md'
+import {Flex, Link, Text, Stack, Icon} from '@chakra-ui/react'
 
 const Footer = () => {
 	return (
-		<div className="footer">
+		<Flex align="center" justify="center" wrap="wrap" w="100%" p="4" direction="column" >
+			<Stack direction="row" >
+				<Link href="https://discord.gg/Gsxej6u" isExternal>
+					<Icon as={FaDiscord} w={8} h={8}/>
+				</Link>
+				<Link href="https://github.com/ufosc/" isExternal>
+					<Icon as={FaGithubSquare} w={8} h={8}/>
+				</Link>
+				<Link href="https://www.facebook.com/groups/ufosc/" isExternal>
+					<Icon as={FaFacebookSquare} w={8} h={8}/>
+				</Link>
+				<Link href="mailto:gator.osc@gmail.com" isExternal>
+					<Icon as={MdEmail} w={8} h={8}/>
+				</Link>
+			</Stack>
 
-			{/* The Links */}
-			<a className="footer-link" target='_blank' rel="noopener noreferrer" href="https://discord.gg/Gsxej6u">
-				<i className="fab fa-discord fa-2x"/>
-			</a>
-			<a className="footer-link" target='_blank' rel="noopener noreferrer" href="https://github.com/ufosc/">
-				<i className="fab fa-github-square fa-2x"/>
-			</a>
-			<a className="footer-link" target='_blank' rel="noopener noreferrer" href="https://www.facebook.com/groups/ufosc/">
-				<i className="fab fa-facebook-square fa-2x"/>
-			</a>
-			<a className="footer-link" target='_blank' rel="noopener noreferrer" href="mailto:gator.osc@gmail.com">
-				<i className="fas fa-envelope-square fa-2x"/>
-			</a>
-
-			{/* The text */}
-			<p className="footer-text">
+			<Text p="4">
 				<i className="fas fa-code"/>
 				with
 				<i className="fas fa-heart"/>
 				by <strong>OSC</strong>
-			</p>
+			</Text>
 
-		</div>
+		</Flex>
 	)
 }
 

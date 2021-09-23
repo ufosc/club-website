@@ -1,22 +1,46 @@
 import React from 'react';
-import '../styles/projects.css'
+import '../styles/projects.css';
+import { Box, Flex, Heading, Text, Link } from '@chakra-ui/layout';
 
-const ProjectCard = (props) => {
+const ProjectCard = props => {
 	return (
-		<div className="project-element page-element">
-			<div className="cardHeader">
-				<h1 className="project-title title">{props.title}</h1>
-				<h4 className="project-subtitle">{props.subtitle}</h4>
-			</div>
-			<div className="projectDescription">{props.description}</div>
-			<div className=".project-footer-text">
-				<p className="project-github-link">
-					<i className="fab fa-github"/>
-					<a href={props.link}>{props.link}</a>
-				</p>
-			</div>
-		</div>
+		<Flex
+			border="0.75rem"
+			boxShadow="0px 5px 4px 1px hsla(0, 0%, 0%, 0.2)"
+			padding="10px"
+			margin="10px"
+			textAlign="center"
+			justifyContent="flex-start"
+			borderRadius="0.5rem"
+			flexDirection="column"
+			max-width="550px"
+		>
+			<Box>
+				<Heading as="h1" size="md" position="relative">
+					{props.title}
+				</Heading>
+				<Heading
+					as="h4"
+					size="sm"
+					fontWeight="lighter"
+					color="rgb(118, 122, 141)"
+					borderBottom="1px solid rgb(126, 126, 126)"
+					paddingBottom="5px"
+				>
+					{props.subtitle}
+				</Heading>
+			</Box>
+			<Box>{props.description}</Box>
+			<Box fontSize="sm" marginTop="auto">
+				<Text>
+					<i className="fab fa-github" />
+					<Link href={props.link} isExternal>
+						{props.link}
+					</Link>
+				</Text>
+			</Box>
+		</Flex>
 	);
-}
+};
 
 export default ProjectCard;
