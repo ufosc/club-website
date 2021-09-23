@@ -20,7 +20,7 @@ const About = () => {
 				textAlign="center"
 				border="2px solid black"
 				borderRadius="25px"
-				shadow="-5px 5px 5px gray"
+				shadow="-5px 5px 5px hsla(0, 0%, 0%, 0.2)"
 				paddingLeft="5"
 				paddingRight="5"
 			>
@@ -70,7 +70,7 @@ const About = () => {
 				textAlign="center"
 				border="2px solid black"
 				borderRadius="25px"
-				shadow="-5px 5px 5px gray"
+				shadow="-5px 5px 5px hsla(0, 0%, 0%, 0.2)"
 				paddingLeft="5"
 				paddingRight="5"
 			>
@@ -118,7 +118,7 @@ const About = () => {
 				textAlign="center"
 				border="2px solid black"
 				borderRadius="25px"
-				shadow="-5px 5px 5px gray"
+				shadow="-5px 5px 5px hsla(0, 0%, 0%, 0.2)"
 				paddingLeft="5"
 				paddingRight="5"
 			>
