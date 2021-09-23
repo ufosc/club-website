@@ -3,7 +3,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { BrowserRouter } from 'react-router-dom';
 import Routes from './Routes';
-import theme from './theme';
+import theme from './Theme';
 import reportWebVitals from './reportWebVitals';
 import * as serviceWorker from './serviceWorker';
 
